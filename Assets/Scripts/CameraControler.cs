@@ -16,6 +16,8 @@ public class CameraControler : MonoBehaviour
 
     public float topAngle; // Angle at which the camera move up
     public float downAngle; // Angle at which the camera move down
+    public float rightAngle; // Angle at which the camera move right
+    public float leftAngle; // Angle at which the camera move left
 
     void Start()
     {
@@ -29,15 +31,29 @@ public class CameraControler : MonoBehaviour
         // Move the camera up
         if(Input.mousePosition.y > screenHeight - deadzone)
         {
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.rotation.y, transform.rotation.z), Time.deltaTime * speed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.rotation.y, transform.rotation.z), Time.deltaTime * (Input.mousePosition.y - screenHeight +deadzone)/100);
+            //Debug.Log("Camera up");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (Input.mousePosition.y - screenHeight + deadzone)/100);
         }
 
         // Move the camera down
         if (Input.mousePosition.y < 0 + deadzone)
         {
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.rotation.y, transform.rotation.z), Time.deltaTime * speed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.rotation.y, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.y)/100);
+            //Debug.Log("Camera down");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.y)/100);
+        }
+
+        // Move the camera right
+        if(Input.mousePosition.x < 0 + deadzone)
+        {
+            //Debug.Log("Camera right");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, rightAngle, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.x)/100);
+        }
+
+        // Move the camera left
+        if (Input.mousePosition.x > screenWidth - deadzone)
+        {
+            //Debug.Log("Camera left");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, leftAngle, transform.rotation.z), Time.deltaTime * (Input.mousePosition.x - screenWidth + deadzone) / 100);
         }
     }
 }
