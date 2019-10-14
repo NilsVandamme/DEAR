@@ -287,7 +287,7 @@ namespace UnityEngine.UI.Extensions
                 {
                     itemObjs[i].name = "Item " + i + " " + _panelItems[i];
                     itemObjs[i].transform.Find("Text").GetComponent<Text>().text = _panelItems[i]; //set the text value
-
+                    
                     Button itemBtn = itemObjs[i].GetComponent<Button>();
                     itemBtn.onClick.RemoveAllListeners();
                     string textOfItem = _panelItems[i]; //has to be copied for anonymous function or it gets garbage collected away
@@ -344,52 +344,47 @@ namespace UnityEngine.UI.Extensions
 
         private void RedrawPanel()
         {
-            Debug.Log("cc");
-            if (_mainInput.text.Length > LenghtAutoComplete)
+            float scrollbarWidth = _panelItems.Count > ItemsToDisplay ? _scrollBarWidth : 0f;//hide the scrollbar if there's not enough items
+            _scrollBarRT.gameObject.SetActive(_panelItems.Count > ItemsToDisplay);
+            if (!_hasDrawnOnce || _rectTransform.sizeDelta != _inputRT.sizeDelta)
             {
-                Debug.Log("cc2");
-                float scrollbarWidth = _panelItems.Count > ItemsToDisplay ? _scrollBarWidth : 0f;//hide the scrollbar if there's not enough items
-                _scrollBarRT.gameObject.SetActive(_panelItems.Count > ItemsToDisplay);
-                if (!_hasDrawnOnce || _rectTransform.sizeDelta != _inputRT.sizeDelta)
-                {
-                    _hasDrawnOnce = true;
-                    _inputRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _rectTransform.sizeDelta.x);
-                    _inputRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _rectTransform.sizeDelta.y);
+                _hasDrawnOnce = true;
+                _inputRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _rectTransform.sizeDelta.x);
+                _inputRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _rectTransform.sizeDelta.y);
 
-                    _scrollPanelRT.SetParent(transform, true);//break the scroll panel from the overlay
-                    _scrollPanelRT.anchoredPosition = new Vector2(0, -_rectTransform.sizeDelta.y); //anchor it to the bottom of the button
+                _scrollPanelRT.SetParent(transform, true);//break the scroll panel from the overlay
+                _scrollPanelRT.anchoredPosition = new Vector2(0, -_rectTransform.sizeDelta.y); //anchor it to the bottom of the button
 
-                    //make the overlay fill the screen
-                    _overlayRT.SetParent(_canvas.transform, false); //attach it to top level object
-                    _overlayRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _canvasRT.sizeDelta.x);
-                    _overlayRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _canvasRT.sizeDelta.y);
+                //make the overlay fill the screen
+                _overlayRT.SetParent(_canvas.transform, false); //attach it to top level object
+                _overlayRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _canvasRT.sizeDelta.x);
+                _overlayRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _canvasRT.sizeDelta.y);
 
-                    _overlayRT.SetParent(transform, true);//reattach to this object
-                    _scrollPanelRT.SetParent(_overlayRT, true); //reattach the scrollpanel to the overlay
-                }
-
-                if (_panelItems.Count < 1) return;
-
-                float dropdownHeight = _rectTransform.sizeDelta.y * Mathf.Min(_itemsToDisplay, _panelItems.Count);
-
-                _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
-                _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _rectTransform.sizeDelta.x);
-
-                _itemsPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _scrollPanelRT.sizeDelta.x - scrollbarWidth - 5);
-                _itemsPanelRT.anchoredPosition = new Vector2(0, 0);
-
-                _scrollBarRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, scrollbarWidth);
-                _scrollBarRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
-
-                _slidingAreaRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
-                _slidingAreaRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight - _scrollBarRT.sizeDelta.x);
+                _overlayRT.SetParent(transform, true);//reattach to this object
+                _scrollPanelRT.SetParent(_overlayRT, true); //reattach the scrollpanel to the overlay
             }
-            
-            
+
+            if (_panelItems.Count < 1) return;
+
+            float dropdownHeight = _rectTransform.sizeDelta.y * Mathf.Min(_itemsToDisplay, _panelItems.Count);
+
+            _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
+            _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _rectTransform.sizeDelta.x);
+
+            _itemsPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _scrollPanelRT.sizeDelta.x - scrollbarWidth - 5);
+            _itemsPanelRT.anchoredPosition = new Vector2(0, 0);
+
+            _scrollBarRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, scrollbarWidth);
+            _scrollBarRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
+
+            _slidingAreaRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
+            _slidingAreaRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight - _scrollBarRT.sizeDelta.x);
+        
         }
 
         public void OnValueChanged(string currText)
         {
+
             Text = currText;
             PruneItems(currText);
             RedrawPanel();
@@ -404,16 +399,19 @@ namespace UnityEngine.UI.Extensions
             {
                 ToggleDropdownPanel(false);
             }
+                
 
-			bool validity_changed = (_panelItems.Contains (Text) != _selectionIsValid);
-			_selectionIsValid = _panelItems.Contains (Text);
-			OnSelectionChanged.Invoke (Text, _selectionIsValid);
-			OnSelectionTextChanged.Invoke (Text);
-			if(validity_changed){
-				OnSelectionValidityChanged.Invoke (_selectionIsValid);
-			}
+            bool validity_changed = (_panelItems.Contains(Text) != _selectionIsValid);
+            _selectionIsValid = _panelItems.Contains(Text);
+            OnSelectionChanged.Invoke(Text, _selectionIsValid);
+            OnSelectionTextChanged.Invoke(Text);
+            if (validity_changed)
+            {
+                OnSelectionValidityChanged.Invoke(_selectionIsValid);
+            }
 
-			SetInputTextColor ();
+            SetInputTextColor();
+            
         }
 
 		private void SetInputTextColor(){
@@ -436,6 +434,7 @@ namespace UnityEngine.UI.Extensions
         /// <param name="directClick"> whether an item was directly clicked on</param>
         public void ToggleDropdownPanel(bool directClick)
         {
+
             _isPanelActive = !_isPanelActive;
 
             _overlayRT.gameObject.SetActive(_isPanelActive);
@@ -463,6 +462,18 @@ namespace UnityEngine.UI.Extensions
 
         private void PruneItemsLinq(string currText)
         {
+            if (_mainInput.text.Length < LenghtAutoComplete)
+            {
+                var del = _panelItems.ToArray();
+                foreach (string key in del)
+                {
+                    panelObjects[key].SetActive(false);
+                    _panelItems.Remove(key);
+                    _prunedPanelItems.Add(key);
+                }
+            }
+            else
+            {
                 currText = currText.ToLower();
                 var toPrune = _panelItems.Where(x => !x.Contains(currText)).ToArray();
                 foreach (string key in toPrune)
@@ -479,31 +490,45 @@ namespace UnityEngine.UI.Extensions
                     _panelItems.Add(key);
                     _prunedPanelItems.Remove(key);
                 }
+            }
         }
 
         //Updated to not use Linq
         private void PruneItemsArray(string currText)
         {
-            string _currText = currText.ToLower();
-
-            for (int i = _panelItems.Count - 1; i >= 0; i--)
+            if (_mainInput.text.Length < LenghtAutoComplete)
             {
-                string _item = _panelItems[i];
-                if (!_item.Contains(_currText))
+                for (int i = _panelItems.Count - 1; i >= 0; i--)
                 {
+                    string _item = _panelItems[i];
                     panelObjects[_panelItems[i]].SetActive(false);
                     _panelItems.RemoveAt(i);
                     _prunedPanelItems.Add(_item);
                 }
             }
-            for (int i = _prunedPanelItems.Count - 1; i >= 0; i--)
+            else
             {
-                string _item = _prunedPanelItems[i];
-                if (_item.Contains(_currText))
+                string _currText = currText.ToLower();
+
+                for (int i = _panelItems.Count - 1; i >= 0; i--)
                 {
-                    panelObjects[_prunedPanelItems[i]].SetActive(true);
-                    _prunedPanelItems.RemoveAt(i);
-                    _panelItems.Add(_item);
+                    string _item = _panelItems[i];
+                    if (!_item.Contains(_currText))
+                    {
+                        panelObjects[_panelItems[i]].SetActive(false);
+                        _panelItems.RemoveAt(i);
+                        _prunedPanelItems.Add(_item);
+                    }
+                }
+                for (int i = _prunedPanelItems.Count - 1; i >= 0; i--)
+                {
+                    string _item = _prunedPanelItems[i];
+                    if (_item.Contains(_currText))
+                    {
+                        panelObjects[_prunedPanelItems[i]].SetActive(true);
+                        _prunedPanelItems.RemoveAt(i);
+                        _panelItems.Add(_item);
+                    }
                 }
             }
         }
