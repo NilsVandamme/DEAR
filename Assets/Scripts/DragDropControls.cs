@@ -15,7 +15,9 @@ public class DragDropControls : MonoBehaviour
     [Header("Debug")]
 
     public bool IsSnapping; // Is the object being snapped ?
+    public Vector3 OriginalPosition;
     public Vector3 SnapPosition; // Position at which the object snaps
+    public GameObject SnapPositionObject; // WHich ibject is it snapped to ?
     public bool snapMovementActive; // Is the object moving to it's snap position ?
 
     private Vector3 mouseOffset; 
@@ -24,6 +26,7 @@ public class DragDropControls : MonoBehaviour
 
     private void Start()
     {
+        OriginalPosition = transform.position;
         rig = GetComponent<Rigidbody>();
     }
 
