@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script controls the movements of the camera
+
 public class CameraControler : MonoBehaviour
 {
     private int screenWidth; // Width of the screen
