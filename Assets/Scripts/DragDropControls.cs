@@ -11,6 +11,7 @@ public class DragDropControls : MonoBehaviour
     public float HoveringHeight = -5.25f; // Height at which the object will hover while being dragged
     public float SpeedDivider = 2.5f; // Divide the drag speed
     public float SnapSpeed; // Speed of the snapping movement
+    public int NumberOfLines; // The number of lines the paragraph contains
 
     [Header("Debug")]
 
@@ -18,9 +19,9 @@ public class DragDropControls : MonoBehaviour
     public Vector3 OriginalPosition;
     public Vector3 SnapPosition; // Position at which the object snaps
     public GameObject SnapPositionObject; // WHich ibject is it snapped to ?
-    public bool snapMovementActive; // Is the object moving to it's snap position ?
+    public bool snapMovementActive; // Is the object moving to it's snap ?
 
-    private Vector3 mouseOffset; 
+    private Vector3 mouseOffset;
     private float mouseZCoord;
     private Rigidbody rig; // Object rigidbidy
 
@@ -49,7 +50,7 @@ public class DragDropControls : MonoBehaviour
     private void OnMouseDown()
     {
         mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        mouseZCoord = mouseZCoord / SpeedDivider;
+        mouseZCoord /=  SpeedDivider;
 
         mouseOffset = gameObject.transform.position - GetMouseWorldPos();
 

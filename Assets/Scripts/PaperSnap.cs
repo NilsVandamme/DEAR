@@ -26,7 +26,7 @@ public class PaperSnap : MonoBehaviour
 
         if (other.tag == "Paragraph" && SnappedObject == null) // Snap the object if there's the emplacement is free
         {
-            Debug.Log(gameObject.name + " has snapped with " + other.name);
+            //Debug.Log(gameObject.name + " has snapped with " + other.name);
             SnappedObject = other.gameObject;
             otherDD.IsSnapping = true;
             otherDD.SnapPositionObject = gameObject;
