@@ -3,7 +3,17 @@ guid: 4d15c084f0d988a459c7eaaf7e845883
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BasePrefabs: {fileID: 5178976626929221662, guid: 0f7b0bfff7be7d545862b43032973015,
+      type: 3}
+  - InsertObjectPrefabs: {fileID: 7077010976790941591, guid: 2f447931a8ff9a042a43164afbb7b8a1,
+      type: 3}
+  - UpdateObjectPrefabs: {fileID: 3633818420298020387, guid: 4b90f40951bee8145969e0f843f17e1e,
+      type: 3}
+  - DeleteObjectPrefabs: {fileID: 5567892509627142684, guid: d17d4c7c2d9d64c47a30dfd2102b3471,
+      type: 3}
+  - ShowObjectPrefabs: {fileID: 5939361647115854506, guid: a9aac6a9bfc485847aa2c3825b4863c3,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
