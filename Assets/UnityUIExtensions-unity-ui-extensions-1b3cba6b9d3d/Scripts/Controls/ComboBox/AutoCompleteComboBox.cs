@@ -134,8 +134,8 @@ namespace UnityEngine.UI.Extensions
 
         public void Awake()
         {
-            
-            Connection = "URI=file:" + Application.dataPath + "/BD/mot_emotions.db";
+
+            Connection = "URI=file:" + System.IO.Directory.GetCurrentDirectory() + "/BD/mot_emotions.db";
 
             using (IDbConnection dbConnection = new SqliteConnection(Connection))
             {
@@ -149,7 +149,7 @@ namespace UnityEngine.UI.Extensions
 
                     using (IDataReader reader = dbCmd.ExecuteReader())
                     {
-                        
+
                         while (reader.Read())
                         {
                             AvailableOptions.Add(reader["Name"].ToString());
@@ -162,7 +162,7 @@ namespace UnityEngine.UI.Extensions
 
                 dbConnection.Close();
             }
-            
+
             Initialize();
             
         }

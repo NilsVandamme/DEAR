@@ -18,7 +18,7 @@ public class ScoreBD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Connection = "URI=file:" + Application.dataPath + "/BD/mot_emotions.db";
+        Connection = "URI=file:" + System.IO.Directory.GetCurrentDirectory() + "/BD/mot_emotions.db";
         ListeMots = new List<InputField>();
         ListeMots.Add(Mot1);
         ListeMots.Add(Mot2);
@@ -35,7 +35,13 @@ public class ScoreBD : MonoBehaviour
             {
                 foreach (InputField elem in ListeMots)
                 {
+                    //String sqlQuery = "SELECT * FROM sqlite_master";
                     String sqlQuery = "SELECT * FROM Mots WHERE Name = '" + elem.text + "'";
+                    /*String sqlQuery = "CREATE TABLE test(" +
+                                        "Field1    INTEGER," +
+                                        "Field2    TEXT," +
+                                        "PRIMARY KEY(Field1)" +
+                                        ");";*/
 
                     dbCmd.CommandText = sqlQuery;
 
@@ -43,6 +49,7 @@ public class ScoreBD : MonoBehaviour
                     {
                         while (reader.Read())
                         {
+                            //Debug.Log(elem.text + " = " + reader["name"]);
                             Debug.Log(elem.text + " = " + reader["ScorePers1"]);
                         }
 

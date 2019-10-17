@@ -1645,7 +1645,7 @@ MonoBehaviour:
   disabledTextColor: {r: 0, g: 0, b: 0, a: 0}
   AvailableOptions: []
   _scrollBarWidth: 20
-  _itemsToDisplay: 3
+  _itemsToDisplay: 1
   SelectFirstItemOnStart: 0
   _ChangeInputTextColorBasedOnMatchingItems: 0
   ValidSelectionTextColor: {r: 0, g: 1, b: 0, a: 1}
@@ -1662,6 +1662,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LenghtAutoComplete: 3
+  text: {fileID: 0}
 --- !u!1 &494659374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,7 +2750,7 @@ MonoBehaviour:
   disabledTextColor: {r: 0, g: 0, b: 0, a: 0}
   AvailableOptions: []
   _scrollBarWidth: 20
-  _itemsToDisplay: 3
+  _itemsToDisplay: 1
   SelectFirstItemOnStart: 0
   _ChangeInputTextColorBasedOnMatchingItems: 0
   ValidSelectionTextColor: {r: 0, g: 1, b: 0, a: 1}
@@ -2766,6 +2767,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LenghtAutoComplete: 3
+  text: {fileID: 0}
 --- !u!1 &1097006197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,13 +3160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledTextColor: {r: 0, g: 0, b: 0, a: 0}
-  AvailableOptions:
-  - bonjour
-  - bon
-  - bonne
-  - bonheur
+  AvailableOptions: []
   _scrollBarWidth: 20
-  _itemsToDisplay: 3
+  _itemsToDisplay: 1
   SelectFirstItemOnStart: 0
   _ChangeInputTextColorBasedOnMatchingItems: 0
   ValidSelectionTextColor: {r: 0, g: 1, b: 0, a: 1}
@@ -3181,6 +3179,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LenghtAutoComplete: 3
+  text: {fileID: 0}
 --- !u!1 &1302721134
 GameObject:
   m_ObjectHideFlags: 0
