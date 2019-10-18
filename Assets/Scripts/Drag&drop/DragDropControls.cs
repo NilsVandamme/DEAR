@@ -16,6 +16,8 @@ public class DragDropControls : MonoBehaviour
     [Header("Debug")]
 
     public bool IsSnapping; // Is the object being snapped ?
+    public bool IsSelected; // Is the object being selected ?
+    public bool IsOnInputField; // Is the cursor on the input field ?
     public Vector3 OriginalPosition;
     public Vector3 SnapPosition; // Position at which the object snaps
     public GameObject SnapPositionObject; // WHich ibject is it snapped to ?
@@ -49,25 +51,37 @@ public class DragDropControls : MonoBehaviour
     // When the mouse is being pressed
     private void OnMouseDown()
     {
-        mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        mouseZCoord /=  SpeedDivider;
+        if(IsOnInputField == false) // Disable if the mouse is over an inputfield, check script "InputFieldMouseCheck" for further details
+        {
+                IsSelected = true;
+                //Debug.Log("MOUSE DOWN");
+                mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+                mouseZCoord /= SpeedDivider;
 
-        mouseOffset = gameObject.transform.position - GetMouseWorldPos();
+                mouseOffset = gameObject.transform.position - GetMouseWorldPos();
 
-        rig.useGravity = false;
+                rig.useGravity = false;
+        }
+
     }
 
     // When the mouse is being released
     private void OnMouseUp()
     {
-        if(IsSnapping == true)
+        if(IsSelected == true)
         {
-            snapMovementActive = true;
-        }
-        else
-        {
-            rig.useGravity = true;
-            snapMovementActive = false;
+            //Debug.Log("MOUSE UP");
+            if (IsSnapping == true)
+            {
+                snapMovementActive = true;
+                IsSelected = false;
+            }
+            else
+            {
+                rig.useGravity = true;
+                snapMovementActive = false;
+                IsSelected = false;
+            }
         }
     }
 
@@ -75,7 +89,11 @@ public class DragDropControls : MonoBehaviour
     // When the mouse is kept being pressed
     private void OnMouseDrag()
     {
-        rig.position = new Vector3(GetMouseWorldPos().x + mouseOffset.x, Mathf.Lerp(transform.position.y, HoveringHeight, Time.deltaTime * 2), GetMouseWorldPos().z + mouseOffset.z );
+        if(IsSelected == true)
+        {
+            //Debug.Log("MOUSE DRAG");
+            rig.position = new Vector3(GetMouseWorldPos().x + mouseOffset.x, Mathf.Lerp(transform.position.y, HoveringHeight, Time.deltaTime * 2), GetMouseWorldPos().z + mouseOffset.z);
+        }     
     }
 
 
