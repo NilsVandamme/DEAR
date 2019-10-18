@@ -59,7 +59,7 @@ public class GM_SceneBD : MonoBehaviour
         Canvas = BaseClone.transform.Find("Canvas").GetComponent<Canvas>();
     }
 
-    public void CID(string toggle)
+    public void CID(String toggle)
     {
         Show.SetActive(false);
 
@@ -154,8 +154,6 @@ public class GM_SceneBD : MonoBehaviour
             sqlQuery += DeleteObjectClones.transform.Find("InputFieldWhere").GetComponent<InputField>().text;
         }
 
-        Debug.Log(sqlQuery);
-
         ConnectWrite();
 
         Stop();
@@ -178,7 +176,7 @@ public class GM_SceneBD : MonoBehaviour
         Show.SetActive(false);
     }
 
-    private void ConnectRead(string choix)
+    private void ConnectRead(String choix)
     {
         String Connection = "URI=file:" + System.IO.Directory.GetCurrentDirectory() + "/BD/mot_emotions.db";
         IDbConnection dbConnection = new SqliteConnection(Connection); ;
@@ -191,17 +189,17 @@ public class GM_SceneBD : MonoBehaviour
         {
             if (choix == "table1")
             {
-                ShowObjectClones.transform.Find("ChampLexical/Panel/GameObject/Text/Id").GetComponent<Text>().text += reader["Id"].ToString() + "\n";
-                ShowObjectClones.transform.Find("ChampLexical/Panel/GameObject/Text/Name").GetComponent<Text>().text += reader["Name"].ToString() + "\n";
+                ShowObjectClones.transform.Find("ChampLexical/GameObject/Text/Id").GetComponent<Text>().text += reader["Id"].ToString() + "\n";
+                ShowObjectClones.transform.Find("ChampLexical/GameObject/Text/Name").GetComponent<Text>().text += reader["Name"].ToString() + "\n";
             }
             else if (choix == "table2")
             {
-                ShowObjectClones.transform.Find("Mots/Panel/GameObject/Text/Id").GetComponent<Text>().text += reader["Id"].ToString() + "\n";
-                ShowObjectClones.transform.Find("Mots/Panel/GameObject/Text/Name").GetComponent<Text>().text += reader["Name"].ToString() + "\n";
-                ShowObjectClones.transform.Find("Mots/Panel/GameObject/Text/ScorePers1").GetComponent<Text>().text += reader["ScorePers1"].ToString() + "\n";
-                ShowObjectClones.transform.Find("Mots/Panel/GameObject/Text/ScorePers2").GetComponent<Text>().text += reader["ScorePers2"].ToString() + "\n";
-                ShowObjectClones.transform.Find("Mots/Panel/GameObject/Text/ScorePers3").GetComponent<Text>().text += reader["ScorePers3"].ToString() + "\n";
-                ShowObjectClones.transform.Find("Mots/Panel/GameObject/Text/IdChampLexical").GetComponent<Text>().text += reader["IdChampLexical"].ToString() + "\n";
+                ShowObjectClones.transform.Find("Mots/GameObject/Text/Id").GetComponent<Text>().text += reader["Id"].ToString() + "\n";
+                ShowObjectClones.transform.Find("Mots/GameObject/Text/Name").GetComponent<Text>().text += reader["Name"].ToString() + "\n";
+                ShowObjectClones.transform.Find("Mots/GameObject/Text/ScorePers1").GetComponent<Text>().text += reader["ScorePers1"].ToString() + "\n";
+                ShowObjectClones.transform.Find("Mots/GameObject/Text/ScorePers2").GetComponent<Text>().text += reader["ScorePers2"].ToString() + "\n";
+                ShowObjectClones.transform.Find("Mots/GameObject/Text/ScorePers3").GetComponent<Text>().text += reader["ScorePers3"].ToString() + "\n";
+                ShowObjectClones.transform.Find("Mots/GameObject/Text/IdChampLexical").GetComponent<Text>().text += reader["IdChampLexical"].ToString() + "\n";
             }
         }
         reader.Close();
