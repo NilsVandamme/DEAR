@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GM_1er_Mail : MonoBehaviour
 {
-    public Text PostitUp;
-    public Text PostitDown;
-    public Text MotRecup;
+    public TMP_Text PostitUp;
+    public TMP_Text PostitDown;
+    public TMP_Text MotRecup;
 
     //Private
     public static GM_1er_Mail GM_1_Mail = null;

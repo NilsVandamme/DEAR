@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Work/SceneJulien.unity
     guid: b2b104ef9cf17c841ae75925a2334cea
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/Menu.unity
     guid: e294d7f0cd1f11048b4e34845a30a5e2
   - enabled: 0
