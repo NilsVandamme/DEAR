@@ -27,6 +27,7 @@ public class ScoreBD : MonoBehaviour
 
     public void GetElemBd()
     {
+        int total = 0;
         using (IDbConnection dbConnection = new SqliteConnection(Connection))
         {
             dbConnection.Open();
@@ -47,17 +48,21 @@ public class ScoreBD : MonoBehaviour
 
                     using (IDataReader reader = dbCmd.ExecuteReader())
                     {
+                        
                         while (reader.Read())
                         {
                             //Debug.Log(elem.text + " = " + reader["name"]);
-                            Debug.Log(elem.text + " = " + reader["ScorePers1"]);
+                            
+                            total += int.Parse(reader["ScorePers1"].ToString());
                         }
 
                         reader.Close();
+                        
                     }
                 }
 
                 dbConnection.Close();
+                Debug.Log("Your score is: " + total);
             }
         }
     }
