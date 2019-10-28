@@ -30,8 +30,8 @@ public class LoadingScreen : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        loadImage = GetComponent<Image>();
+        anim = GetComponentInChildren<Animator>();
+        loadImage = GetComponentInChildren<Image>();
         loadImage.enabled = false;
 
         //anim.SetTrigger("Hide");
