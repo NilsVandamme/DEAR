@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class InputFieldMouseCheck : MonoBehaviour
 {
-    private DragDropControls DDC;
+    public DragDropControls DDC;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class InputFieldMouseCheck : MonoBehaviour
     {
         DDC.IsOnInputField = true;
 
-        //Debug.Log("Mouse is over an input field");
+        Debug.Log("Mouse is over an input field");
     }
 
     public void OnExit()
@@ -29,7 +29,7 @@ public class InputFieldMouseCheck : MonoBehaviour
         // Deselect the inputfield if the mouse isn't on it
         //EventSystem.current.SetSelectedGameObject(null);
 
-        //Debug.Log("Mouse is not over an input field anymore");
+        Debug.Log("Mouse is not over an input field anymore");
     }
 
 }

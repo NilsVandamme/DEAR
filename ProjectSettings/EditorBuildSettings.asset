@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Work/SceneJulienN\xB02.unity"
     guid: d3dbc0b6371390a4d8d39202066775d9
+  - enabled: 1
+    path: Assets/Scenes/Game/Game.unity
+    guid: 947b34bdf295568439887aa76aa6a6b4
   m_configObjects: {}
