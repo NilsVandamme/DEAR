@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1762451625}
         m_MethodName: OpenMailTabs
         m_Mode: 1
         m_Arguments:
@@ -3500,7 +3500,7 @@ GameObject:
   - component: {fileID: 999406882}
   - component: {fileID: 999406881}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: ColorPalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4004,7 +4004,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1762451625}
         m_MethodName: OpenMailTabs
         m_Mode: 1
         m_Arguments:
@@ -4570,7 +4570,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1762451625}
         m_MethodName: OpenInfos
         m_Mode: 1
         m_Arguments:
@@ -5888,7 +5888,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1899569069}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5911,14 +5911,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00e9c079687b78479fd1becfc7ab83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EmailTab: {fileID: 0}
-  InfosTab: {fileID: 1519898644}
-  ListeEmailsTabs: []
-  ListeInfosTabs: []
-  EmailButton: {fileID: 0}
-  InfosButton: {fileID: 0}
-  ListeEmailsButtons: []
-  ListeInfosButtons: []
+  EmailTab: {fileID: 301839789}
+  InfosTab: {fileID: 93580164}
+  ListeEmailsTabs:
+  - {fileID: 234877794}
+  - {fileID: 1772393927}
+  - {fileID: 303297799}
+  ListeInfosTabs:
+  - {fileID: 1006740161}
+  - {fileID: 972362167}
+  - {fileID: 1956545862}
+  EmailButton: {fileID: 1893853628}
+  InfosButton: {fileID: 1188748341}
+  ListeEmailsButtons:
+  - {fileID: 1098221477}
+  - {fileID: 2013901905}
+  - {fileID: 973496794}
+  ListeInfosButtons:
+  - {fileID: 1105329058}
+  - {fileID: 897526300}
+  - {fileID: 1807618108}
 --- !u!1 &1772393927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6414,7 +6426,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1762451625}
         m_MethodName: OpenMail
         m_Mode: 1
         m_Arguments:
@@ -7211,7 +7223,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1762451625}
         m_MethodName: OpenMailTabs
         m_Mode: 1
         m_Arguments:
