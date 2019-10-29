@@ -40,7 +40,7 @@ public class CameraControlerSnap : MonoBehaviour
         }
         else if (isLookingUp == true && transform.rotation.x >= Quaternion.Euler(22, 0, 0).x) // Automatically align the camera to the upper position
         {
-            Debug.Log("camera is aligning to the upper position");
+            //Debug.Log("camera is aligning to the upper position");
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * speed);
         }
 
@@ -52,7 +52,7 @@ public class CameraControlerSnap : MonoBehaviour
         }
         else if (isLookingUp == false && transform.rotation.x <= Quaternion.Euler(62, 0, 0).x) // Automatically align the camera to the lower position
         {
-            Debug.Log("camera is aligning to the lower position");
+            //Debug.Log("camera is aligning to the lower position");
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * speed);
         }
 
@@ -73,7 +73,7 @@ public class CameraControlerSnap : MonoBehaviour
         // Move the camera to the upper position
         if(Input.mousePosition.y > screenHeight - 30 && isLookingUp == false)
         {
-            Debug.Log("camera moved the the upper position");
+            //Debug.Log("camera moved the the upper position");
             downAngle = 24;
             topAngle = 20;
             isLookingUp = true;
@@ -82,7 +82,7 @@ public class CameraControlerSnap : MonoBehaviour
         // Move the camera to the lower position
         if (Input.mousePosition.y < 0 + 30 && isLookingUp == true)
         {
-            Debug.Log("camera moved the the lower position");
+            //Debug.Log("camera moved the the lower position");
             downAngle = 64;
             topAngle = 60;
             isLookingUp = false;
