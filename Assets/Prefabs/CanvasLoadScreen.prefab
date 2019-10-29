@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 4686115692455540798}
   - component: {fileID: 4686115692455540799}
   - component: {fileID: 4686115692455540796}
+  - component: {fileID: 4686115691236462063}
   m_Layer: 5
   m_Name: LOADSCREEN
   m_TagString: Untagged
@@ -219,3 +220,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4686115691236462063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686115692455540770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679b4345ae325894bb35100b9cafc7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
