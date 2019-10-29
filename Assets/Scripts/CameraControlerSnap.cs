@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// This script controls the movements of the camera with free movement
+// This script controls the movements of the camera with snapped positions
 
-public class CameraControler : MonoBehaviour
+public class CameraControlerSnap : MonoBehaviour
 {
+    public bool isLookingUp;
+
     private int screenWidth; // Width of the screen
     private int screenHeight; // Height of the screen
 
@@ -31,24 +33,24 @@ public class CameraControler : MonoBehaviour
     void Update()
     {
         // Move the camera up
-        if(Input.mousePosition.y > screenHeight - deadzone)
+        if (Input.mousePosition.y > screenHeight - deadzone)
         {
             //Debug.Log("Camera up");
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (Input.mousePosition.y - screenHeight + deadzone)/100);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (Input.mousePosition.y - screenHeight + deadzone) / 100);
         }
 
         // Move the camera down
         if (Input.mousePosition.y < 0 + deadzone)
         {
             //Debug.Log("Camera down");
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.y)/100);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.y) / 100);
         }
 
         // Move the camera right
-        if(Input.mousePosition.x < 0 + deadzone)
+        if (Input.mousePosition.x < 0 + deadzone)
         {
             //Debug.Log("Camera right");
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, rightAngle, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.x)/100);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, rightAngle, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.x) / 100);
         }
 
         // Move the camera left
@@ -56,6 +58,24 @@ public class CameraControler : MonoBehaviour
         {
             //Debug.Log("Camera left");
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, leftAngle, transform.rotation.z), Time.deltaTime * (Input.mousePosition.x - screenWidth + deadzone) / 100);
+        }
+
+        // Move the camera to the upper position
+        if(Input.mousePosition.y > screenHeight - 30 && isLookingUp == false)
+        {
+            Debug.Log("camera moved the the upper position");
+            downAngle = 24;
+            topAngle = 20;
+            isLookingUp = true;
+        }
+
+        // Move the camera to the lower position
+        if (Input.mousePosition.y < 0 + 30 && isLookingUp == true)
+        {
+            Debug.Log("camera moved the the lower position");
+            downAngle = 64;
+            topAngle = 60;
+            isLookingUp = false;
         }
     }
 }
