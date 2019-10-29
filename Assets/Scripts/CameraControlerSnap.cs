@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraControlerSnap : MonoBehaviour
 {
-    public bool isLookingUp;
+    private bool isLookingUp; // Is the camera looking at the PC screen ?
 
     private int screenWidth; // Width of the screen
     private int screenHeight; // Height of the screen
@@ -38,12 +38,22 @@ public class CameraControlerSnap : MonoBehaviour
             //Debug.Log("Camera up");
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (Input.mousePosition.y - screenHeight + deadzone) / 100);
         }
+        else if (isLookingUp == true && transform.rotation.x >= Quaternion.Euler(22, 0, 0).x) // Automatically align the camera to the upper position
+        {
+            Debug.Log("camera is aligning to the upper position");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * speed);
+        }
 
         // Move the camera down
         if (Input.mousePosition.y < 0 + deadzone)
         {
             //Debug.Log("Camera down");
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * (deadzone - Input.mousePosition.y) / 100);
+        }
+        else if (isLookingUp == false && transform.rotation.x <= Quaternion.Euler(62, 0, 0).x) // Automatically align the camera to the lower position
+        {
+            Debug.Log("camera is aligning to the lower position");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(downAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * speed);
         }
 
         // Move the camera right
