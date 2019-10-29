@@ -3864,10 +3864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
-  m_Camera: {fileID: 1795503794}
-  m_PreviousProfile: {fileID: 0}
-  m_RenderingInSceneView: 0
 --- !u!1 &1815180611
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,6 +4964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686115690732834599, guid: d1fe5bafb5f79c640ae14db60ce3eb13,
+        type: 3}
+      propertyPath: LoadedScene
+      value: Scene_Intro_Prez1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1fe5bafb5f79c640ae14db60ce3eb13, type: 3}
