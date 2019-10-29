@@ -55,7 +55,7 @@ public class PaperSnap : MonoBehaviour
             SnappedObject = null;
             HasSnap = false;
         }
-        else if(otherDD.SnapPositionObject != gameObject && otherDD.IsSnapping == true) // Unsnap the object currently snapped and transfer snap to another point
+        else if(otherDD.SnapPositionObject != gameObject && otherDD.IsSnapping == true && other == SnappedObject) // Unsnap the object currently snapped and transfer snap to another point
         {
             //Debug.Log(gameObject.name + " has unsnapped with " + other.name + " and transfered snap");
             otherDD.IsSnapping = true;
