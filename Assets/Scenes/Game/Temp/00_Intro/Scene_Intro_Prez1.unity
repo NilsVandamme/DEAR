@@ -1027,12 +1027,12 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 251
+      value: 261
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 66
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1072,7 +1072,7 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_text
-      value: "Donna ! Get your stuff together. You know what ? \nScrew                    .
+      value: "Donna ! Get your stuff together. You know what ? \nScrew                              .
         \n\nThat ain't gonna help you nor your dreams in your current state of life.
         The biggest part of the work has to be done on a day-to-day basis. Fight boredom
         with consistency !"
@@ -1121,17 +1121,17 @@ PrefabInstance:
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 19.5
+      value: 23.7
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -61.2
+      value: -63
       objectReference: {fileID: 0}
     - target: {fileID: 2771400415058255938, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1147,6 +1147,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.11764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688240, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688240, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.20000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688240, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.099998474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400415058255939, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.4999981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62076635272d21d45a81d5412d797382, type: 3}
@@ -1358,12 +1378,12 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 300
+      value: 319
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 70
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1373,7 +1393,7 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1405,9 +1425,9 @@ PrefabInstance:
       propertyPath: m_text
       value: "You know what ? You have a profile that is clearly full of energy. Positive
         energy. And it\u2019s currently going to waste. You said that you couldn\u2019t
-        dance where you currently are ? \n\nOkay then, but how about\u2026             ?
-        That\u2019s important, too ! \nI\u2019m sure that you can find a way to get
-        entertained !\r\n"
+        dance where you currently are ? \n\nOkay then, but how about\u2026                               ?
+        \nThat\u2019s important, too ! \nI\u2019m sure that you can find a way to
+        get entertained !\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1453,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.1
+      value: 44.6
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1463,7 +1483,7 @@ PrefabInstance:
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20.4
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 2771400415058255938, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1582,12 +1602,12 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 244
+      value: 259
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 60
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1627,10 +1647,10 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_text
-      value: "From what i've seen, you do have a problem with                .\n\nIt's
+      value: "From what i've seen, \nyou do have a problem with                               .\n\nIt's
         very probably related to your current state of boredom and, let's say it,
-        loneliness. \n\nRing your family to tell them about it. Theyre surely the
-        best ones to talk about it."
+        loneliness. \nRing your family to tell them about it. Theyre surely the best
+        ones to talk about it."
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1666,22 +1686,22 @@ PrefabInstance:
     - target: {fileID: 2771400414417169667, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 223
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 41.2
+      value: 28.2
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2771400414784826961, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 116.4
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 2771400415058255938, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
@@ -1697,6 +1717,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.11764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688240, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688240, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688240, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62076635272d21d45a81d5412d797382, type: 3}
@@ -4631,6 +4666,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027511409697778785, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000018626451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027511409697778785, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5027511407889158701, guid: 84e5422f523dbd74982bd1ec97190c33,
         type: 3}
