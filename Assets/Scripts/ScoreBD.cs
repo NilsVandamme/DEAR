@@ -17,11 +17,11 @@ public class ScoreBD : MonoBehaviour
     
     public InputField Mot1;
     public InputField Mot2;
-    public InputField Mot3;
+    public InputField Mot3, Mot4, Mot5, Mot6;
     
     public float Mult1;
     public float Mult2;
-    public float Mult3;
+    public float Mult3, Mult4, Mult5, Mult6;
 
     private String Connection;
     private List<InputField> ListeMots;
@@ -41,12 +41,19 @@ public class ScoreBD : MonoBehaviour
         ListeMots.Add(Mot1);
         ListeMots.Add(Mot2);
         ListeMots.Add(Mot3);
+        ListeMots.Add(Mot4);
+        ListeMots.Add(Mot5);
+        ListeMots.Add(Mot6);
+
 
         ListeMults.Add(Mult1);
         ListeMults.Add(Mult2);
         ListeMults.Add(Mult3);
+        ListeMults.Add(Mult4);
+        ListeMults.Add(Mult5);
+        ListeMults.Add(Mult6);
 
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             scoreStruct[i].Mot = ListeMots[i];
             scoreStruct[i].Mult = ListeMults[i];

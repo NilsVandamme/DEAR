@@ -74,7 +74,7 @@ namespace UnityEngine.UI.Extensions
         //    private int _selectedIndex = 0;
 
         [SerializeField]
-        private int _itemsToDisplay;
+        public int _itemsToDisplay;
         public int ItemsToDisplay
         {
             get { return _itemsToDisplay; }
@@ -261,12 +261,14 @@ namespace UnityEngine.UI.Extensions
             _panelItems.Clear();
             _prunedPanelItems.Clear();
             panelObjects.Clear();
-
+            foreach (string key in _panelItems)
+                Debug.Log("panel item : " + key);
             foreach (string option in AvailableOptions)
             {
                 _panelItems.Add(option.ToLower());
             }
-
+            foreach (string key in _panelItems)
+                Debug.Log("panel item : " + key);
             List<GameObject> itemObjs = new List<GameObject>(panelObjects.Values);
 
             int indx = 0;
@@ -410,7 +412,7 @@ namespace UnityEngine.UI.Extensions
             }
 
             SetInputTextColor();
-            
+
         }
 
 		private void SetInputTextColor(){
@@ -451,16 +453,25 @@ namespace UnityEngine.UI.Extensions
         {
             if (autocompleteSearchType == AutoCompleteSearchType.Linq)
             {
-                PruneItemsLinq(currText);
+                PruneItemsLinq(_mainInput.text);
             }
             else
             {
-                PruneItemsArray(currText);
+                PruneItemsArray(_mainInput.text);
             }
+            /*
+            Debug.Log(_mainInput.text);
+            foreach (string key in _panelItems)
+                Debug.Log("panel item : " + key);
+            /*
+            foreach (string key in _prunedPanelItems)
+                Debug.Log("prune panel item : " + key);
+                */
         }
 
         private void PruneItemsLinq(string currText)
         {
+            
             if (_mainInput.text.Length < LenghtAutoComplete)
             {
                 var del = _panelItems.ToArray();
@@ -483,6 +494,8 @@ namespace UnityEngine.UI.Extensions
                 }
 
                 var toAddBack = _prunedPanelItems.Where(x => x.Contains(currText)).ToArray();
+                foreach (string elem in toAddBack)
+                    Debug.Log(elem);
                 foreach (string key in toAddBack)
                 {
                     panelObjects[key].SetActive(true);
