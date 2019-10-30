@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 486347115}
   - component: {fileID: 486347114}
   m_Layer: 5
-  m_Name: Postit-
+  m_Name: PostitDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,10 +452,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 670774981}
   - component: {fileID: 670774980}
   m_Layer: 0
-  m_Name: Postit-
+  m_Name: PostitDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,10 +1013,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 1365636693}
   - component: {fileID: 1365636692}
   m_Layer: 0
-  m_Name: Postit+
+  m_Name: PostitUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 1904072682}
   - component: {fileID: 1904072681}
   m_Layer: 5
-  m_Name: Postit+
+  m_Name: PostitUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1406,10 +1406,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1560,9 +1560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c135e7f8cbec0d84da5c566b933d2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PostitUp: {fileID: 0}
-  PostitDown: {fileID: 0}
-  MotRecup: {fileID: 0}
+  PostitUp: {fileID: 1904072681}
+  PostitDown: {fileID: 486347114}
+  MotRecup: {fileID: 1302573953}
 --- !u!1 &2007499690
 GameObject:
   m_ObjectHideFlags: 0
