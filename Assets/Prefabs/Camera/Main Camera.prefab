@@ -85,8 +85,7 @@ GameObject:
   - component: {fileID: 553468919167876977}
   - component: {fileID: 553468919167876978}
   - component: {fileID: 553468919167876979}
-  - component: {fileID: 553468919167876976}
-  - component: {fileID: 553468919167876975}
+  - component: {fileID: 4231893620489151112}
   - component: {fileID: 553468919167876974}
   - component: {fileID: 553468919167876973}
   m_Layer: 0
@@ -162,25 +161,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553468919167876980}
   m_Enabled: 1
---- !u!114 &553468919167876976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553468919167876980}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2197ca72de8dd742b348f6a2a5cdfa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deadzone: 250
-  speed: 1.4
-  topAngle: 18
-  downAngle: 72
-  rightAngle: -8
-  leftAngle: 8
---- !u!114 &553468919167876975
+--- !u!114 &4231893620489151112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,12 +173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95afaab9adc5b4b43ac3fef3f5d5ec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLookingUp: 0
   deadzone: 250
-  speed: 1.4
+  movementSpeed: 1.4
+  alignSpeed: 1.25
   topAngle: 18
   downAngle: 72
   rightAngle: -2
-  leftAngle: 14
+  leftAngle: 2
 --- !u!95 &553468919167876974
 Animator:
   serializedVersion: 3
