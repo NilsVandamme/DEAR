@@ -1,34 +1,55 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
-
-struct Click
-{
-    public TMP_LinkInfo linkInfo;
-    public int pos;
-}
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.UI;
+using System;
 
 public class AutoComplete : MonoBehaviour, IPointerClickHandler
 {
+    // Nombre de button a display
+    public int numberOfButtonToDisplay = 12;
+
+    // Taille de la chaine de l'inputfield minimum pour afficher l'autocompletion
+    public int autoCompileLenght = 3;
+
+    // Liste des mots total, a stocker et a afficher
+    public ListWords bd;
+    private List<string> toStore;
+    private List<string> toDisplay;
+
+    // Elements récupérer dans le canvas
     private TextMeshProUGUI myText;
     private TMP_InputField myInputField;
     private GameObject myButtons;
+    private Button[] listButtons;
+    private Tuple<Button, bool>[] tupleButtons;
 
-    private Click currentClick;
-    private bool toClick = false;
-
+    // Object regroupant les informations obtenue lors des clicks
+    private ClickObject currentClick;
 
     /*
      * Récupère les objets nécessaires
      */
     void Start()
     {
+        // Initialise les listes de mots
+        toDisplay = new List<string>();
+        toStore = new List<string>();
+        foreach (Word elem in bd.words)
+            toStore.Add(elem.mot);
+
+        // Init des élements du canvas
         myText = this.GetComponentInChildren<TextMeshProUGUI>();
-        myInputField = this.GetComponentInChildren<TMP_InputField>();
-        myButtons = myInputField.transform.Find("Buttons").GetComponent<GameObject>();
-        
-        myInputField.gameObject.SetActive(false);
-        //myButtons.SetActive(false);
+        myInputField = this.GetComponentInChildren<TMP_InputField>(true);
+        myButtons = myInputField.transform.Find("Buttons").gameObject;
+        listButtons = myButtons.GetComponentsInChildren<Button>(true);
+
+        // Init le tab des buttons
+        tupleButtons = new Tuple<Button, bool>[numberOfButtonToDisplay];
+        for (int i = 0; i < listButtons.Length; i++)
+            tupleButtons[i] = new Tuple<Button, bool>(listButtons[i], false);
     }
 
     /*
@@ -36,40 +57,133 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
      */
     public void OnPointerClick(PointerEventData eventData)
     {
-        int pos = 0, linkIndex = TMP_TextUtilities.FindIntersectingLink(myText, Input.mousePosition, null);
-        TMP_LinkInfo linkInfo;
+        int linkIndex = TMP_TextUtilities.FindIntersectingLink(myText, Input.mousePosition, null);
 
         if (linkIndex != -1)
         {
-            if (toClick)
-            {
-
-            }
+            if (currentClick == null)
+                myInputField.gameObject.SetActive(true);
             else
-            {
-                toClick = true;
-                linkInfo = myText.textInfo.linkInfo[linkIndex];
+                RewriteTextWithInputField();
 
-                while ((++pos) < linkInfo.linkIdFirstCharacterIndex)
-                    pos = myText.text.IndexOf(linkInfo.GetLinkText(), pos);
-
-                OpenInputField(linkInfo.GetLinkID());
-
-                currentClick = new Click();
-                currentClick.linkInfo = linkInfo;
-                currentClick.pos = pos;
-            }
+            GetClickInfo(linkIndex);
         }
-        else
+        else if (currentClick != null)
+            RewriteAndReinit();
+    }
+
+    /*
+     * Supprime le text courant et le remplace par le nouveau
+     */
+    private void RewriteTextWithInputField(string newString = null)
+    {
+        if (myInputField.text != "")
         {
-            myText.text = myText.text.Remove((--currentClick.pos), currentClick.linkInfo.GetLinkText().Length);
-            myText.text = myText.text.Insert(currentClick.pos, myInputField.text);
-            toClick = false;
+            myText.text = myText.text.Remove((currentClick.getPosStart()), currentClick.getLenght());
+            if (newString == null)
+                myText.text = myText.text.Insert(currentClick.getPosStart(), myInputField.text);
+            else
+                myText.text = myText.text.Insert(currentClick.getPosStart(), newString);
         }
     }
 
-    private void OpenInputField (string id)
+    /*
+     * Récupère les infos de la balise clicker
+     */
+    private void GetClickInfo(int linkIndex)
     {
-        myInputField.gameObject.SetActive(true);
+        int pos = 0;
+        TMP_LinkInfo linkInfo = myText.textInfo.linkInfo[linkIndex];
+
+        while ((++pos) < linkInfo.linkIdFirstCharacterIndex)
+            pos = myText.text.IndexOf(linkInfo.GetLinkText(), pos);
+
+        myInputField.text = linkInfo.GetLinkText();
+
+        currentClick = new ClickObject(pos - 1, linkInfo.GetLinkText().Length);
+    }
+
+    /*
+     * Change les liste a afficher et a stocker quand la valeur de l'inputfield change
+     */
+    public void onInputFieldValueChange()
+    {
+        if (myInputField.text.Length >= autoCompileLenght)
+        {
+            // On ajoute une lettre donc on enlève les mots qui ne contiennent plus le text courant de l'inputfield
+            IEnumerable<string> toRemove = toDisplay.Where(x => !x.Contains(myInputField.text)).ToArray();
+            foreach (string mot in toRemove)
+            {
+                toDisplay.Remove(mot);
+                toStore.Add(mot);
+            }
+
+            // On supprime une lettre donc on ajoute les mots qui contiennent le text courant de l'inputfield
+            IEnumerable<string> toAddBack = toStore.Where(x => x.Contains(myInputField.text)).ToArray();
+            foreach (string mot in toAddBack)
+            {
+                toStore.Remove(mot);
+                toDisplay.Add(mot);
+            }
+
+            AfficheButton();
+        }
+        else
+            for (int i = 0; i < tupleButtons.Length; i++)
+                CloseButton(i);
+    }
+
+    /*
+     * Calcul les mot d'autocompélation à afficher et a stocker et affiche les Button correspondant
+     */
+    private void AfficheButton()
+    {
+        foreach (string mot in toStore)
+            for (int i = 0; i < tupleButtons.Length; i++)
+                if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot)
+                {
+                    CloseButton(i);
+                    break;
+                }
+        foreach (string mot in toDisplay)
+            for (int i = 0; i < tupleButtons.Length; i++)
+                if (tupleButtons[i].Item2 == false)
+                {
+                    tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text = mot;
+                    tupleButtons[i] = new Tuple<Button, bool>(tupleButtons[i].Item1, true);
+                    tupleButtons[i].Item1.gameObject.SetActive(true);
+                    break;
+                }
+    }
+
+    /*
+     * Réinit et ferme le Button i
+     */
+    private void CloseButton(int i)
+    {
+        tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text = "";
+        tupleButtons[i] = new Tuple<Button, bool>(tupleButtons[i].Item1, false);
+        tupleButtons[i].Item1.gameObject.SetActive(false);
+    }
+
+    /*
+     * Gère le click d'un Button
+     */
+    public void OnClickButton()
+    {
+        RewriteAndReinit(EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>().text);
+    }
+
+    /*
+     * Ecrit le text selectionné et réinit/close les params et les elems
+     */
+    private void RewriteAndReinit(string text = null)
+    {
+        RewriteTextWithInputField(text);
+        currentClick = null;
+        myInputField.gameObject.SetActive(false);
+
+        for (int i = 0; i < tupleButtons.Length; i++)
+            CloseButton(i);
     }
 }

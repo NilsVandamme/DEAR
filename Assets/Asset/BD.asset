@@ -15,7 +15,7 @@ MonoBehaviour:
   fichierWords: {fileID: 4900000, guid: 825138c4986ab6046a219c893701e918, type: 3}
   words:
   - score: 01000000feffffff
-    mot: enfants
+    mot: serienitude
     champLexical: Amour
     name:
     - Mots
@@ -23,7 +23,7 @@ MonoBehaviour:
     - ScoreMamie
     - "ScorePatron\r"
   - score: 0200000001000000
-    mot: tricots
+    mot: ramasser
     champLexical: Amour
     name:
     - Mots

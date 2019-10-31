@@ -18,6 +18,7 @@ public class GetResultsAndLoad : MonoBehaviour
         ls = FindObjectOfType<LoadingScreen>();
     }
 
+    /*
     public void AnalyseResults()
     {
         
@@ -35,5 +36,6 @@ public class GetResultsAndLoad : MonoBehaviour
         }
 
     }
+    */
 
 }

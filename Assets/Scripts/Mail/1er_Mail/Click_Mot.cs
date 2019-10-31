@@ -12,7 +12,7 @@ public class Click_Mot : MonoBehaviour
         if (click)
         {
             click = false;
-            GM_1er_Mail.GM_1_Mail.GetMot(this.GetComponentInChildren<Text>().text);
+            //GM_1er_Mail.GM_1_Mail.GetMot(this.GetComponentInChildren<Text>().text);
         }
     }
 }
