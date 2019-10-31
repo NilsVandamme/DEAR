@@ -1,11 +1,12 @@
 ﻿public class ClickObject
 {
-    private int posStart, lenght;
+    private int posStart;
+    private string mot;
 
-    public ClickObject(int pos, int len)
+    public ClickObject(int pos, string val)
     {
         this.posStart = pos;
-        this.lenght = len;
+        this.mot = val;
     }
 
     public int getPosStart()
@@ -13,9 +14,9 @@
         return this.posStart;
     }
 
-    public int getLenght()
+    public string getMot()
     {
-        return this.lenght;
+        return this.mot;
     }
 
     public void setPosStart(int val)
@@ -23,8 +24,8 @@
         this.posStart = val;
     }
 
-    public void setLenght(int val)
+    public void setMot(string val)
     {
-        this.lenght = val;
+        this.mot = val;
     }
 }

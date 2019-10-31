@@ -5,28 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 using System;
-using UnityEngine.SceneManagement;
 
 public class AutoComplete : MonoBehaviour, IPointerClickHandler
 {
-    // Prochaines Scenes
-    public int pivotScene;
-    public string goodScene;
-    public string badScene;
-
-    // Camera de la scène
-    private Camera cam;
-
     // Nombre de button a display
     public int numberOfButtonToDisplay = 12;
 
     // Taille de la chaine de l'inputfield minimum pour afficher l'autocompletion
     public int autoCompileLenght = 3;
 
-    // Liste des mots total, a stocker et a afficher
-    public ListWords bd;
+    // Liste des mots a stocker et a afficher
     private List<string> toStore;
     private List<string> toDisplay;
+
+    // Camera de la scène
+    private Camera cam;
 
     // Elements récupérer dans le canvas
     private TextMeshProUGUI myText;
@@ -37,14 +30,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
 
     // Object regroupant les informations obtenue lors des clicks
     private ClickObject currentClick;
-    private List<string> tabInputStrings;
-
-    // Score personne courante
-    private int peopleScore = 0;
-
-    private static int score;
-
-
+    
     /*
      * Récupère les objets nécessaires
      */
@@ -56,7 +42,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
         // Initialise les listes de mots
         toDisplay = new List<string>();
         toStore = new List<string>();
-        foreach (Word elem in bd.words)
+        foreach (Word elem in GM.gm.bd.words)
             toStore.Add(elem.mot);
 
         // Init des élements du canvas
@@ -71,7 +57,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
             tupleButtons[i] = new Tuple<Button, bool>(listButtons[i], false);
 
         // Init le tab des inputs sauvegardées
-        tabInputStrings = new List<string>();
+        GM.gm.tabInputStrings = new List<string>();
     }
 
     /*
@@ -79,13 +65,10 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
      */
     public void OnPointerClick(PointerEventData eventData)
     {
-        //Debug.Log("Text field clicked");
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(myText, Input.mousePosition, cam);
-        //Debug.Log("link index  = " + linkIndex);
 
         if (linkIndex != -1)
         {
-            //Debug.Log("Link clicked");
             if (currentClick == null)
                 myInputField.gameObject.SetActive(true);
             else
@@ -104,18 +87,21 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
     {
         if (myInputField.text != "")
         {
-            myText.text = myText.text.Remove((currentClick.getPosStart()), currentClick.getLenght());
+            myText.text = myText.text.Remove((currentClick.getPosStart()), currentClick.getMot().Length);
+            if (!GM.gm.tabInputStrings.Contains(currentClick.getMot()))
+                GM.gm.tabInputStrings.Remove(currentClick.getMot());
+
             if (newString == null)
             {
                 myText.text = myText.text.Insert(currentClick.getPosStart(), myInputField.text);
-                if (!tabInputStrings.Contains(myInputField.text))
-                    tabInputStrings.Add(myInputField.text);
+                if (!GM.gm.tabInputStrings.Contains(myInputField.text))
+                    GM.gm.tabInputStrings.Add(myInputField.text);
             }
             else
             {
                 myText.text = myText.text.Insert(currentClick.getPosStart(), newString);
-                if (!tabInputStrings.Contains(myInputField.text))
-                    tabInputStrings.Add(myInputField.text);
+                if (!GM.gm.tabInputStrings.Contains(newString))
+                    GM.gm.tabInputStrings.Add(newString);
             }
         }
     }
@@ -133,7 +119,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
 
         myInputField.text = linkInfo.GetLinkText();
 
-        currentClick = new ClickObject(pos - 1, linkInfo.GetLinkText().Length);
+        currentClick = new ClickObject(pos - 1, linkInfo.GetLinkText());
     }
 
     /*
@@ -171,6 +157,8 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
      */
     private void AfficheButton()
     {
+        bool find;
+
         foreach (string mot in toStore)
             for (int i = 0; i < tupleButtons.Length; i++)
                 if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot)
@@ -179,14 +167,25 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
                     break;
                 }
         foreach (string mot in toDisplay)
+        {
+            find = false;
             for (int i = 0; i < tupleButtons.Length; i++)
-                if (tupleButtons[i].Item2 == false)
+                if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot)
                 {
-                    tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text = mot;
-                    tupleButtons[i] = new Tuple<Button, bool>(tupleButtons[i].Item1, true);
-                    tupleButtons[i].Item1.gameObject.SetActive(true);
+                    find = true;
                     break;
                 }
+
+            if (!find)
+                for (int i = 0; i < tupleButtons.Length; i++)
+                    if (tupleButtons[i].Item2 == false)
+                    {
+                        tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text = mot;
+                        tupleButtons[i] = new Tuple<Button, bool>(tupleButtons[i].Item1, true);
+                        tupleButtons[i].Item1.gameObject.SetActive(true);
+                        break;
+                    }
+        }
     }
 
     /*
@@ -218,21 +217,5 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
 
         for (int i = 0; i < tupleButtons.Length; i++)
             CloseButton(i);
-    }
-
-    public void OnClickSubmitButton()
-    {
-        foreach(string elem in tabInputStrings)
-            foreach(Word word in bd.words)
-                if(elem == word.mot)
-                {
-                   score += word.score[peopleScore];
-                    break;
-                }
-
-        if (score >= pivotScene)
-            SceneManager.LoadScene(goodScene);
-        else
-            SceneManager.LoadScene(badScene);
     }
 }
