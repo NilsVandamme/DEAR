@@ -27,6 +27,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     private GameObject myButtons;
     private Button[] listButtons;
     private Tuple<Button, bool>[] tupleButtons;
+    private RectTransform rect;
 
     // Object regroupant les informations obtenue lors des clicks
     private SC_ClickObject currentClick;
@@ -51,6 +52,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         myInputField = this.GetComponentInChildren<TMP_InputField>(true);
         myButtons = myInputField.transform.Find("Buttons").gameObject;
         listButtons = myButtons.GetComponentsInChildren<Button>(true);
+        rect = GetComponent<RectTransform>();
 
         // Init le tab des buttons
         tupleButtons = new Tuple<Button, bool>[numberOfButtonToDisplay];
@@ -68,7 +70,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     {
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(myText, Input.mousePosition, cam);
 
-        RectTransformUtility.ScreenPointToWorldPointInRectangle(GetComponent<RectTransform>(), Input.mousePosition, cam, out newPos);
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, Input.mousePosition, cam, out newPos);
         myInputField.transform.position = new Vector3(newPos.x, myInputField.transform.position.y, newPos.z);
 
         //Debug.Log("camera position: " + newPos);
@@ -77,7 +79,10 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         if (linkIndex != -1)
         {
             if (currentClick == null)
+            {
                 myInputField.gameObject.SetActive(true);
+                onInputFieldValueChange();
+            }
             else
                 RewriteTextWithInputField();
 
