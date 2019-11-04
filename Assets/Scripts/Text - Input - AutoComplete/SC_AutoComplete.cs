@@ -30,7 +30,8 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
 
     // Object regroupant les informations obtenue lors des clicks
     private SC_ClickObject currentClick;
-    
+    private Vector3 newPos;
+
     /*
      * Récupère les objets nécessaires
      */
@@ -67,9 +68,14 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     {
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(myText, Input.mousePosition, cam);
 
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(GetComponent<RectTransform>(), Input.mousePosition, cam, out newPos);
+        myInputField.transform.position = new Vector3(newPos.x, myInputField.transform.position.y, newPos.z);
+
+        //Debug.Log("camera position: " + newPos);
+        //Debug.Log("inputfield position: " + myInputField.transform.position);
+
         if (linkIndex != -1)
         {
-            myInputField.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             if (currentClick == null)
                 myInputField.gameObject.SetActive(true);
             else
