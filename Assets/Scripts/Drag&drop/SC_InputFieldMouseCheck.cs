@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 
 // This script disable the drag&drop if the mouse is over an inputfield
 
-public class InputFieldMouseCheck : MonoBehaviour
+public class SC_InputFieldMouseCheck : MonoBehaviour
 {
-    public DragDropControls DDC;
+    public SC_DragDropControls DDC;
 
     // Start is called before the first frame update
     void Start()
     {
-        DDC = GetComponentInParent<DragDropControls>();
+        DDC = GetComponentInParent<SC_DragDropControls>();
     }
 
     public void OnEnter()

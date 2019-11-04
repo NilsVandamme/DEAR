@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 // This scirpt manages the functions used by the different tab buttons on the computer
 
-public class ComputerWindowsSwitch : MonoBehaviour
+public class SC_ComputerWindowsSwitch : MonoBehaviour
 {
     [Header("Tabs")]
     public GameObject EmailTab; // The email tab

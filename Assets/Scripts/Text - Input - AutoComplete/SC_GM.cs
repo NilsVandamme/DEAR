@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GM : MonoBehaviour
+public class SC_GM : MonoBehaviour
 {
     // Prochaines Scenes
     public int pivotScene;
@@ -15,7 +15,7 @@ public class GM : MonoBehaviour
     private int peopleScore = 0;
 
     // Asset des mots
-    public ListWords bd;
+    public SC_ListWords bd;
 
     [HideInInspector]
     // Liste des mots entre par le joueur
@@ -25,7 +25,7 @@ public class GM : MonoBehaviour
     // Score de la scene
     public int score = 0;
 
-    public static GM gm = null;
+    public static SC_GM gm = null;
 
     private void Awake()
     {
@@ -45,7 +45,6 @@ public class GM : MonoBehaviour
                 if (elem == word.mot)
                 {
                     score += word.score[peopleScore];
-                    Debug.Log(word.score[peopleScore]);
                     break;
                 }
         }

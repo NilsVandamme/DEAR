@@ -10,7 +10,7 @@ public struct Word
 }
 
 [CreateAssetMenu(fileName = "BD.asset", menuName = "Custom/GenerateBD", order = 1)]
-public class ListWords : ScriptableObject
+public class SC_ListWords : ScriptableObject
 {
     public TextAsset fichierWords;
     public List<Word> words;

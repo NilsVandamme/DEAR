@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEditor;
 
 [CanEditMultipleObjects]
-[CustomEditor(typeof(ListWords))]
-public class ListWordsEditor : Editor
+[CustomEditor(typeof(SC_ListWords))]
+public class SC_ListWordsEditor : Editor
 {
-    private ListWords listOfWords;
+    private SC_ListWords listOfWords;
 
     private bool foldoutListOfWord;
     private bool generate = false;
@@ -15,7 +15,7 @@ public class ListWordsEditor : Editor
 
     private void OnEnable()
     {
-        listOfWords = target as ListWords;
+        listOfWords = target as SC_ListWords;
 
         myListOfWords = serializedObject.FindProperty("words");
     }

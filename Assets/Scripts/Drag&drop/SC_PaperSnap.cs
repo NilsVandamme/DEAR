@@ -4,12 +4,12 @@ using UnityEngine;
 
 // This script make the paragraphs snap on the paper when drag & dropped
 
-public class PaperSnap : MonoBehaviour
+public class SC_PaperSnap : MonoBehaviour
 {
     public bool HasSnap; // Is an object currently snapped to this object ?
     public GameObject SnappedObject;
 
-    private DragDropControls otherDD;
+    private SC_DragDropControls otherDD;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class PaperSnap : MonoBehaviour
     // Snap the object
     private void OnTriggerEnter(Collider other)
     {
-        otherDD = other.GetComponent<DragDropControls>();
+        otherDD = other.GetComponent<SC_DragDropControls>();
 
         //Debug.Log(gameObject.name + " has collided with " + other.name);
 
@@ -43,7 +43,7 @@ public class PaperSnap : MonoBehaviour
     // Unsnap the object
     private void OnTriggerExit(Collider other)
     {
-        otherDD = other.GetComponent<DragDropControls>();
+        otherDD = other.GetComponent<SC_DragDropControls>();
         //Debug.Log(gameObject.name + " ; " + other.name + " is Snapped To " + (otherDD.SnapPositionObject));
 
         if (otherDD.SnapPositionObject == gameObject && other != SnappedObject) // Unsnap the object currently snapped

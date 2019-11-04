@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Objects with this script attached will persist between scenes
 
-public class DontDestroyOnLoad : MonoBehaviour
+public class SC_DontDestroyOnLoad : MonoBehaviour
 {
     void Start()
     {

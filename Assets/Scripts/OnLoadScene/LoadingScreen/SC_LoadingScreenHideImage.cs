@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingScreenHideImage : MonoBehaviour
+public class SC_LoadingScreenHideImage : MonoBehaviour
 {
     private Image loadImage;
 

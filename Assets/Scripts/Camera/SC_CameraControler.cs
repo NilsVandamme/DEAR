@@ -4,7 +4,7 @@ using UnityEngine;
 
 // This script controls the movements of the camera with free movement
 
-public class CameraControler : MonoBehaviour
+public class SC_CameraControler : MonoBehaviour
 {
     private int screenWidth; // Width of the screen
     private int screenHeight; // Height of the screen

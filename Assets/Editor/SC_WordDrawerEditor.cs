@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(Word))]
-public class WordDrawerEditor : PropertyDrawer
+public class SC_WordDrawerEditor : PropertyDrawer
 {
     /*
      * Définie la taille alouer a chache objet de l'inspecteur

@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 // This script manage the loading of scenes and display of loading screen
 
-public class LoadingScreen : MonoBehaviour
+public class SC_LoadingScreen : MonoBehaviour
 {
-    public static LoadingScreen Instance; // Instance of this script
+    public static SC_LoadingScreen Instance; // Instance of this script
     public string LoadedScene; // Name of the scene which will be loaded
     private Animator anim; // Animator of the load screen
     private Image loadImage; // Image of the load screen

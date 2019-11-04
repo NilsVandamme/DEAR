@@ -4,7 +4,7 @@ using UnityEngine;
 
 // This script make the object attached to drag & drop-able
 
-public class DragDropControls : MonoBehaviour
+public class SC_DragDropControls : MonoBehaviour
 {
     [Header("System values")]
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 // This script controls the movements of the camera with snapped positions
 
-public class CameraControlerSnap : MonoBehaviour
+public class SC_CameraControlerSnap : MonoBehaviour
 {
     public bool isLookingUp; // Is the camera looking at the PC screen ?
     private bool isAligning; // Is the camera currently aligning ?

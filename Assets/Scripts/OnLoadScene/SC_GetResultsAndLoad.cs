@@ -4,18 +4,18 @@ using UnityEngine;
 
 // This script analyse the results and load the scene accordingly
 
-public class GetResultsAndLoad : MonoBehaviour
+public class SC_GetResultsAndLoad : MonoBehaviour
 {
     public float NeededScore; // The score you need to get to the top ending
 
     public string DownScene;
     public string TopScene;
 
-    private LoadingScreen ls;
+    private SC_LoadingScreen ls;
 
     private void Start()
     {
-        ls = FindObjectOfType<LoadingScreen>();
+        ls = FindObjectOfType<SC_LoadingScreen>();
     }
 
     /*

@@ -1,9 +1,9 @@
-﻿public class ClickObject
+﻿public class SC_ClickObject
 {
     private int posStart;
     private string mot;
 
-    public ClickObject(int pos, string val)
+    public SC_ClickObject(int pos, string val)
     {
         this.posStart = pos;
         this.mot = val;

@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine.UI;
 using System;
 
-public class AutoComplete : MonoBehaviour, IPointerClickHandler
+public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
 {
     // Nombre de button a display
     public int numberOfButtonToDisplay = 12;
@@ -29,7 +29,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
     private Tuple<Button, bool>[] tupleButtons;
 
     // Object regroupant les informations obtenue lors des clicks
-    private ClickObject currentClick;
+    private SC_ClickObject currentClick;
     
     /*
      * Récupère les objets nécessaires
@@ -42,7 +42,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
         // Initialise les listes de mots
         toDisplay = new List<string>();
         toStore = new List<string>();
-        foreach (Word elem in GM.gm.bd.words)
+        foreach (Word elem in SC_GM.gm.bd.words)
             toStore.Add(elem.mot);
 
         // Init des élements du canvas
@@ -57,7 +57,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
             tupleButtons[i] = new Tuple<Button, bool>(listButtons[i], false);
 
         // Init le tab des inputs sauvegardées
-        GM.gm.tabInputStrings = new List<string>();
+        SC_GM.gm.tabInputStrings = new List<string>();
     }
 
     /*
@@ -69,6 +69,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
 
         if (linkIndex != -1)
         {
+            myInputField.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             if (currentClick == null)
                 myInputField.gameObject.SetActive(true);
             else
@@ -88,20 +89,20 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
         if (myInputField.text != "")
         {
             myText.text = myText.text.Remove((currentClick.getPosStart()), currentClick.getMot().Length);
-            if (!GM.gm.tabInputStrings.Contains(currentClick.getMot()))
-                GM.gm.tabInputStrings.Remove(currentClick.getMot());
+            if (!SC_GM.gm.tabInputStrings.Contains(currentClick.getMot()))
+                SC_GM.gm.tabInputStrings.Remove(currentClick.getMot());
 
             if (newString == null)
             {
                 myText.text = myText.text.Insert(currentClick.getPosStart(), myInputField.text);
-                if (!GM.gm.tabInputStrings.Contains(myInputField.text))
-                    GM.gm.tabInputStrings.Add(myInputField.text);
+                if (!SC_GM.gm.tabInputStrings.Contains(myInputField.text))
+                    SC_GM.gm.tabInputStrings.Add(myInputField.text);
             }
             else
             {
                 myText.text = myText.text.Insert(currentClick.getPosStart(), newString);
-                if (!GM.gm.tabInputStrings.Contains(newString))
-                    GM.gm.tabInputStrings.Add(newString);
+                if (!SC_GM.gm.tabInputStrings.Contains(newString))
+                    SC_GM.gm.tabInputStrings.Add(newString);
             }
         }
     }
@@ -119,7 +120,7 @@ public class AutoComplete : MonoBehaviour, IPointerClickHandler
 
         myInputField.text = linkInfo.GetLinkText();
 
-        currentClick = new ClickObject(pos - 1, linkInfo.GetLinkText());
+        currentClick = new SC_ClickObject(pos - 1, linkInfo.GetLinkText());
     }
 
     /*

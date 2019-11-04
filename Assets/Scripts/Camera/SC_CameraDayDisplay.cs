@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class CameraDayDisplay : MonoBehaviour
+public class SC_CameraDayDisplay : MonoBehaviour
 {
 
     public string Day1;

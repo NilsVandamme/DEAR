@@ -6,28 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Work/SceneNils.unity
+    path: Assets/Scenes/Work/L_SceneNils.unity
     guid: e4cca2fec166f3043b1bf84ab49022af
   - enabled: 0
     path: Assets/Scenes/Work/SceneJulien.unity
     guid: b2b104ef9cf17c841ae75925a2334cea
   - enabled: 0
-    path: Assets/Scenes/Game/Menu.unity
+    path: Assets/Scenes/Game/L_Menu.unity
     guid: e294d7f0cd1f11048b4e34845a30a5e2
   - enabled: 1
     path: Assets/Scenes/Work/SceneBD.unity
     guid: a04aa9f26c1994943ac9217da4c0cee6
   - enabled: 0
-    path: "Assets/Scenes/Work/SceneJulienN\xB02.unity"
+    path: "Assets/Scenes/Work/L_SceneJulienN\xB02.unity"
     guid: d3dbc0b6371390a4d8d39202066775d9
   - enabled: 0
-    path: Assets/Scenes/Game/Game.unity
+    path: Assets/Scenes/Game/L_Intro.unity
     guid: 947b34bdf295568439887aa76aa6a6b4
   - enabled: 1
-    path: Assets/Scenes/Game/Temp/Test_Menu.unity
+    path: Assets/Scenes/Game/Temp/L_Test_Menu.unity
     guid: c64e67968f8146c40b9eba74a94edd86
   - enabled: 1
-    path: Assets/Scenes/Game/Temp/00_Intro/Scene_Intro_Prez1.unity
+    path: Assets/Scenes/Game/Temp/00_Intro/L_Scene_Intro_Prez1.unity
     guid: b2d9aa41558bdc646b2f5870d3e78f78
   - enabled: 0
     path: 
@@ -36,9 +36,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Game/Temp/01_MS/Scene_Bad_Prez.unity
+    path: Assets/Scenes/Game/Temp/01_MS/L_Scene_Bad_Prez.unity
     guid: cbc6fdfd126e3e840a1a0120f813bda7
   - enabled: 1
-    path: Assets/Scenes/Game/Temp/01_MS/Scene_Good_Prez.unity
+    path: Assets/Scenes/Game/Temp/01_MS/L_Scene_Good_Prez.unity
     guid: 79cb67dc7f384f34cac5aeb2179bde5a
   m_configObjects: {}
