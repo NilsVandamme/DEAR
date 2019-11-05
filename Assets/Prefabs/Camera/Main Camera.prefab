@@ -176,7 +176,7 @@ MonoBehaviour:
   isLookingUp: 0
   deadzone: 250
   movementSpeed: 1.4
-  alignSpeed: 1.25
+  alignSpeed: 1.4
   topAngle: 18
   downAngle: 72
   rightAngle: -2
