@@ -11,7 +11,7 @@ public class SC_WordDrawerEditor : PropertyDrawer
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         float lineHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-        float numberOfLines = property.FindPropertyRelative("score").arraySize + 2;
+        float numberOfLines = property.FindPropertyRelative("score").arraySize + property.FindPropertyRelative("critere").arraySize + 2;
 
         return lineHeight * numberOfLines;
     }
@@ -21,33 +21,39 @@ public class SC_WordDrawerEditor : PropertyDrawer
      */
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        int i = 0, j, numberOfCritere = 1;
+        int i = 0, j, numberOfCritere = 5;
 
         float lineHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
 
         float space = 10f;
-        float rectWight = (position.width - space);
-
-        Rect motRect = new Rect(position.x, position.y, rectWight, lineHeight);
+        float rectWight = (position.width - space) * 0.6f;
         
         SerializedProperty name = property.FindPropertyRelative("name");
+
         SerializedProperty critere = property.FindPropertyRelative("critere");
-        
+        critere.isExpanded = 
+            EditorGUI.Foldout(new Rect(position.x, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight), critere.isExpanded, "List of criteres", true);
 
-        EditorGUI.LabelField(new Rect(position.x, position.y + lineHeight * i + EditorGUIUtility.standardVerticalSpacing, rectWight * 0.5f, lineHeight), new GUIContent(name.GetArrayElementAtIndex(1).stringValue));
+        if (critere.isExpanded)
+        {
+            EditorGUI.indentLevel += 1;
 
-        if (SC_EnumerableCritere.myStaticEnum.key == name.GetArrayElementAtIndex(1).stringValue)
-            for (int k = 0; k < SC_EnumerableCritere.myStaticEnum.value.Length; k++)
-                if (SC_EnumerableCritere.myStaticEnum.value[k] == critere.stringValue)
-                {
-                    int selectIndex = 
-                        EditorGUI.Popup(new Rect(position.x + rectWight * 0.5f, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight * 0.5f, lineHeight), k, SC_EnumerableCritere.myStaticEnum.value);
-                    critere.stringValue = SC_EnumerableCritere.myStaticEnum.value[selectIndex];
-                }
+            for (j = 0; j < critere.arraySize; j++)
+            {
+                EditorGUI.LabelField(new Rect(position.x, position.y + lineHeight * i + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight),
+                                    new GUIContent(name.GetArrayElementAtIndex(j + 1).stringValue));
+
+                EditorGUI.LabelField(new Rect(position.x + rectWight, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight),
+                                    critere.GetArrayElementAtIndex(j).stringValue);
+            }
+
+            EditorGUI.indentLevel -= 1;
+        }
 
 
         SerializedProperty score = property.FindPropertyRelative("score");
-        score.isExpanded = EditorGUI.Foldout(new Rect(position.x, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight), score.isExpanded, "List of scores", true);
+        score.isExpanded = 
+            EditorGUI.Foldout(new Rect(position.x, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight), score.isExpanded, "List of scores", true);
 
         if (score.isExpanded)
         {
@@ -55,9 +61,11 @@ public class SC_WordDrawerEditor : PropertyDrawer
 
             for (j = 0; j < score.arraySize; j++)
             {
-                EditorGUI.LabelField(new Rect(position.x, position.y + lineHeight * i + EditorGUIUtility.standardVerticalSpacing, rectWight * 0.5f, lineHeight), new GUIContent(name.GetArrayElementAtIndex(j + numberOfCritere + 1).stringValue));
-                score.GetArrayElementAtIndex(j).intValue = 
-                    EditorGUI.IntField(new Rect(position.x + rectWight * 0.7f, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight * 0.3f, lineHeight), score.GetArrayElementAtIndex(j).intValue);
+                EditorGUI.LabelField(new Rect(position.x, position.y + lineHeight * i + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight),
+                                    new GUIContent(name.GetArrayElementAtIndex(j + numberOfCritere + 1).stringValue));
+
+                EditorGUI.LabelField(new Rect(position.x + rectWight, position.y + lineHeight * (i++) + EditorGUIUtility.standardVerticalSpacing, rectWight, lineHeight),
+                                    (score.GetArrayElementAtIndex(j).intValue).ToString());
             }
 
             EditorGUI.indentLevel -= 1;

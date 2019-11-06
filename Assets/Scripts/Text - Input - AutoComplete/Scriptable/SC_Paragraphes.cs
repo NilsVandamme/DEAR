@@ -6,7 +6,6 @@ using UnityEngine;
 public struct TextPart
 {
     public string partText;
-    public int dependecies;
 }
 
 [CreateAssetMenu(fileName = "Paragraphe.asset", menuName = "Custom/GenerateParagraphe", order = 1)]

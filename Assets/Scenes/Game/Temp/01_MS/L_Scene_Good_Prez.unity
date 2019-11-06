@@ -991,6 +991,12 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7291460618315852865, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: textParagraphe
+      value: 
+      objectReference: {fileID: 11400000, guid: 53c61678e92a12848a9a5ab6a8bba329,
+        type: 2}
     - target: {fileID: 2771400414997830393, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_Enabled
@@ -999,6 +1005,11 @@ PrefabInstance:
     - target: {fileID: 7944382432692465706, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944382432692465706, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: autoCompileLenght
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2326,6 +2337,12 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7291460618315852865, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: textParagraphe
+      value: 
+      objectReference: {fileID: 11400000, guid: c6ed4c6117dc36549951adf70545117c,
+        type: 2}
     - target: {fileID: 7944382432692465706, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_Enabled
@@ -3031,11 +3048,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7944382432692465706, guid: 62076635272d21d45a81d5412d797382,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2771400414162688247, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3045,6 +3057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944382432692465706, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62076635272d21d45a81d5412d797382, type: 3}
@@ -3078,9 +3095,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivotScene: 0
-  goodScene: Scene_Good_Prez
-  badScene: Scene_Bad_Prez
-  bd: {fileID: 11400000, guid: e5bd1db6d7f2435488d7541cbbad4329, type: 2}
+  goodScene: L_Scene_Good_Prez
+  badScene: L_Scene_Bad_Prez
+  listMots: {fileID: 11400000, guid: a875d81c9d4fabf46bbb4bef2a8249ec, type: 2}
   paragraphsConfirmed: 0
   snapPositions:
   - {fileID: 2008367800}

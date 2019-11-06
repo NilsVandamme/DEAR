@@ -48,7 +48,7 @@ public class SC_ParagrapheEditor : Editor
     {
         Undo.RecordObject(listOfText, "undo");
 
-        string deb = "<link=\"id\">", fin = "</link>";
+        string deb = "<link=\"", middle = "\">", fin = "</link>";
 
         string rawContent = listOfText.fichierTexte.text;
         string[] lineList = rawContent.Split(new string[] { "\n" }, System.StringSplitOptions.None);
@@ -62,13 +62,13 @@ public class SC_ParagrapheEditor : Editor
         for (int i = 1; i < lineList.Length; i++)
         {
             cells = lineList[i].Split(separator, System.StringSplitOptions.None);
-
-            temp.dependecies = int.Parse(cells[1]);
+            
 
             if (cells[0] == "_____")
-                temp.partText = deb + cells[0] + fin;
+                temp.partText = deb + cells[1] + middle + cells[0] + fin;
             else
                 temp.partText = cells[0];
+
 
             textInfo.Add(temp);
 

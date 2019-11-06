@@ -32,11 +32,9 @@ public class SC_ParagrapheDrawerEditor : PropertyDrawer
         float lineHeight = (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) * 2;
 
         float space = 10f;
-        float textRectWight = (position.width - space) * 0.9f;
-        float dependenciesRectWight = (position.width - space) * 0.1f;
+        float textRectWight = (position.width - space);
 
         Rect textRect = new Rect(position.x, position.y, textRectWight, lineHeight);
-        Rect dependenciesRect = new Rect(position.x + space + textRect.width, position.y, dependenciesRectWight, lineHeight);
 
         if (!scrollDict.ContainsKey(label.text))
             scrollDict.Add(label.text, new Vector2());
@@ -47,8 +45,5 @@ public class SC_ParagrapheDrawerEditor : PropertyDrawer
         textProp.stringValue = GUI.TextArea(new Rect(0, 0, textRectWight - space, lineHeight * 10), textProp.stringValue, myTextAreaStyle);
 
         GUI.EndScrollView();
-
-        SerializedProperty dependenciesProp = property.FindPropertyRelative("dependecies");
-        EditorGUI.TextField(dependenciesRect, (dependenciesProp.intValue).ToString(), myTextFieldStyle);
     }
 }

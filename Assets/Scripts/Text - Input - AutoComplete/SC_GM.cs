@@ -10,12 +10,11 @@ public class SC_GM : MonoBehaviour
     public string goodScene;
     public string badScene;
 
-
     // Score personne courante
     private int peopleScore = 0;
 
     // Asset des mots
-    public SC_ListWords bd;
+    public SC_ListWords listMots;
     public bool paragraphsConfirmed;
     public List<SC_PaperSnap> snapPositions;
     public List<SC_DragDropControls> ddcontrols;
@@ -44,17 +43,11 @@ public class SC_GM : MonoBehaviour
     {
         if(paragraphsConfirmed == true)
         {
-            Debug.Log("cc");
             foreach (string elem in tabInputStrings)
-            {
-                Debug.Log(elem);
-                foreach (Word word in bd.words)
-                    if (elem == word.mot)
-                    {
-                        score += word.score[peopleScore];
-                        break;
-                    }
-            }
+                foreach (Word word in listMots.words)
+                    foreach (string mot in word.critere)
+                        if (elem == mot)
+                            score += word.score[peopleScore];
 
             if (score >= pivotScene)
                 SceneManager.LoadScene(goodScene);
@@ -70,19 +63,14 @@ public class SC_GM : MonoBehaviour
         if(paragraphsConfirmed == false)
         {
             for (int i = 0; i < snapPositions.Count; i++)
-            {
                 if (snapPositions[i].SnappedObject != null && !acompletes.Contains(snapPositions[i].SnappedObject.GetComponentInChildren<SC_AutoComplete>()))
                 {
                     acompletes.Add(snapPositions[i].SnappedObject.GetComponentInChildren<SC_AutoComplete>());
-
                     acompletes[i].enabled = true;
                 }
-            }
 
             for(int k = 0; k < ddcontrols.Count; k++)
-            {
                 ddcontrols[k].enabled = false;
-            }
 
             if(ddcontrols.Count != 0)
                 paragraphsConfirmed = true;
@@ -92,18 +80,13 @@ public class SC_GM : MonoBehaviour
             //Debug.Log("Unblocked paragraphs placement");
 
             for (int j = 0; j < acompletes.Count; j++)
-            {
                 acompletes[j].enabled = false;
-            }
 
             for (int l = 0; l < ddcontrols.Count; l++)
-            {
                 ddcontrols[l].enabled = true;
-            }
 
             acompletes.Clear();
-
-                paragraphsConfirmed = false;
+            paragraphsConfirmed = false;
         }
     }
 }

@@ -12,7 +12,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     public int numberOfButtonToDisplay = 12;
 
     // Taille de la chaine de l'inputfield minimum pour afficher l'autocompletion
-    public int autoCompileLenght = 3;
+    public int autoCompileLenght = 0;
 
     // Liste des mots a stocker et a afficher
     private List<string> toStore;
@@ -44,8 +44,10 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         // Initialise les listes de mots
         toDisplay = new List<string>();
         toStore = new List<string>();
-        foreach (Word elem in SC_GM.gm.bd.words)
-            toStore.Add(elem.mot);
+        foreach (Word elem in SC_GM.gm.listMots.words)
+            foreach (string mot in elem.critere)
+                if (mot != "none")
+                    toStore.Add(mot);
 
         // Init des élements du canvas
         myText = this.GetComponentInChildren<TextMeshProUGUI>();
@@ -97,7 +99,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
      */
     private void RewriteTextWithInputField(string newString = null)
     {
-        if (myInputField.text != "")
+        if (myInputField.text != "" || newString != null)
         {
             myText.text = myText.text.Remove((currentClick.getPosStart()), currentClick.getMot().Length);
             if (!SC_GM.gm.tabInputStrings.Contains(currentClick.getMot()))
@@ -129,7 +131,10 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         while ((++pos) < linkInfo.linkIdFirstCharacterIndex)
             pos = myText.text.IndexOf(linkInfo.GetLinkText(), pos);
 
-        myInputField.text = linkInfo.GetLinkText();
+        if (linkInfo.GetLinkText() == "_____")
+            myInputField.text = "";
+        else
+            myInputField.text = linkInfo.GetLinkText();
 
         currentClick = new SC_ClickObject(pos - 1, linkInfo.GetLinkText());
     }
