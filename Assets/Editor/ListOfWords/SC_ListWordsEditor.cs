@@ -32,28 +32,32 @@ public class SC_ListWordsEditor : Editor
         if (listOfWords.fichierWords != null)
         {
             if (GUILayout.Button("Load BD"))
-                if (listOfWords.words != null)
-                    GenerateBD();
+                GenerateBD();
 
-            //if (GUILayout.Button("Rewrite BD"))
+            if (GUILayout.Button("Rewrite BD"))
                 if (generate)
                     RewriteBD();
 
-            foldoutListOfWord = EditorGUILayout.Foldout(foldoutListOfWord, "List of words", true);
-            if (foldoutListOfWord)
+            if (SC_EnumerableCritere.myStaticEnum.key == null)
+                EditorGUILayout.LabelField("Veuillez reloader l'Asset des critères");
+            else
             {
-                EditorGUI.indentLevel += 1;
-                foreach (SerializedProperty elem in myListOfWords)
+                foldoutListOfWord = EditorGUILayout.Foldout(foldoutListOfWord, "List for " + listOfWords.fichierWords.name, true);
+                if (foldoutListOfWord)
                 {
-                    elem.isExpanded = EditorGUILayout.Foldout(elem.isExpanded, "Words", true);
-                    if (elem.isExpanded)
+                    EditorGUI.indentLevel += 1;
+                    foreach (SerializedProperty elem in myListOfWords)
                     {
-                        EditorGUI.indentLevel += 1;
-                        EditorGUILayout.PropertyField(elem);
-                        EditorGUI.indentLevel -= 1;
+                        elem.isExpanded = EditorGUILayout.Foldout(elem.isExpanded, elem.FindPropertyRelative("mot").stringValue, true);
+                        if (elem.isExpanded)
+                        {
+                            EditorGUI.indentLevel += 1;
+                            EditorGUILayout.PropertyField(elem);
+                            EditorGUI.indentLevel -= 1;
+                        }
                     }
+                    EditorGUI.indentLevel -= 1;
                 }
-                EditorGUI.indentLevel -= 1;
             }
         }
 
@@ -61,10 +65,12 @@ public class SC_ListWordsEditor : Editor
     }
 
     /*
-     * Lis le csv du level
+     * Lis le csv des mots
      */
     private void GenerateBD()
     {
+        int numberOfCritere = 1;
+
         generate = true;
         Undo.RecordObject(listOfWords, "undo");
 
@@ -73,7 +79,7 @@ public class SC_ListWordsEditor : Editor
 
         string[] separator = new string[] { "," };
         string[] cells;
-        string[] name = lineList[0].Split(separator, System.StringSplitOptions.None); 
+        string[] name = lineList[0].Split(separator, System.StringSplitOptions.None);
 
         List<Word> wordInfos = new List<Word>();
         Word word;
@@ -84,12 +90,12 @@ public class SC_ListWordsEditor : Editor
             word = new Word();
 
             word.mot = cells[0];
-            word.champLexical = cells[1];
-            
-            word.score = new int[cells.Length - 2];
-            for (int j = 2; j < cells.Length; j++)
-                int.TryParse(cells[j], out word.score[j - 2]);
+            word.critere = cells[1];
 
+            word.score = new int[cells.Length - (numberOfCritere + 1)];
+            for (int j = (numberOfCritere + 1); j < cells.Length; j++)
+                int.TryParse(cells[j], out word.score[j - (numberOfCritere + 1)]);
+            
             word.name = new string[cells.Length];
             for (int j = 0; j < cells.Length; j++)
                 word.name[j] = name[j];
@@ -116,14 +122,13 @@ public class SC_ListWordsEditor : Editor
         {
             newCSV += "\n";
 
-            newCSV += elem.FindPropertyRelative("mot").stringValue + ",";
-            newCSV += elem.FindPropertyRelative("champLexical").stringValue;
+            newCSV += elem.FindPropertyRelative("mot").stringValue;
+            newCSV += "," + elem.FindPropertyRelative("critere").stringValue;
 
             for (int j = 0; j < elem.FindPropertyRelative("score").arraySize; j++)
                 newCSV += "," + elem.FindPropertyRelative("score").GetArrayElementAtIndex(j).intValue;
-
         }
-
-        System.IO.File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "\\Assets\\CSV\\Dears.csv", newCSV);
+        
+        System.IO.File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "\\Assets\\ImportFiles\\CSV\\Mots\\" + listOfWords.fichierWords.name + ".csv", newCSV);
     }
 }

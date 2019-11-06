@@ -922,6 +922,7 @@ GameObject:
   - component: {fileID: 2771400414997830392}
   - component: {fileID: 2771400414997830276}
   - component: {fileID: 2771400414997830393}
+  - component: {fileID: 7291460618315852865}
   m_Layer: 0
   m_Name: Paragraph
   m_TagString: Paragraph
@@ -1042,6 +1043,19 @@ MonoBehaviour:
   SnapPosition: {x: 0, y: 0, z: 0}
   SnapPositionObject: {fileID: 0}
   snapMovementActive: 0
+--- !u!114 &7291460618315852865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771400414997830278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502b39ea80adf8049ac11055800fc09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textParagraphe: {fileID: 0}
 --- !u!1001 &1538086221192497004
 PrefabInstance:
   m_ObjectHideFlags: 0

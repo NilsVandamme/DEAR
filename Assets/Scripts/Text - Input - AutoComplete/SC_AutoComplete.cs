@@ -77,7 +77,10 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         if (linkIndex != -1)
         {
             if (currentClick == null)
+            {
                 myInputField.gameObject.SetActive(true);
+                onInputFieldValueChange();
+            }
             else
                 RewriteTextWithInputField();
 

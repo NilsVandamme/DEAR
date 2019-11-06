@@ -739,7 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262525481}
   m_Layer: 0
-  m_Name: '---------------------- (1)'
+  m_Name: '----------------------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1262,6 +1262,44 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1876704421846886851, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_text
+      value: 'Lorem bonjour dolor sit amet, consectetur adipiscing elit. Praesent
+        vel elit et tellus consectetur _______ Aliquam tellus arcu, imperdiet quis
+        aliquet id, molestie at tellus. Morbi at neque nisi. Donec <link="mot1">_______</link>,
+        enim at tempus sodales, purus arcu fermentum ante, a eleifend leo est eu dolor.
+        <link="mot2">_______</link> in convallis velit. Sed faucibus dolor id enim
+        malesuada.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876704421846886851, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 357
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876704421846886851, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876704421846886851, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 357
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876704421846886851, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291460618315852865, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: textParagraphe
+      value: 
+      objectReference: {fileID: 11400000, guid: c6ed4c6117dc36549951adf70545117c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62076635272d21d45a81d5412d797382, type: 3}
 --- !u!1001 &479162431
@@ -2728,6 +2766,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1876704421846886851, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_overflowMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62076635272d21d45a81d5412d797382, type: 3}
 --- !u!1 &1070193327
@@ -3688,16 +3731,6 @@ PrefabInstance:
         \ \nIt\u2019s truely the only thing to think about in that kind of moment,
         with your kind of profile. Believe me !"
       objectReference: {fileID: 0}
-    - target: {fileID: 2771400414162688247, guid: 62076635272d21d45a81d5412d797382,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2771400414162688247, guid: 62076635272d21d45a81d5412d797382,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2771400414374374508, guid: 62076635272d21d45a81d5412d797382,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -3752,6 +3785,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688247, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771400414162688247, guid: 62076635272d21d45a81d5412d797382,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62076635272d21d45a81d5412d797382, type: 3}

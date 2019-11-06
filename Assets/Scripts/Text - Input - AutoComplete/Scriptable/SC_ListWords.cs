@@ -5,11 +5,11 @@ using UnityEngine;
 public struct Word
 {
     public int[] score;
-    public string mot, champLexical;
+    public string mot, critere;
     public string[] name;
 }
 
-[CreateAssetMenu(fileName = "BD.asset", menuName = "Custom/GenerateBD", order = 1)]
+[CreateAssetMenu(fileName = "ChampLexical.asset", menuName = "Custom/GenerateChampLexical", order = 1)]
 public class SC_ListWords : ScriptableObject
 {
     public TextAsset fichierWords;
