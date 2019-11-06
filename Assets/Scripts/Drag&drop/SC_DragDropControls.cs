@@ -51,36 +51,42 @@ public class SC_DragDropControls : MonoBehaviour
     // When the mouse is being pressed
     private void OnMouseDown()
     {
-        if(IsOnInputField == false) // Disable if the mouse is over an inputfield, check script "InputFieldMouseCheck" for further details
+        if (enabled)
         {
+            if (IsOnInputField == false) // Disable if the mouse is over an inputfield, check script "InputFieldMouseCheck" for further details
+            {
                 IsSelected = true;
                 //Debug.Log("MOUSE DOWN");
                 mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
                 mouseZCoord /= SpeedDivider;
 
                 mouseOffset = gameObject.transform.position - GetMouseWorldPos();
-
-                rig.useGravity = false;
+                if (rig != null)
+                    rig.useGravity = false;
+            }
         }
-
     }
 
     // When the mouse is being released
     private void OnMouseUp()
     {
-        if(IsSelected == true)
+        if (enabled)
         {
-            //Debug.Log("MOUSE UP");
-            if (IsSnapping == true)
+            if (IsSelected == true)
             {
-                snapMovementActive = true;
-                IsSelected = false;
-            }
-            else
-            {
-                rig.useGravity = true;
-                snapMovementActive = false;
-                IsSelected = false;
+                //Debug.Log("MOUSE UP");
+                if (IsSnapping == true)
+                {
+                    snapMovementActive = true;
+                    IsSelected = false;
+                }
+                else
+                {
+                    if (rig != null)
+                        rig.useGravity = true;
+                    snapMovementActive = false;
+                    IsSelected = false;
+                }
             }
         }
     }
@@ -89,11 +95,15 @@ public class SC_DragDropControls : MonoBehaviour
     // When the mouse is kept being pressed
     private void OnMouseDrag()
     {
-        if(IsSelected == true)
+        if (enabled)
         {
-            //Debug.Log("MOUSE DRAG");
-            rig.position = new Vector3(GetMouseWorldPos().x + mouseOffset.x, Mathf.Lerp(transform.position.y, HoveringHeight, Time.deltaTime * 2), GetMouseWorldPos().z + mouseOffset.z);
-        }     
+            if (IsSelected == true)
+            {
+                //Debug.Log("MOUSE DRAG");
+                if (rig != null)
+                    rig.position = new Vector3(GetMouseWorldPos().x + mouseOffset.x, Mathf.Lerp(transform.position.y, HoveringHeight, Time.deltaTime * 2), GetMouseWorldPos().z + mouseOffset.z);
+            }
+        }
     }
 
 
