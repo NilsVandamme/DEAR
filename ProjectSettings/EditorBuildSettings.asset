@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Work/L_SceneNils.unity
+    path: Assets/__DELETED_GUID_Trash/e4cca2fec166f3043b1bf84ab49022af
     guid: e4cca2fec166f3043b1bf84ab49022af
   - enabled: 0
     path: 
@@ -23,10 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Game/L_Intro.unity
     guid: 947b34bdf295568439887aa76aa6a6b4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Temp/L_Test_Menu.unity
     guid: c64e67968f8146c40b9eba74a94edd86
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Temp/00_Intro/L_Scene_Intro_Prez1.unity
     guid: b2d9aa41558bdc646b2f5870d3e78f78
   - enabled: 0
