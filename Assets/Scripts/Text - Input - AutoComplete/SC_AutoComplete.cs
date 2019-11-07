@@ -15,8 +15,8 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     public int autoCompileLenght = 0;
 
     // Liste des mots a stocker et a afficher
-    private List<string> toStore;
-    private List<string> toDisplay;
+    private List<(string, string)> toStore;
+    private List<(string, string)> toDisplay;
 
     // Camera de la scène
     private Camera cam;
@@ -32,6 +32,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     // Object regroupant les informations obtenue lors des clicks
     private SC_ClickObject currentClick;
     private Vector3 newPos;
+    private string currentId;
 
     /*
      * Récupère les objets nécessaires
@@ -42,12 +43,12 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         // Initialise les listes de mots
-        toDisplay = new List<string>();
-        toStore = new List<string>();
+        toDisplay = new List<(string, string)>();
+        toStore = new List<(string, string)>();
         foreach (Word elem in SC_GM.gm.listMots.words)
-            foreach (string mot in elem.critere)
-                if (mot != "none")
-                    toStore.Add(mot);
+            for (int i = 0; i < elem.critere.Length; i++)
+                if (elem.critere[i] != "none")
+                    toStore.Add((elem.critere[i], elem.name[i + 1]));
 
         // Init des élements du canvas
         myText = this.GetComponentInChildren<TextMeshProUGUI>();
@@ -80,15 +81,18 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
 
         if (linkIndex != -1)
         {
+            TMP_LinkInfo linkInfo = myText.textInfo.linkInfo[linkIndex];
+            currentId = linkInfo.GetLinkID();
+
             if (currentClick == null)
             {
                 myInputField.gameObject.SetActive(true);
-                onInputFieldValueChange();
+                OnInputFieldValueChange();
             }
             else
                 RewriteTextWithInputField();
 
-            GetClickInfo(linkIndex);
+            GetClickInfo(linkInfo);
         }
         else if (currentClick != null)
             RewriteAndReinit();
@@ -123,10 +127,9 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     /*
      * Récupère les infos de la balise clicker
      */
-    private void GetClickInfo(int linkIndex)
+    private void GetClickInfo(TMP_LinkInfo linkInfo)
     {
         int pos = 0;
-        TMP_LinkInfo linkInfo = myText.textInfo.linkInfo[linkIndex];
 
         while ((++pos) < linkInfo.linkIdFirstCharacterIndex)
             pos = myText.text.IndexOf(linkInfo.GetLinkText(), pos);
@@ -142,21 +145,21 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     /*
      * Change les liste a afficher et a stocker quand la valeur de l'inputfield change
      */
-    public void onInputFieldValueChange()
+    public void OnInputFieldValueChange()
     {
         if (myInputField.text.Length >= autoCompileLenght)
         {
             // On ajoute une lettre donc on enlève les mots qui ne contiennent plus le text courant de l'inputfield
-            IEnumerable<string> toRemove = toDisplay.Where(x => !x.Contains(myInputField.text)).ToArray();
-            foreach (string mot in toRemove)
+            IEnumerable<(string, string)> toRemove = toDisplay.Where(x => !x.Item1.Contains(myInputField.text) || x.Item2 != currentId).ToArray();
+            foreach ((string, string) mot in toRemove)
             {
                 toDisplay.Remove(mot);
                 toStore.Add(mot);
             }
-
+            
             // On supprime une lettre donc on ajoute les mots qui contiennent le text courant de l'inputfield
-            IEnumerable<string> toAddBack = toStore.Where(x => x.Contains(myInputField.text)).ToArray();
-            foreach (string mot in toAddBack)
+            IEnumerable<(string, string)> toAddBack = toStore.Where(x => x.Item1.Contains(myInputField.text) && x.Item2 == currentId).ToArray();
+            foreach ((string, string) mot in toAddBack)
             {
                 toStore.Remove(mot);
                 toDisplay.Add(mot);
@@ -176,18 +179,18 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     {
         bool find;
 
-        foreach (string mot in toStore)
+        foreach ((string, string) mot in toStore)
             for (int i = 0; i < tupleButtons.Length; i++)
-                if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot)
+                if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot.Item1)
                 {
                     CloseButton(i);
                     break;
                 }
-        foreach (string mot in toDisplay)
+        foreach ((string, string) mot in toDisplay)
         {
             find = false;
             for (int i = 0; i < tupleButtons.Length; i++)
-                if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot)
+                if (tupleButtons[i].Item2 == true && tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text == mot.Item1)
                 {
                     find = true;
                     break;
@@ -197,7 +200,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
                 for (int i = 0; i < tupleButtons.Length; i++)
                     if (tupleButtons[i].Item2 == false)
                     {
-                        tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text = mot;
+                        tupleButtons[i].Item1.GetComponentInChildren<TextMeshProUGUI>().text = mot.Item1;
                         tupleButtons[i] = new Tuple<Button, bool>(tupleButtons[i].Item1, true);
                         tupleButtons[i].Item1.gameObject.SetActive(true);
                         break;
