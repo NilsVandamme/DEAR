@@ -1238,6 +1238,16 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8869976904462432070, guid: 563652843ee2da24a9ca92c3e59e582e,
+        type: 3}
+      propertyPath: autoCompileLenght
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869976904462432070, guid: 563652843ee2da24a9ca92c3e59e582e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1104232925887923262, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2620,7 +2630,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1538086221192497004}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79d5f5a567ff7c8409c0f039bbee7961, type: 3}
   m_Name: 

@@ -65,7 +65,10 @@ public class SC_ParagrapheEditor : Editor
             
 
             if (cells[0] == "_____")
-                temp.partText = deb + cells[1] + middle + cells[0] + fin;
+                if (i == lineList.Length - 1)
+                    temp.partText = deb + cells[1] + middle + cells[0] + fin;
+                else
+                    temp.partText = deb + cells[1].Substring(0, cells[1].Length - 1) + middle + cells[0] + fin;
             else
                 temp.partText = cells[0];
 
