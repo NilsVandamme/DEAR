@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class SC_WindowTopBar : MonoBehaviour, IDragHandler
 {
+    private Vector2 offset;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +16,18 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler
 
     }
 
-    private void OnMouseDown()
-    {
-        Debug.Log("clicked " + gameObject.name + " window");
-    }
-
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("moving " + gameObject.name + " window");
-        Debug.Log("mousepos to world = " + Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 6f)));
-        transform.parent.transform.localPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 6f)) ;
+        
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out Vector2 localpoint);
+        CalculateCameraOffset();
+        transform.localPosition = localpoint + offset;
+        Debug.Log("mousepos to world = " + localpoint);
+    }
+
+    private void CalculateCameraOffset()
+    {
+
     }
 }
