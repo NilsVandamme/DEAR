@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.EventSystems;
 
 // This script manage the function of the top bar of the cumputer windows
@@ -9,7 +10,16 @@ using UnityEngine.EventSystems;
 public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     private Vector2 offset;
-    public GameObject windowContent;
+    public bool IsOpen;
+
+    public Image btnImg;
+    public Text btnText;
+    private Animator windowAnim;
+
+    private void Start()
+    {
+        windowAnim = GetComponentInParent<Animator>();
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -19,6 +29,8 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out Vector2 localpoint);
 
         offset = new Vector2(transform.parent.localPosition.x, transform.parent.localPosition.y) - localpoint;
+
+        transform.parent.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -51,16 +63,30 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
         transform.parent.gameObject.SetActive(false);
     }
 
-    // Maximize button
+    // Maximize or minimize button
     public void MaximizeWindow()
     {
-        windowContent.SetActive(true);
-    }
+        if(IsOpen == true) // Minimize
+        {
+            //windowContent.SetActive(false);
 
-    // Minimize button
-    public void MinimizeWindow()
-    {
-        windowContent.SetActive(false);
-    }
+            btnImg.color = new Color(0.63f, 1f, 0.46f); // green
+            btnText.text = "+";
 
+            windowAnim.SetTrigger("Min");
+
+            IsOpen = false;
+        }
+        else // Maximize
+        {
+            //windowContent.SetActive(true);
+
+            btnImg.color = new Color(1f, 0.85f, 0.46f); // yellow
+            btnText.text = "-";
+
+            windowAnim.SetTrigger("Max");
+
+            IsOpen = true;
+        }
+    }
 }

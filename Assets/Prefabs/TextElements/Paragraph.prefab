@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502b39ea80adf8049ac11055800fc09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textParagraphe: {fileID: 0}
+  textParagraphe: {fileID: 11400000, guid: 53c61678e92a12848a9a5ab6a8bba329, type: 2}
 --- !u!1001 &683636908772996399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,11 +155,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2771400414997830277}
     m_Modifications:
-    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_Name
-      value: TextAutoComplete
-      objectReference: {fileID: 0}
     - target: {fileID: 1104232924593432691, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,35 +260,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1104232924742201007, guid: 563652843ee2da24a9ca92c3e59e582e,
+    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 356
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924742201007, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924742201007, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924742201007, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_textInfo.linkCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924742201007, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924742201007, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
+      propertyPath: m_Name
+      value: TextAutoComplete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 563652843ee2da24a9ca92c3e59e582e, type: 3}
