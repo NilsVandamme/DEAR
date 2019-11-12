@@ -1,14 +1,22 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SC_GM : MonoBehaviour
 {
     // Prochaines Scenes
-    public int pivotScene;
-    public string goodScene;
-    public string badScene;
+    [HideInInspector]
+    public int numberOfScene;
+    [HideInInspector]
+    public int firstPivotScene;
+    [HideInInspector]
+    public int secondPivotScene;
+    [HideInInspector]
+    public string firstScene;
+    [HideInInspector]
+    public string secondScene;
+    [HideInInspector]
+    public string thirdScene;
 
     // Score personne courante
     private int peopleScore = 0;
@@ -43,16 +51,21 @@ public class SC_GM : MonoBehaviour
         if(paragraphsConfirmed == true)
         {
             foreach (string elem in tabInputStrings)
-                foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicals)
+                foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals)
                     foreach (Word word in listWord.words)
                         foreach (string mot in word.critere)
                             if (elem == mot)
                                 score += word.score[peopleScore];
 
-            if (score >= pivotScene)
-                SceneManager.LoadScene(goodScene);
+            if (score >= firstPivotScene)
+                SceneManager.LoadScene(firstScene);
+            else if (numberOfScene == 1)
+                SceneManager.LoadScene(secondScene);
+            else if (score >= secondPivotScene)
+                SceneManager.LoadScene(secondScene);
             else
-                SceneManager.LoadScene(badScene);
+                SceneManager.LoadScene(thirdScene);
+           
         }
     }
 

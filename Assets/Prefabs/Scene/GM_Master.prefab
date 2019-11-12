@@ -43,7 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeef57d6c853ed844994e109e84f58be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listChampsLexicals:
-  - {fileID: 11400000, guid: a875d81c9d4fabf46bbb4bef2a8249ec, type: 2}
-  - {fileID: 11400000, guid: f3793a232214be74dad719140e17d4c9, type: 2}
+  listChampsLexicaux: {fileID: 11400000, guid: 9d8752c471e94ac44a30d18b4b0e7861, type: 2}
   nameChampsLexicals: []
