@@ -6,6 +6,13 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 
     public void OnClickParagrapheOrdi()
     {
-        Debug.Log("cc");
+        for (int i = 0; i < info.motAccepter.Length; i++)
+        {
+            if (info.motAccepter[i])
+            {
+                Debug.Log(info.champLexical.words[i].titre);
+            }
+
+        }
     }
 }
