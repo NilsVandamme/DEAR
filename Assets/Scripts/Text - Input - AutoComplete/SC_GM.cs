@@ -1,14 +1,22 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SC_GM : MonoBehaviour
 {
     // Prochaines Scenes
-    public int pivotScene;
-    public string goodScene;
-    public string badScene;
+    [HideInInspector]
+    public int numberOfScene;
+    [HideInInspector]
+    public int firstPivotScene;
+    [HideInInspector]
+    public int secondPivotScene;
+    [HideInInspector]
+    public string firstScene;
+    [HideInInspector]
+    public string secondScene;
+    [HideInInspector]
+    public string thirdScene;
 
     // Score personne courante
     private int peopleScore = 0;
@@ -43,16 +51,21 @@ public class SC_GM : MonoBehaviour
         if(paragraphsConfirmed == true)
         {
             foreach (string elem in tabInputStrings)
-                foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicals)
+                foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals)
                     foreach (Word word in listWord.words)
                         foreach (string mot in word.critere)
                             if (elem == mot)
                                 score += word.score[peopleScore];
 
-            if (score >= pivotScene)
-                SceneManager.LoadScene(goodScene);
+            if (score >= firstPivotScene)
+                SceneManager.LoadScene(firstScene);
+            else if (numberOfScene == 1)
+                SceneManager.LoadScene(secondScene);
+            else if (score >= secondPivotScene)
+                SceneManager.LoadScene(secondScene);
             else
-                SceneManager.LoadScene(badScene);
+                SceneManager.LoadScene(thirdScene);
+           
         }
     }
 
@@ -62,17 +75,25 @@ public class SC_GM : MonoBehaviour
 
         if(paragraphsConfirmed == false)
         {
+            Debug.Log("snapPositions.Count = " + snapPositions.Count);
             for (int i = 0; i < snapPositions.Count; i++)
                 if (snapPositions[i].SnappedObject != null && !acompletes.Contains(snapPositions[i].SnappedObject.GetComponentInChildren<SC_AutoComplete>()))
                 {
                     acompletes.Add(snapPositions[i].SnappedObject.GetComponentInChildren<SC_AutoComplete>());
-                    acompletes[i].enabled = true;
+                    Debug.Log("value of i = " + i);
+
+                    for(int m = 0; m < acompletes.Count; m++)
+                    {
+                        acompletes[m].enabled = true;
+                    }
+
                 }
 
             for(int k = 0; k < ddcontrols.Count; k++)
                 ddcontrols[k].enabled = false;
 
-            if(ddcontrols.Count != 0)
+            if (ddcontrols.Count != 0)
+                Debug.Log("no paragraphs were placed");
                 paragraphsConfirmed = true;
         }
         else

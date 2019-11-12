@@ -45,7 +45,8 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         // Initialise les listes de mots
         toDisplay = new List<(string, string)>();
         toStore = new List<(string, string)>();
-        foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicals)
+
+        foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals)
             foreach (Word elem in listWord.words)
                 for (int i = 0; i < elem.critere.Length; i++)
                     if (elem.critere[i] != "none")

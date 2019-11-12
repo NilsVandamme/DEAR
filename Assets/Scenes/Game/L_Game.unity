@@ -3175,9 +3175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d0af4307d691f4988a0f557d7d62f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivotScene: 0
-  goodScene: L_Scene_Good_Prez
-  badScene: L_Scene_Bad_Prez
+  numberOfScene: 2
+  firstPivotScene: 0
+  secondPivotScene: 2
+  firstScene: 
+  secondScene: 
+  thirdScene: 
   paragraphsConfirmed: 0
   snapPositions:
   - {fileID: 2008367800}

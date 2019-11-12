@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class SC_GM_Master : MonoBehaviour
 {
-    public SC_ListWords[] listChampsLexicals;
+    public SC_ListChampLexicaux listChampsLexicaux;
 
     [HideInInspector]
-    public List<string> nameChampsLexicals;
+    public string[] nameChampsLexicals;
 
     public static SC_GM_Master gm = null;
 
@@ -16,11 +16,5 @@ public class SC_GM_Master : MonoBehaviour
             gm = this;
         else if (gm != null)
             Destroy(gameObject);
-    }
-
-    private void Start()
-    {
-        foreach (SC_ListWords elem in listChampsLexicals)
-            nameChampsLexicals.Add(elem.fichierWords.name);
     }
 }
