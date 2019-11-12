@@ -75,17 +75,25 @@ public class SC_GM : MonoBehaviour
 
         if(paragraphsConfirmed == false)
         {
+            Debug.Log("snapPositions.Count = " + snapPositions.Count);
             for (int i = 0; i < snapPositions.Count; i++)
                 if (snapPositions[i].SnappedObject != null && !acompletes.Contains(snapPositions[i].SnappedObject.GetComponentInChildren<SC_AutoComplete>()))
                 {
                     acompletes.Add(snapPositions[i].SnappedObject.GetComponentInChildren<SC_AutoComplete>());
-                    acompletes[i].enabled = true;
+                    Debug.Log("value of i = " + i);
+
+                    for(int m = 0; m < acompletes.Count; m++)
+                    {
+                        acompletes[m].enabled = true;
+                    }
+
                 }
 
             for(int k = 0; k < ddcontrols.Count; k++)
                 ddcontrols[k].enabled = false;
 
-            if(ddcontrols.Count != 0)
+            if (ddcontrols.Count != 0)
+                Debug.Log("no paragraphs were placed");
                 paragraphsConfirmed = true;
         }
         else
