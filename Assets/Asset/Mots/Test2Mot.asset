@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e2e9302b0a7454599204ebea877d47, type: 3}
-  m_Name: Test
+  m_Name: Test2Mot
   m_EditorClassIdentifier: 
   fichierWords: {fileID: 0}
   words: []

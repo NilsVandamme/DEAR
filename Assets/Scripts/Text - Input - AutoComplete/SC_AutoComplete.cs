@@ -45,15 +45,13 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         // Initialise les listes de mots
         toDisplay = new List<(string, string)>();
         toStore = new List<(string, string)>();
-        foreach (Word elem in SC_GM.gm.listMots.words)
-            for (int i = 0; i < elem.critere.Length; i++)
-                if (elem.critere[i] != "none")
-                    toStore.Add((elem.critere[i], elem.name[i + 1]));
+        foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicals)
+            foreach (Word elem in listWord.words)
+                for (int i = 0; i < elem.critere.Length; i++)
+                    if (elem.critere[i] != "none")
+                        toStore.Add((elem.critere[i], elem.name[i + 1]));
 
         // Init des élements du canvas
-        //myText = this.GetComponentInChildren<TextMeshProUGUI>();
-        //myInputField = this.GetComponentInChildren<TMP_InputField>(true);
-        //myButtons = myInputField.transform.Find("Buttons").gameObject;
         listButtons = myButtons.GetComponentsInChildren<Button>(true);
         rect = this.GetComponent<RectTransform>();
 

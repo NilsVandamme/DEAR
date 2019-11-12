@@ -14,7 +14,6 @@ public class SC_GM : MonoBehaviour
     private int peopleScore = 0;
 
     // Asset des mots
-    public SC_ListWords listMots;
     public bool paragraphsConfirmed;
     public List<SC_PaperSnap> snapPositions;
     public List<SC_DragDropControls> ddcontrols;
@@ -44,10 +43,11 @@ public class SC_GM : MonoBehaviour
         if(paragraphsConfirmed == true)
         {
             foreach (string elem in tabInputStrings)
-                foreach (Word word in listMots.words)
-                    foreach (string mot in word.critere)
-                        if (elem == mot)
-                            score += word.score[peopleScore];
+                foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicals)
+                    foreach (Word word in listWord.words)
+                        foreach (string mot in word.critere)
+                            if (elem == mot)
+                                score += word.score[peopleScore];
 
             if (score >= pivotScene)
                 SceneManager.LoadScene(goodScene);
