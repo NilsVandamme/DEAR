@@ -22,9 +22,9 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
     private Camera cam;
 
     // Elements récupérer dans le canvas
-    private TextMeshProUGUI myText;
-    private TMP_InputField myInputField;
-    private GameObject myButtons;
+    public TextMeshProUGUI myText;
+    public TMP_InputField myInputField;
+    public GameObject myButtons;
     private Button[] listButtons;
     private Tuple<Button, bool>[] tupleButtons;
     private RectTransform rect;
@@ -51,11 +51,11 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
                     toStore.Add((elem.critere[i], elem.name[i + 1]));
 
         // Init des élements du canvas
-        myText = this.GetComponentInChildren<TextMeshProUGUI>();
-        myInputField = this.GetComponentInChildren<TMP_InputField>(true);
-        myButtons = myInputField.transform.Find("Buttons").gameObject;
+        //myText = this.GetComponentInChildren<TextMeshProUGUI>();
+        //myInputField = this.GetComponentInChildren<TMP_InputField>(true);
+        //myButtons = myInputField.transform.Find("Buttons").gameObject;
         listButtons = myButtons.GetComponentsInChildren<Button>(true);
-        rect = GetComponent<RectTransform>();
+        rect = this.GetComponent<RectTransform>();
 
         // Init le tab des buttons
         tupleButtons = new Tuple<Button, bool>[numberOfButtonToDisplay];
