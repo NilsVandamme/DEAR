@@ -44,13 +44,13 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
         if(localpoint.x < 363 && localpoint.x > -363)
         {
             // Move the window
-            transform.parent.localPosition = new Vector3(localpoint.x + offset.x, transform.parent.localPosition.y, transform.parent.localPosition.z);
+            transform.parent.localPosition = new Vector3(Mathf.Round((localpoint.x + offset.x) /10) *10, transform.parent.localPosition.y, transform.parent.localPosition.z);
         }
 
         // move the window on the y axis
         if (localpoint.y < 207 && localpoint.y > -207)
         {
-            transform.parent.localPosition = new Vector3(transform.parent.localPosition.x, localpoint.y + offset.y, transform.parent.localPosition.z);
+            transform.parent.localPosition = new Vector3(transform.parent.localPosition.x, Mathf.Round((localpoint.y + offset.y) /10) *10 , transform.parent.localPosition.z);
         }
 
     }
