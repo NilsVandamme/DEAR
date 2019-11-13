@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/e4cca2fec166f3043b1bf84ab49022af
-    guid: e4cca2fec166f3043b1bf84ab49022af
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Game/L_Menu.unity
-    guid: e294d7f0cd1f11048b4e34845a30a5e2
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -21,14 +21,20 @@ EditorBuildSettings:
     path: "Assets/Scenes/Work/L_SceneJulienN\xB02.unity"
     guid: d3dbc0b6371390a4d8d39202066775d9
   - enabled: 0
-    path: Assets/Scenes/Game/L_Intro.unity
-    guid: 947b34bdf295568439887aa76aa6a6b4
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Game/Temp/L_Test_Menu.unity
-    guid: c64e67968f8146c40b9eba74a94edd86
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Game/Temp/00_Intro/L_Scene_Intro_Prez1.unity
-    guid: b2d9aa41558bdc646b2f5870d3e78f78
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -36,9 +42,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Game/Temp/01_MS/L_Scene_Bad_Prez.unity
-    guid: cbc6fdfd126e3e840a1a0120f813bda7
+    path: Assets/Scenes/Game/L_UiTestLila.unity
+    guid: f28590ba85c5d8142b8106a9e84fc318
   - enabled: 1
-    path: Assets/Scenes/Game/Temp/01_MS/L_Scene_Good_Prez.unity
-    guid: 79cb67dc7f384f34cac5aeb2179bde5a
+    path: Assets/Scenes/Game/L_Menu.unity
+    guid: f4e8e13de5e42f745ad46dd6fd6f38ba
   m_configObjects: {}
