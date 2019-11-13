@@ -11,7 +11,10 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
             {
                 (string, Word, bool) elem = (info.champLexical.fichierWords.name, info.champLexical.words[i], false);
                 if (!SC_GM_Master.gm.choosenWordInMail.Contains(elem))
+                {
                     SC_GM_Master.gm.choosenWordInMail.Add(elem);
+                    Debug.Log(elem.Item2.titre);
+                }
             }
     }
 }

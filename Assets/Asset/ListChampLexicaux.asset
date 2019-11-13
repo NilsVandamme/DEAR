@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ListChampLexicaux
   m_EditorClassIdentifier: 
   listChampsLexicals:
-  - {fileID: 11400000, guid: a875d81c9d4fabf46bbb4bef2a8249ec, type: 2}
-  - {fileID: 11400000, guid: f3793a232214be74dad719140e17d4c9, type: 2}
+  - {fileID: 11400000, guid: 3c484eb6804f59a4c981648d921a1f98, type: 2}
+  - {fileID: 11400000, guid: 9f5d2fa15ad1d8d4d8902bf0be2487ad, type: 2}
   nameChampsLexicals:
   - Test
   - Test2
