@@ -30,7 +30,7 @@ public class SC_GM : MonoBehaviour
 
     [HideInInspector]
     // Liste des mots entre par le joueur
-    public List<string> tabInputStrings;
+    public List<string> choosenWordInLetter;
 
     [HideInInspector]
     // Score de la scene
@@ -50,7 +50,7 @@ public class SC_GM : MonoBehaviour
     {
         if(paragraphsConfirmed == true)
         {
-            foreach (string elem in tabInputStrings)
+            foreach (string elem in choosenWordInLetter)
                 foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals)
                     foreach (Word word in listWord.words)
                         foreach (string mot in word.critere)

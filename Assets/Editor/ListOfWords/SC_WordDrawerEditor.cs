@@ -11,7 +11,17 @@ public class SC_WordDrawerEditor : PropertyDrawer
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         float lineHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-        float numberOfLines = property.FindPropertyRelative("score").arraySize + property.FindPropertyRelative("critere").arraySize + 2;
+        float numberOfLines = 2;
+
+        SerializedProperty score = property.FindPropertyRelative("score");
+        SerializedProperty critere = property.FindPropertyRelative("critere");
+
+        if (critere.isExpanded && score.isExpanded)
+            numberOfLines += score.arraySize + critere.arraySize;
+        else if (critere.isExpanded)
+            numberOfLines += critere.arraySize;
+        else if (score.isExpanded)
+            numberOfLines += score.arraySize;
 
         return lineHeight * numberOfLines;
     }

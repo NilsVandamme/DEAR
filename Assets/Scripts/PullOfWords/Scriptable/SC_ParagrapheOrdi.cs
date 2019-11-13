@@ -6,6 +6,6 @@ public class SC_ParagrapheOrdi : ScriptableObject
     public SC_ListChampLexicaux listChampLexicaux;
     public SC_ListWords champLexical;
     public int nameChampLexical = 0;
-    public bool[] motAccepter;
+    public bool[] motAccepter = null;
 
 }

@@ -7,12 +7,11 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
     public void OnClickParagrapheOrdi()
     {
         for (int i = 0; i < info.motAccepter.Length; i++)
-        {
             if (info.motAccepter[i])
             {
-                Debug.Log(info.champLexical.words[i].titre);
+                (string, Word, bool) elem = (info.champLexical.fichierWords.name, info.champLexical.words[i], false);
+                if (!SC_GM_Master.gm.choosenWordInMail.Contains(elem))
+                    SC_GM_Master.gm.choosenWordInMail.Add(elem);
             }
-
-        }
     }
 }

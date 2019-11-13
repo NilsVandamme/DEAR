@@ -31,6 +31,11 @@ public class SC_ParagrapheOrdiEditor : Editor
 
             EditorGUILayout.EndHorizontal();
 
+
+            if (paragrapheOrdi.nameChampLexical != save || paragrapheOrdi.motAccepter == null)
+                paragrapheOrdi.motAccepter = new bool[paragrapheOrdi.champLexical.words.Count];
+
+
             for (int i = 0; i < paragrapheOrdi.champLexical.words.Count; i++)
             {
                 EditorGUILayout.BeginHorizontal();
@@ -41,9 +46,5 @@ public class SC_ParagrapheOrdiEditor : Editor
                 EditorGUILayout.EndHorizontal();
             }
         }
-
-        if (paragrapheOrdi.nameChampLexical != save)
-            paragrapheOrdi.motAccepter = new bool[paragrapheOrdi.champLexical.words.Count];
-            
     }
 }

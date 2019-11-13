@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class SC_GM_Master : MonoBehaviour
 {
+    // Ensemble des champs lexicaux
     public SC_ListChampLexicaux listChampsLexicaux;
 
     [HideInInspector]
-    public string[] nameChampsLexicals;
+    // Liste des mots choisi par le joueur (CL, Word, Use)
+    public List<(string, Word, bool)> choosenWordInMail;
 
     public static SC_GM_Master gm = null;
 

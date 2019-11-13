@@ -62,7 +62,7 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
             tupleButtons[i] = new Tuple<Button, bool>(listButtons[i], false);
 
         // Init le tab des inputs sauvegardées
-        SC_GM.gm.tabInputStrings = new List<string>();
+        SC_GM.gm.choosenWordInLetter = new List<string>();
     }
 
     /*
@@ -105,20 +105,20 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         if (myInputField.text != "" || newString != null)
         {
             myText.text = myText.text.Remove((currentClick.getPosStart()), currentClick.getMot().Length);
-            if (!SC_GM.gm.tabInputStrings.Contains(currentClick.getMot()))
-                SC_GM.gm.tabInputStrings.Remove(currentClick.getMot());
+            if (!SC_GM.gm.choosenWordInLetter.Contains(currentClick.getMot()))
+                SC_GM.gm.choosenWordInLetter.Remove(currentClick.getMot());
 
             if (newString == null)
             {
                 myText.text = myText.text.Insert(currentClick.getPosStart(), myInputField.text);
-                if (!SC_GM.gm.tabInputStrings.Contains(myInputField.text))
-                    SC_GM.gm.tabInputStrings.Add(myInputField.text);
+                if (!SC_GM.gm.choosenWordInLetter.Contains(myInputField.text))
+                    SC_GM.gm.choosenWordInLetter.Add(myInputField.text);
             }
             else
             {
                 myText.text = myText.text.Insert(currentClick.getPosStart(), newString);
-                if (!SC_GM.gm.tabInputStrings.Contains(newString))
-                    SC_GM.gm.tabInputStrings.Add(newString);
+                if (!SC_GM.gm.choosenWordInLetter.Contains(newString))
+                    SC_GM.gm.choosenWordInLetter.Add(newString);
             }
         }
     }
