@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58bf807b26898294e8dc3a4f67ee89a4, type: 3}
-  m_Name: OrdiParagraphe
+  m_Name: OrdiParagraphe 1
   m_EditorClassIdentifier: 
   listChampLexicaux: {fileID: 0}
   champLexical: {fileID: 0}
