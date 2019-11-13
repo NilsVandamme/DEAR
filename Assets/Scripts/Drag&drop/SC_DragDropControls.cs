@@ -36,7 +36,7 @@ public class SC_DragDropControls : MonoBehaviour
     private void Update()
     {
         // Snap the object to it's target
-        if (snapMovementActive == true && Vector3.Distance(transform.position, SnapPosition) >= 0.03)
+        if (snapMovementActive == true && Vector3.Distance(transform.position, SnapPosition) > 0.03)
         {
             rig.position = Vector3.Lerp(rig.position, SnapPosition, SnapSpeed*Time.deltaTime);
         }
