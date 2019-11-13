@@ -20,10 +20,10 @@ public class SC_CameraControlerSnap : MonoBehaviour
 
     //[Header("Current angle values")]
 
-    private float topAngle; // Angle at which the camera move up
-    private float downAngle; // Angle at which the camera move down
-    private float rightAngle; // Angle at which the camera move right
-    private float leftAngle; // Angle at which the camera move left
+    public float topAngle; // Angle at which the camera move up
+    public float downAngle; // Angle at which the camera move down
+    public float rightAngle; // Angle at which the camera move right
+    public float leftAngle; // Angle at which the camera move left
 
     [Header("Set angle values")]
 

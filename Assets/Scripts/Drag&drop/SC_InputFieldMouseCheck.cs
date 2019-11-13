@@ -17,14 +17,14 @@ public class SC_InputFieldMouseCheck : MonoBehaviour
 
     public void OnEnter()
     {
-        DDC.IsOnInputField = true;
+        //DDC.IsOnInputField = true;
 
         //Debug.Log("Mouse is over an input field");
     }
 
     public void OnExit()
     {
-        DDC.IsOnInputField = false;
+        //DDC.IsOnInputField = false;
 
         // Deselect the inputfield if the mouse isn't on it
         //EventSystem.current.SetSelectedGameObject(null);
