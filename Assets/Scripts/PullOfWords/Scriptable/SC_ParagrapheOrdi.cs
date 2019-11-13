@@ -4,7 +4,8 @@
 public class SC_ParagrapheOrdi : ScriptableObject
 {
     public SC_ListChampLexicaux listChampLexicaux;
-    public string nameChampLexical;
+    public SC_ListWords champLexical;
+    public int nameChampLexical = 0;
     public bool[] motAccepter;
 
 }

@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 
 [CanEditMultipleObjects]
 [CustomEditor(typeof(SC_ParagrapheOrdi))]
@@ -16,6 +18,7 @@ public class SC_ParagrapheOrdiEditor : Editor
      */
     public override void OnInspectorGUI()
     {
+        int save = paragrapheOrdi.nameChampLexical;
         paragrapheOrdi.listChampLexicaux = EditorGUILayout.ObjectField("File words : ", paragrapheOrdi.listChampLexicaux, typeof(SC_ListChampLexicaux), false) as SC_ListChampLexicaux;
 
         if (paragrapheOrdi.listChampLexicaux != null)
@@ -23,21 +26,24 @@ public class SC_ParagrapheOrdiEditor : Editor
             EditorGUILayout.BeginHorizontal();
 
             EditorGUILayout.LabelField("Champ Lexical");
-            paragrapheOrdi.nameChampLexical = paragrapheOrdi.listChampLexicaux.nameChampsLexicals[EditorGUILayout.Popup(0, paragrapheOrdi.listChampLexicaux.nameChampsLexicals)];
+            paragrapheOrdi.nameChampLexical = EditorGUILayout.Popup(paragrapheOrdi.nameChampLexical, paragrapheOrdi.listChampLexicaux.nameChampsLexicals);
+            paragrapheOrdi.champLexical =  paragrapheOrdi.listChampLexicaux.listChampsLexicals.Where(x => x.fichierWords.name == paragrapheOrdi.listChampLexicaux.nameChampsLexicals[paragrapheOrdi.nameChampLexical]).First();
 
             EditorGUILayout.EndHorizontal();
+
+            for (int i = 0; i < paragrapheOrdi.champLexical.words.Count; i++)
+            {
+                EditorGUILayout.BeginHorizontal();
+
+                EditorGUILayout.LabelField(paragrapheOrdi.champLexical.words[i].titre);
+                paragrapheOrdi.motAccepter[i] = EditorGUILayout.Toggle(paragrapheOrdi.motAccepter[i]);
+
+                EditorGUILayout.EndHorizontal();
+            }
         }
 
-        if (paragrapheOrdi.nameChampLexical != null)
-        {
-            EditorGUILayout.BeginHorizontal();
-
-            EditorGUILayout.LabelField("Champ Lexical");
-            //EditorGUILayout.Toggle
-
-            paragrapheOrdi.nameChampLexical = paragrapheOrdi.listChampLexicaux.nameChampsLexicals[EditorGUILayout.Popup(0, paragrapheOrdi.listChampLexicaux.nameChampsLexicals)];
-
-            EditorGUILayout.EndHorizontal();
-        }
+        if (paragrapheOrdi.nameChampLexical != save)
+            paragrapheOrdi.motAccepter = new bool[paragrapheOrdi.champLexical.words.Count];
+            
     }
 }
