@@ -155,6 +155,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2771400414997830277}
     m_Modifications:
+    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
+        type: 3}
+      propertyPath: m_Name
+      value: TextAutoComplete
+      objectReference: {fileID: 0}
     - target: {fileID: 1104232924593432691, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -259,11 +264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_Name
-      value: TextAutoComplete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 563652843ee2da24a9ca92c3e59e582e, type: 3}
