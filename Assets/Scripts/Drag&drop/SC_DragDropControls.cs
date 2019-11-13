@@ -17,7 +17,7 @@ public class SC_DragDropControls : MonoBehaviour
 
     public bool IsSnapping; // Is the object being snapped ?
     public bool IsSelected; // Is the object being selected ?
-    public bool IsOnInputField; // Is the cursor on the input field ?
+    //public bool IsOnInputField; // Is the cursor on the input field ?
     public Vector3 OriginalPosition;
     public Vector3 SnapPosition; // Position at which the object snaps
     public GameObject SnapPositionObject; // WHich ibject is it snapped to ?
@@ -36,7 +36,7 @@ public class SC_DragDropControls : MonoBehaviour
     private void Update()
     {
         // Snap the object to it's target
-        if (snapMovementActive == true && Vector3.Distance(transform.position, SnapPosition) >= 0.03)
+        if (snapMovementActive == true && Vector3.Distance(transform.position, SnapPosition) > 0.03)
         {
             rig.position = Vector3.Lerp(rig.position, SnapPosition, SnapSpeed*Time.deltaTime);
         }
@@ -53,8 +53,7 @@ public class SC_DragDropControls : MonoBehaviour
     {
         if (enabled)
         {
-            if (IsOnInputField == false) // Disable if the mouse is over an inputfield, check script "InputFieldMouseCheck" for further details
-            {
+
                 IsSelected = true;
                 //Debug.Log("MOUSE DOWN");
                 mouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -63,7 +62,6 @@ public class SC_DragDropControls : MonoBehaviour
                 mouseOffset = gameObject.transform.position - GetMouseWorldPos();
                 if (rig != null)
                     rig.useGravity = false;
-            }
         }
     }
 

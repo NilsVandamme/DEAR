@@ -7,7 +7,7 @@ using UnityEngine;
 public class SC_CameraControlerSnap : MonoBehaviour
 {
     public bool isLookingUp; // Is the camera looking at the PC screen ?
-    private bool isAligning; // Is the camera currently aligning ?
+    public bool isAligning; // Is the camera currently aligning ?
 
     private int screenWidth; // Width of the screen
     private int screenHeight; // Height of the screen
@@ -18,22 +18,40 @@ public class SC_CameraControlerSnap : MonoBehaviour
     public float movementSpeed; // Movement speed
     public float alignSpeed; // Aligment speed
 
-    [Header("Angle values")]
+    //[Header("Current angle values")]
 
     public float topAngle; // Angle at which the camera move up
     public float downAngle; // Angle at which the camera move down
     public float rightAngle; // Angle at which the camera move right
     public float leftAngle; // Angle at which the camera move left
 
+    [Header("Set angle values")]
+
+    public float screenTopAngle; // Angle at which the camera move up in the computer area
+    public float screenDownAngle; // Angle at which the camera move down in the computer area
+    public float letterTopAngle; // Angle at which the camera move up in the letter area
+    public float letterDownAngle; // Angle at which the camera move down in the letter area
+
     void Start()
     {
         // Get the size of the screen
         screenWidth = Screen.width;
         screenHeight = Screen.height;
+
+        if(isLookingUp == true)
+        {
+            topAngle = screenTopAngle;
+        }
+        else
+        {
+            downAngle = letterDownAngle;
+        }
     }
 
     void Update()
     {
+        // MOVE THE CAMERA UP AND DOWN
+
         // Move the camera up
         if (Input.mousePosition.y > screenHeight - deadzone && isAligning == false)
         {
@@ -45,7 +63,6 @@ public class SC_CameraControlerSnap : MonoBehaviour
             //Debug.Log("camera is aligning to the upper position");
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(topAngle, transform.eulerAngles.y, transform.rotation.z), Time.deltaTime * alignSpeed);
         }
-
 
 
         // Move the camera down
@@ -61,6 +78,8 @@ public class SC_CameraControlerSnap : MonoBehaviour
         }
 
 
+
+        // MOVE THE CAMERA LEFT AND RIGHT
 
         // Move the camera right
         if (Input.mousePosition.x < 0 + deadzone)
@@ -78,12 +97,14 @@ public class SC_CameraControlerSnap : MonoBehaviour
 
 
 
+        // GET IF THE CAMERA NEED TO BE SWITCHED TO UPPER OR LOWER POSITION
+
         // Move the camera to the upper position
         if(Input.mousePosition.y > screenHeight - 30 && isLookingUp == false)
         {
             //Debug.Log("camera moved the the upper position");
-            downAngle = 24;
-            topAngle = 20;
+            downAngle = screenDownAngle;
+            topAngle = screenTopAngle;
             isAligning = true;
             isLookingUp = true;
         }
@@ -92,8 +113,8 @@ public class SC_CameraControlerSnap : MonoBehaviour
         if (Input.mousePosition.y < 0 + 30 && isLookingUp == true)
         {
             //Debug.Log("camera moved the the lower position");
-            downAngle = 64;
-            topAngle = 60;
+            downAngle = letterDownAngle;
+            topAngle = letterTopAngle;
             isAligning = true;
             isLookingUp = false;
         }
