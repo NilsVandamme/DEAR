@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEditor;
 
 [CanEditMultipleObjects]
@@ -24,7 +23,7 @@ public class SC_ParagrapheOrdiEditor : Editor
         if (paragrapheOrdi.listChampLexicaux != null)
         {
             EditorGUILayout.BeginHorizontal();
-
+            
             EditorGUILayout.LabelField("Champ Lexical");
             paragrapheOrdi.nameChampLexical = EditorGUILayout.Popup(paragrapheOrdi.nameChampLexical, paragrapheOrdi.listChampLexicaux.nameChampsLexicals);
             paragrapheOrdi.champLexical =  paragrapheOrdi.listChampLexicaux.listChampsLexicals.Where(x => x.fichierWords.name == paragrapheOrdi.listChampLexicaux.nameChampsLexicals[paragrapheOrdi.nameChampLexical]).First();
@@ -33,7 +32,11 @@ public class SC_ParagrapheOrdiEditor : Editor
 
 
             if (paragrapheOrdi.nameChampLexical != save || paragrapheOrdi.motAccepter == null)
+            {
                 paragrapheOrdi.motAccepter = new bool[paragrapheOrdi.champLexical.words.Count];
+                for (int i = 0; i < paragrapheOrdi.champLexical.words.Count; i++)
+                    paragrapheOrdi.motAccepter[i] = false;
+            }
 
 
             for (int i = 0; i < paragrapheOrdi.champLexical.words.Count; i++)

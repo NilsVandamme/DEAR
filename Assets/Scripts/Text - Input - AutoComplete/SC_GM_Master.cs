@@ -8,7 +8,7 @@ public class SC_GM_Master : MonoBehaviour
 
     [HideInInspector]
     // Liste des mots choisi par le joueur (CL, Word, Use)
-    public List<(string, Word, bool)> choosenWordInMail;
+    public List<(string, Word, bool)> choosenWordInMail = new List<(string, Word, bool)>();
 
     public static SC_GM_Master gm = null;
 

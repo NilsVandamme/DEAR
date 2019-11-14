@@ -75,6 +75,8 @@ public class SC_PullOfWord : MonoBehaviour
             WordToDisplay(index);
         else
             ClearAllWords(index);
+
+        EnableDisable(index);
     }
 
     /*
@@ -87,23 +89,35 @@ public class SC_PullOfWord : MonoBehaviour
 
         foreach ((string, Word, bool) elem in SC_GM_Master.gm.choosenWordInMail)
             if (elem.Item1 == champsLexicauxAndWords[index][posElemCl].text)
-            {
-                pos = GetFirstMotLibre(index);
-                if (pos != -1)
-                    if (critere.captionText.text == listCritere[0] && elem.Item2.titre != "none") // Titre
+                if (critere.captionText.text == listCritere[0] && elem.Item2.titre != "none") // Titre
+                {
+                    pos = GetFirstMotLibre(index);
+                    if (pos != -1)
                         champsLexicauxAndWords[index][pos].text = elem.Item2.titre;
-                    else if (critere.captionText.text == listCritere[1] && elem.Item2.critere[0] != "none") // Verb
+                }
+                else if (critere.captionText.text == listCritere[1] && elem.Item2.critere[0] != "none") // Verb
+                {
+                    pos = GetFirstMotLibre(index);
+                    if (pos != -1)
                         champsLexicauxAndWords[index][pos].text = elem.Item2.critere[0];
-                    else if (critere.captionText.text == listCritere[2] && elem.Item2.critere[3] != "none") // Noun
+                }
+                else if (critere.captionText.text == listCritere[2] && elem.Item2.critere[3] != "none") // Noun
+                {
+                    pos = GetFirstMotLibre(index);
+                    if (pos != -1)
                         champsLexicauxAndWords[index][pos].text = elem.Item2.critere[3];
-                    else if (critere.captionText.text == listCritere[3] && elem.Item2.critere[4] != "none") // Adjectif
+                }
+                else if (critere.captionText.text == listCritere[3] && elem.Item2.critere[4] != "none") // Adjectif
+                {
+                    pos = GetFirstMotLibre(index);
+                    if (pos != -1)
                         champsLexicauxAndWords[index][pos].text = elem.Item2.critere[4];
-            }
+                }
     }
 
     /*
-     * Trouve le premier champ non utilisé du CL, l'active et retoune sa position
-     */
+    * Trouve le premier champ non utilisé du CL, l'active et retoune sa position
+    */
     private int GetFirstMotLibre(int index)
     {
         for (int i = 0; i < numberOfElemInCL; i++)
@@ -116,6 +130,9 @@ public class SC_PullOfWord : MonoBehaviour
         return -1;
     }
 
+    /*
+     * Enleve l'affichage de tous les mots du CL
+     */
     private void ClearAllWords(int index)
     {
         isDisplay[index] = false;
@@ -126,13 +143,24 @@ public class SC_PullOfWord : MonoBehaviour
     }
 
     /*
-     * Affiche ou non les mots d'un CL
-     */
+    * Affiche ou non les mots d'un CL
+    */
     private void EnableDisable(int index)
     {
         for (int i = 0; i < numberOfElemInCL; i++)
             if (i != posElemCl)
                 champsLexicauxAndWords[index][i].gameObject.SetActive(toDisplay[index][i]);
 
+    }
+
+    public void FullEnableDisable()
+    {
+        for (int i = 0; i < allChampLexicaux.Length; i++)
+            if (isDisplay[i])
+            {
+                ClearAllWords(i);
+                WordToDisplay(i);
+                EnableDisable(i);
+            }
     }
 }
