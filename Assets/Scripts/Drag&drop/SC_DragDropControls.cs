@@ -15,34 +15,33 @@ public class SC_DragDropControls : MonoBehaviour
 
     [Header("Debug")]
 
-    public bool IsSnapping; // Is the object being snapped ?
-    public bool IsSelected; // Is the object being selected ?
-    //public bool IsOnInputField; // Is the cursor on the input field ?
-    public Vector3 OriginalPosition;
-    public Vector3 SnapPosition; // Position at which the object snaps
-    public GameObject SnapPositionObject; // Which object is it snapped to 
+    //private bool IsSnapping; // Is the object being snapped ?
+    private bool IsSelected; // Is the object being selected ?
+    private Vector3 OriginalPosition;
+    private Vector3 SnapPosition; // Position at which the object snaps
+    //private GameObject SnapPositionObject; // Which object is it snapped to 
 
-    [Space]
-    public GameObject SnapPositionObjectOverTop;
-    public GameObject SnapPositionObjectTop; // Which object Top is it snapped to ?
-    public GameObject SnapPositionObjectDown; // Which object Down is it snapped to ?
-    public GameObject SnapPositionObjectUnderDown;
+    //[Space]
+    //private GameObject SnapPositionObjectOverTop;
+    private GameObject SnapPositionObjectTop; // Which object Top is it snapped to ?
+    private GameObject SnapPositionObjectDown; // Which object Down is it snapped to ?
+    //private GameObject SnapPositionObjectUnderDown;
 
-    [Space]
-    public bool overTopSnapped;
-    public bool topSnapped;
-    public bool downSnapped;
-    public bool underDownSnapped;
+    //[Space]
+    private bool overTopSnapped;
+    private bool topSnapped;
+    private bool downSnapped;
+    private bool underDownSnapped;
 
-    [Space]
-    public bool snapMovementActive; // Is the object moving to it's snap ?
+    //[Space]
+    private bool snapMovementActive; // Is the object moving to it's snap ?
 
     private Vector3 mouseOffset;
     private float mouseZCoord;
     private Rigidbody rig; // Object rigidbidy
 
-    [Space]
-    public float timer;
+    //[Space]
+    private float timer;
 
     private void Start()
     {
