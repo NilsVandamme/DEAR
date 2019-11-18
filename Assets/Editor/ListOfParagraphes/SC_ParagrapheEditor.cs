@@ -39,6 +39,8 @@ public class SC_ParagrapheEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+
+        EditorUtility.SetDirty(listOfText);
     }
 
     /*

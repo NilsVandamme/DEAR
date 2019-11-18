@@ -12,7 +12,7 @@ public class SC_PullOfWord : MonoBehaviour
 
     // Liste des dropdown
     private List<string> listCritere = new List<string> {"Titre", "Verb", "Noun", "Adjectif"};
-    public List<string> listPerso = new List<string> {"General"};
+    private List<string> listPerso = new List<string> {"General"};
 
     // Object de la fenetre
     public TMP_Dropdown critere;
@@ -30,6 +30,9 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void Start()
     {
+        for (int i = SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].critere.Length + 1; i < SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name.Length; i++)
+            listPerso.Add(SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name[i]);
+
         critere.AddOptions(listCritere);
         perso.AddOptions(listPerso);
 
@@ -61,6 +64,18 @@ public class SC_PullOfWord : MonoBehaviour
     }
 
     /*
+     * Met a jour le pull de mot lorsqu'on click sur des paragraphe a l'ordi
+     */
+    private void Update()
+    {
+        foreach ((string, Word, bool[]) elem in SC_GM_Master.gm.choosenWords)
+            for (int i = 0; i < champsLexicauxAndWords.Length; i++)
+                if (champsLexicauxAndWords[i][posElemCl].gameObject.activeSelf == false && champsLexicauxAndWords[i][posElemCl].text == elem.Item1)
+                    champsLexicauxAndWords[i][posElemCl].gameObject.SetActive(true);
+
+    }
+
+    /*
      * Récupère et traite le click sur un CL
      */
     public void OnClickNameChampLexical (LayoutGroup lg)
@@ -69,7 +84,10 @@ public class SC_PullOfWord : MonoBehaviour
 
         for (int i = 0; i < allChampLexicaux.Length; i++)
             if (allChampLexicaux[i] == lg)
+            {
                 index = i;
+                break;
+            }
 
         if (!isDisplay[index])
             WordToDisplay(index);
@@ -87,7 +105,7 @@ public class SC_PullOfWord : MonoBehaviour
         int pos;
         isDisplay[index] = true;
 
-        foreach ((string, Word, bool) elem in SC_GM_Master.gm.choosenWordInMail)
+        foreach ((string, Word, bool[]) elem in SC_GM_Master.gm.choosenWords)
             if (elem.Item1 == champsLexicauxAndWords[index][posElemCl].text)
                 if (critere.captionText.text == listCritere[0] && elem.Item2.titre != "none") // Titre
                 {
@@ -153,6 +171,9 @@ public class SC_PullOfWord : MonoBehaviour
 
     }
 
+    /*
+     * Gere l'interface losqu'on change de critère.
+     */
     public void FullEnableDisable()
     {
         for (int i = 0; i < allChampLexicaux.Length; i++)
@@ -162,5 +183,27 @@ public class SC_PullOfWord : MonoBehaviour
                 WordToDisplay(i);
                 EnableDisable(i);
             }
+    }
+
+    /*
+     * Ajoute le mot clicker dans la wheel si l'on est sur 'Général' et 'Titre'
+     */
+     public void AddWordInWheel (TextMeshProUGUI tmp)
+    {
+        if (critere.captionText.text != listCritere[0] || perso.captionText.text != listPerso[0])
+            return;
+
+        for (int i = 0; i < champsLexicauxAndWords.Length; i++)
+            for (int j = 0; j < champsLexicauxAndWords[i].Length; j++)
+                if (champsLexicauxAndWords[i][j] == tmp) // cherche le TMP_UGUI sur lequel on a clicker
+                    foreach ((string, Word, bool[]) elem in SC_GM_Master.gm.choosenWords)
+                        if (elem.Item1 == champsLexicauxAndWords[i][posElemCl].text &&
+                            ((champsLexicauxAndWords[i][j].text == elem.Item2.titre) || (champsLexicauxAndWords[i][j].text == elem.Item2.critere[0]) ||
+                            (champsLexicauxAndWords[i][j].text == elem.Item2.critere[3]) || (champsLexicauxAndWords[i][j].text == elem.Item2.critere[4]))) // cherche quel mot de la BD il correpond
+                        {
+                            SC_GM.gm.wheelOfWords.Add(elem.Item2);
+                            return;
+                        }
+
     }
 }
