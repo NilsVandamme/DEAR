@@ -22,10 +22,10 @@ public class SC_DragDropControls : MonoBehaviour
     //private GameObject SnapPositionObject; // Which object is it snapped to 
 
     //[Space]
-    //private GameObject SnapPositionObjectOverTop;
+    private GameObject SnapPositionObjectOverTop;
     private GameObject SnapPositionObjectTop; // Which object Top is it snapped to ?
     private GameObject SnapPositionObjectDown; // Which object Down is it snapped to ?
-    //private GameObject SnapPositionObjectUnderDown;
+    private GameObject SnapPositionObjectUnderDown;
 
     //[Space]
     private bool overTopSnapped;
