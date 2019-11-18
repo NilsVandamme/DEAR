@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// ! ! ! OLD SCRIPT  ! ! ! 
+// Was replaced by SC_PaperSnapGrid
 // This script make the paragraphs snap on the paper when drag & dropped
 
 public class SC_PaperSnap : MonoBehaviour
@@ -28,9 +30,9 @@ public class SC_PaperSnap : MonoBehaviour
         {
             //Debug.Log(gameObject.name + " has snapped with " + other.name);
             SnappedObject = other.gameObject;
-            otherDD.IsSnapping = true;
-            otherDD.SnapPositionObject = gameObject;
-            otherDD.SnapPosition = transform.position;
+            //otherDD.IsSnapping = true;
+            //otherDD.SnapPositionObject = gameObject;
+            //otherDD.SnapPosition = transform.position;
             HasSnap = true;
         }
         else if(other.tag == "Paragraph" && other != SnappedObject)  // Prevent another object from snapping if there's already one
@@ -45,7 +47,7 @@ public class SC_PaperSnap : MonoBehaviour
     {
         otherDD = other.GetComponent<SC_DragDropControls>();
         //Debug.Log(gameObject.name + " ; " + other.name + " is Snapped To " + (otherDD.SnapPositionObject));
-
+        /*
         if (otherDD.SnapPositionObject == gameObject && other != SnappedObject) // Unsnap the object currently snapped
         {
             //Debug.Log(gameObject.name + " has unsnapped with " + other.name);
@@ -62,6 +64,6 @@ public class SC_PaperSnap : MonoBehaviour
             SnappedObject = null;
             HasSnap = false;
         }
-
+        */
     }
 }
