@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEditor;
+using UnityEngine;
 
 [CanEditMultipleObjects]
 [CustomEditor(typeof(SC_ParagrapheOrdi))]
@@ -31,7 +32,7 @@ public class SC_ParagrapheOrdiEditor : Editor
             EditorGUILayout.EndHorizontal();
 
 
-            if (paragrapheOrdi.nameChampLexical != save || paragrapheOrdi.motAccepter == null)
+            if (paragrapheOrdi.nameChampLexical != save || paragrapheOrdi.motAccepter == null || paragrapheOrdi.motAccepter.Length != paragrapheOrdi.champLexical.words.Count)
             {
                 paragrapheOrdi.motAccepter = new bool[paragrapheOrdi.champLexical.words.Count];
                 for (int i = 0; i < paragrapheOrdi.champLexical.words.Count; i++)
@@ -49,5 +50,7 @@ public class SC_ParagrapheOrdiEditor : Editor
                 EditorGUILayout.EndHorizontal();
             }
         }
+
+        EditorUtility.SetDirty(paragrapheOrdi);
     }
 }

@@ -52,6 +52,8 @@ public class SC_ListWordsEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+
+        EditorUtility.SetDirty(listOfWords);
     }
 
     /*

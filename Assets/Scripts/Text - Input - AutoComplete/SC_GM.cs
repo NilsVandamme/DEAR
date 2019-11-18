@@ -31,6 +31,9 @@ public class SC_GM : MonoBehaviour
     [HideInInspector]
     // Liste des mots entre par le joueur
     public List<string> choosenWordInLetter;
+    [HideInInspector]
+    // Liste des mots choisis par le joueur
+    public List<Word> wheelOfWords;
 
     [HideInInspector]
     // Score de la scene

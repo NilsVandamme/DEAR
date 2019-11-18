@@ -12,5 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e2e9302b0a7454599204ebea877d47, type: 3}
   m_Name: ChampLexical 1
   m_EditorClassIdentifier: 
-  fichierWords: {fileID: 0}
-  words: []
+  fichierWords: {fileID: 4900000, guid: bcdeadd3a3d9d9e409f0eacf4e2adb5f, type: 3}
+  words:
+  - score: 0100000003000000
+    titre: Visit&
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - visit&
+    - visited&
+    - visiting&
+    - visit&
+    - none
+  - score: fbfffffffdffffff
+    titre: Anxiety&
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - anxious&
+    - anxious&
+    - anxious&
+    - anxiety&
+    - anxious&
