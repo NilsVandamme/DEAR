@@ -1724,8 +1724,8 @@ MonoBehaviour:
     Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas
     adipiscing ante non diam sodales hendrerit.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f9e506ae07d2d4f4e826fbf00c03c24f, type: 2}
-  m_sharedMaterial: {fileID: -2696448226709814767, guid: f9e506ae07d2d4f4e826fbf00c03c24f,
+  m_fontAsset: {fileID: 11400000, guid: a46b90ca552eaaa4c987f620b8d91874, type: 2}
+  m_sharedMaterial: {fileID: -4828613615170667613, guid: a46b90ca552eaaa4c987f620b8d91874,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 470
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1797,7 +1797,7 @@ MonoBehaviour:
     spaceCount: 123
     wordCount: 124
     linkCount: 0
-    lineCount: 14
+    lineCount: 21
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
