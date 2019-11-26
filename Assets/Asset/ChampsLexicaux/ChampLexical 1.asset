@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e2e9302b0a7454599204ebea877d47, type: 3}
   m_Name: ChampLexical 1
   m_EditorClassIdentifier: 
-  fichierWords: {fileID: 4900000, guid: bcdeadd3a3d9d9e409f0eacf4e2adb5f, type: 3}
+  fichierWords: {fileID: 4900000, guid: 11bebb6e6ab1e0f4787b6dc83821977b, type: 3}
   words:
   - score: 0100000003000000
     titre: Visit&
@@ -31,7 +31,7 @@ MonoBehaviour:
     - visiting&
     - visit&
     - none
-  - score: fbfffffffdffffff
+  - score: 02000000fdffffff
     titre: Anxiety&
     name:
     - Titre
