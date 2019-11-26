@@ -16,7 +16,7 @@ public class SC_ClientSelection : MonoBehaviour
     public void OpenClientInfos(int index)
     {
         WindowInfos.SetActive(true);
-
+        WindowInfos.transform.SetAsLastSibling();
         for (int i =0; i < CharactersProfilesList.Count; i++)
         {
             CharactersProfilesList[i].SetActive(false);
