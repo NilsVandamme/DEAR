@@ -15,6 +15,13 @@ MonoBehaviour:
   listChampsLexicals:
   - {fileID: 11400000, guid: 3c484eb6804f59a4c981648d921a1f98, type: 2}
   - {fileID: 11400000, guid: 9f5d2fa15ad1d8d4d8902bf0be2487ad, type: 2}
+  - {fileID: 11400000, guid: f1f508337dbb5d14b920b0781d5cf953, type: 2}
+  - {fileID: 11400000, guid: 8c5d1ff2fc5999c47811d9822201176c, type: 2}
+  - {fileID: 11400000, guid: 5f15a130012a78d4daefcfda2ed195d4, type: 2}
+  - {fileID: 11400000, guid: 1f93e94a2f3936f45bd63cc8edd0c8a3, type: 2}
+  - {fileID: 11400000, guid: 3377afafc10fa1448a86ad5139db6579, type: 2}
+  - {fileID: 11400000, guid: 653a9b2536dde96449b7601d3db6d195, type: 2}
+  - {fileID: 11400000, guid: f7d66cc860eeb224bbbeb356ddf03753, type: 2}
   nameChampsLexicals:
   - Test
   - Test2
