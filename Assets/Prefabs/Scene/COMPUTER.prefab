@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WindowInfos: {fileID: 6641389982772754237}
+  wtb: {fileID: 5861622492589573105}
   CharactersProfilesList:
   - {fileID: 8732583043992884240}
   - {fileID: 7158212004226030352}
@@ -9270,8 +9271,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WindowClients: {fileID: 16779531650734744}
+  ClientsWtb: {fileID: 5861622492589573105}
   WindowEmails: {fileID: 1045763632747726644}
+  EmailsWtb: {fileID: 866481595761703429}
   WindowTreeview: {fileID: 0}
+  TreeviewWtb: {fileID: 0}
 --- !u!1 &4298264422664804416
 GameObject:
   m_ObjectHideFlags: 0
