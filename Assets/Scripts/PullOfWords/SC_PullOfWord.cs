@@ -6,6 +6,23 @@ using UnityEngine.UI;
 
 public class SC_PullOfWord : MonoBehaviour
 {
+    // Object de la fenetre
+    public TMP_Dropdown critere;
+    public TMP_Dropdown perso;
+    public GameObject myButtons;
+
+    // Couleur des mots en fonction des points
+    private Dictionary<int, Color> color = 
+        new Dictionary<int, Color>()
+        {
+            {-3, Color.red},
+            {-2, new Color32(255, 128, 0, 255)},
+            {-1, Color.yellow},
+            {1, new Color32(128, 255, 0, 255)},
+            {2, Color.green},
+            {3, new Color32(0, 255, 128, 255)}
+        };
+
     // Nombre d'elem dans un CL
     private int numberOfElemInCL = 9;
     private int posElemCl = 4;
@@ -14,24 +31,35 @@ public class SC_PullOfWord : MonoBehaviour
     private List<string> listCritere = new List<string> {"Titre", "Verb", "Noun", "Adjectif"};
     private List<string> listPerso = new List<string> {"General"};
 
-    // Object de la fenetre
-    public TMP_Dropdown critere;
-    public TMP_Dropdown perso;
-    public GameObject myButtons;
-
     // Liste des CL, Words et infos les concernants
     private LayoutGroup[] allChampLexicaux;
     private bool[] isDisplay;
     private TextMeshProUGUI[][] champsLexicauxAndWords;
     private bool[][] toDisplay;
 
+    // Info sur les Words
+    private string[] namePerso;
+    private Dictionary<string, int> critereOfWord = 
+        new Dictionary<string, int>()
+        {
+            {"Verb", 0},
+            {"Noun", 3},
+            {"Adjectif", 4}
+        };
+
+
     /*
      * Init les CL et les Dropdown
      */
     private void Start()
     {
+        int x = 0;
+        namePerso = new string[SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].score.Length];
         for (int i = SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].critere.Length + 1; i < SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name.Length; i++)
+        {
             listPerso.Add(SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name[i]);
+            namePerso[x++] = SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name[i];
+        }
 
         critere.AddOptions(listCritere);
         perso.AddOptions(listPerso);
@@ -68,9 +96,9 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void Update()
     {
-        foreach ((string, Word, bool[]) elem in SC_GM_Master.gm.choosenWords)
+        foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
-                if (champsLexicauxAndWords[i][posElemCl].gameObject.activeSelf == false && champsLexicauxAndWords[i][posElemCl].text == elem.Item1)
+                if (champsLexicauxAndWords[i][posElemCl].gameObject.activeSelf == false && champsLexicauxAndWords[i][posElemCl].text == elem.GetCL())
                     champsLexicauxAndWords[i][posElemCl].gameObject.SetActive(true);
 
     }
@@ -105,32 +133,26 @@ public class SC_PullOfWord : MonoBehaviour
         int pos;
         isDisplay[index] = true;
 
-        foreach ((string, Word, bool[]) elem in SC_GM_Master.gm.choosenWords)
-            if (elem.Item1 == champsLexicauxAndWords[index][posElemCl].text)
-                if (critere.captionText.text == listCritere[0] && elem.Item2.titre != "none") // Titre
+        foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
+            if (elem.GetCL() == champsLexicauxAndWords[index][posElemCl].text)
+            {
+                pos = GetFirstMotLibre(index);
+                if (pos != -1)
                 {
-                    pos = GetFirstMotLibre(index);
-                    if (pos != -1)
-                        champsLexicauxAndWords[index][pos].text = elem.Item2.titre;
+                    if (critere.captionText.text == listCritere[0] && elem.GetWord().titre != "none") // Titre
+                    {
+                        toDisplay[index][pos] = true;
+                        champsLexicauxAndWords[index][pos].text = elem.GetWord().titre;
+                    }
+
+                    foreach (KeyValuePair<string, int> item in critereOfWord)
+                        if (critere.captionText.text == item.Key && elem.GetWord().critere[item.Value] != "none") // Critere
+                        {
+                            toDisplay[index][pos] = true;
+                            champsLexicauxAndWords[index][pos].text = elem.GetWord().critere[item.Value];
+                        }
                 }
-                else if (critere.captionText.text == listCritere[1] && elem.Item2.critere[0] != "none") // Verb
-                {
-                    pos = GetFirstMotLibre(index);
-                    if (pos != -1)
-                        champsLexicauxAndWords[index][pos].text = elem.Item2.critere[0];
-                }
-                else if (critere.captionText.text == listCritere[2] && elem.Item2.critere[3] != "none") // Noun
-                {
-                    pos = GetFirstMotLibre(index);
-                    if (pos != -1)
-                        champsLexicauxAndWords[index][pos].text = elem.Item2.critere[3];
-                }
-                else if (critere.captionText.text == listCritere[3] && elem.Item2.critere[4] != "none") // Adjectif
-                {
-                    pos = GetFirstMotLibre(index);
-                    if (pos != -1)
-                        champsLexicauxAndWords[index][pos].text = elem.Item2.critere[4];
-                }
+            }
     }
 
     /*
@@ -140,10 +162,7 @@ public class SC_PullOfWord : MonoBehaviour
     {
         for (int i = 0; i < numberOfElemInCL; i++)
             if (i != posElemCl && !toDisplay[index][i])
-            {
-                toDisplay[index][i] = true;
                 return i;
-            }
 
         return -1;
     }
@@ -196,14 +215,72 @@ public class SC_PullOfWord : MonoBehaviour
         for (int i = 0; i < champsLexicauxAndWords.Length; i++)
             for (int j = 0; j < champsLexicauxAndWords[i].Length; j++)
                 if (champsLexicauxAndWords[i][j] == tmp) // cherche le TMP_UGUI sur lequel on a clicker
-                    foreach ((string, Word, bool[]) elem in SC_GM_Master.gm.choosenWords)
-                        if (elem.Item1 == champsLexicauxAndWords[i][posElemCl].text &&
-                            ((champsLexicauxAndWords[i][j].text == elem.Item2.titre) || (champsLexicauxAndWords[i][j].text == elem.Item2.critere[0]) ||
-                            (champsLexicauxAndWords[i][j].text == elem.Item2.critere[3]) || (champsLexicauxAndWords[i][j].text == elem.Item2.critere[4]))) // cherche quel mot de la BD il correpond
+                {
+                    SC_WordInPull mot = getWordInPull(i, j);
+                    if (mot != null)
+                    {
+                        SC_GM.gm.wheelOfWords.Add(mot.GetWord());
+                        return;
+                    }
+
+                }
+    }
+
+    /*
+     * Met en couleur les mots en fonction de leur score aux personnages
+     */
+     public void OnValueChangePerso ()
+    {
+        // Remet tous les mots en noir
+        if (perso.captionText.text == listPerso[0])
+            foreach (TextMeshProUGUI[] liste in champsLexicauxAndWords)
+                foreach (TextMeshProUGUI mot in liste)
+                    mot.color = Color.black;
+
+        // Met les mots en couleurs
+        else
+        {
+            string perso = GetPersoInPull();
+            for (int i = 0; i < namePerso.Length; i++)
+                if (perso == namePerso[i]) // Trouve l'indice pour le score du perso
+                    for (int k = 0; k < champsLexicauxAndWords.Length; k++)
+                        for (int l = 0; l < champsLexicauxAndWords[k].Length; l++)
                         {
-                            SC_GM.gm.wheelOfWords.Add(elem.Item2);
-                            return;
+                            SC_WordInPull mot = getWordInPull(k, l);
+                            if (mot != null && mot.GetUsed()[i]) champsLexicauxAndWords[k][l].color = color[mot.GetWord().score[i]];
                         }
+        }
+    }
+
+    /*
+     * Récupere le perso selectionner dans le pull
+     */
+    private string GetPersoInPull ()
+    {
+        for (int i = 1; i < listPerso.Count; i++)
+            if (perso.captionText.text == listPerso[i])
+                return listPerso[i];
+
+        return null;
+    }
+
+    /*
+     * Trouve le mot du pull correspondant au TMP_UGUI (champsLexicauxAndWords[i][j])
+     */
+    private SC_WordInPull getWordInPull(int i, int j)
+    {
+        foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
+            if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
+            {
+                if (champsLexicauxAndWords[i][j].text == elem.GetWord().titre)
+                    return elem;
+
+                foreach (KeyValuePair<string, int> item in critereOfWord)
+                    if (champsLexicauxAndWords[i][j].text == elem.GetWord().critere[item.Value])
+                        return elem;
+            }
+
+        return null;
 
     }
 }
