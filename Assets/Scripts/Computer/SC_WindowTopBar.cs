@@ -13,12 +13,17 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
     public bool IsOpen;
 
     public Image btnImg;
-    public Text btnText;
+    //public Text btnText;
     private Animator windowAnim;
 
     private void Start()
     {
         windowAnim = GetComponentInParent<Animator>();
+    }
+
+    public void SetWindowFirst()
+    {
+        transform.parent.SetAsLastSibling();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -29,8 +34,6 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out Vector2 localpoint);
 
         offset = new Vector2(transform.parent.localPosition.x, transform.parent.localPosition.y) - localpoint;
-
-        transform.parent.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -71,7 +74,7 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
             //windowContent.SetActive(false);
 
             btnImg.color = new Color(0.63f, 1f, 0.46f); // green
-            btnText.text = "+";
+            //btnText.text = "+";
 
             windowAnim.SetTrigger("Min");
 
@@ -82,7 +85,7 @@ public class SC_WindowTopBar : MonoBehaviour, IDragHandler, IBeginDragHandler
             //windowContent.SetActive(true);
 
             btnImg.color = new Color(1f, 0.85f, 0.46f); // yellow
-            btnText.text = "-";
+            //btnText.text = "-";
 
             windowAnim.SetTrigger("Max");
 
