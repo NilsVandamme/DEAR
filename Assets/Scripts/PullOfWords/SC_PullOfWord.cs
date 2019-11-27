@@ -9,7 +9,8 @@ public class SC_PullOfWord : MonoBehaviour
     // Object de la fenetre
     public GameObject critere;
     public GameObject perso;
-    public GameObject whell;
+    public GameObject wheel;
+    public GameObject cancelWheel;
     public GameObject myButtons;
 
     // Couleur des mots en fonction des points
@@ -48,6 +49,10 @@ public class SC_PullOfWord : MonoBehaviour
             {"Adjectif", 4}
         };
 
+    // Liste des mots de la wheel
+    private TextMeshProUGUI[] listOfWheel;
+    private TextMeshProUGUI[] listOfCancelWheel;
+
 
     //##############################################################################################################################################################
     //##############################################################################################################################################################
@@ -60,8 +65,18 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void Start()
     {
+        InitWheel();
         InitCritereAndPerso();
         InitCLAndWordInCL();
+    }
+
+    /*
+     * Recupere la liste des critere et des perso. Met a jour les perso
+     */
+    private void InitWheel()
+    {
+        listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
+        listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
     }
 
     /*
