@@ -29,6 +29,7 @@ public class SC_ListChampLexicauxEditor : Editor
      */
     private void loadName ()
     {
+        //Debug.Log("nb champs lexicaux = " + listChampLexicaux.listChampsLexicals.Length);
         listChampLexicaux.nameChampsLexicals = new string[listChampLexicaux.listChampsLexicals.Length];
         for (int i = 0; i < listChampLexicaux.listChampsLexicals.Length; i++)
             listChampLexicaux.nameChampsLexicals[i] = listChampLexicaux.listChampsLexicals[i].fichierWords.name;

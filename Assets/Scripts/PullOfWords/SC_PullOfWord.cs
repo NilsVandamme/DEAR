@@ -77,9 +77,9 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void InitWheel()
     {
-        hasWordInWheel = new bool[listOfCancelWheel.Length];
         listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
         listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
+        hasWordInWheel = new bool[listOfCancelWheel.Length];
     }
 
     /*
@@ -111,7 +111,9 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void WriteWordAndCL()
     {
+        //Debug.Log("champslexicaux.lenght = " + allChampLexicaux.Length);
         hasWord = new bool[allChampLexicaux.Length][];
+        //Debug.Log("sc_gm_master = " + SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length);
         if (allChampLexicaux.Length == SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length)
             for (int i = 0; i < allChampLexicaux.Length; i++)
             {

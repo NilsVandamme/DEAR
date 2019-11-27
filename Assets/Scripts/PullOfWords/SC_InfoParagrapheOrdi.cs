@@ -9,12 +9,14 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 
     public void OnClickParagrapheOrdi()
     {
+        Debug.Log(gameObject.name + " paragraph has been clicked");
         button.text = info.champLexical.fichierWords.name;
         button.gameObject.SetActive(true);
     }
 
     public void OnClickButtonConfirm()
     {
+        Debug.Log(gameObject.name + " button has been clicked");
         bool[] tabBool = new bool[SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].score.Length];
         for (int i = 0; i < info.motAccepter.Length; i++)
             if (info.motAccepter[i])
