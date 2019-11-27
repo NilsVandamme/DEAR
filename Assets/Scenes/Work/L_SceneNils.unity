@@ -7093,7 +7093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &754739588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7285,7 +7285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1052997242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7875,7 +7875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1554483983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8237,22 +8237,8 @@ MonoBehaviour:
   firstScene: 
   secondScene: 
   thirdScene: 
-  paragraphsConfirmed: 0
-  snapPositions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ddcontrols:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  acompletes: []
   choosenWordInLetter: []
   wheelOfWords: []
-  score: 0
 --- !u!4 &1881016861
 Transform:
   m_ObjectHideFlags: 0
@@ -8997,6 +8983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PAPER2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840496846890042076, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6840496846890042077, guid: 218d32f5c2e47a543b141ab36cfdec3c,
         type: 3}
