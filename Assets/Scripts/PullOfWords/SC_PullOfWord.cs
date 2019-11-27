@@ -298,6 +298,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
+        //Debug.Log("addword running");
         int k = GetFirstMotInWheelLibre();
         if (k == -1)
             return;
@@ -306,10 +307,12 @@ public class SC_PullOfWord : MonoBehaviour
             for (int j = 0; j < champsLexicauxAndWords[i].Length; j++)
                 if (champsLexicauxAndWords[i][j] == tmp) // cherche le TMP_UGUI sur lequel on a clicker
                 {
+                    //Debug.Log("addword if 1");
                     SC_WordInPull mot = getWordInPull(champsLexicauxAndWords[i][j].text);
                     if (mot != null)
                     {
-                        listOfWheel[i].text = mot.GetWord().titre;
+                        //Debug.Log("addword if 2");
+                        listOfWheel[k].text = mot.GetWord().titre;
                         SC_GM.gm.wheelOfWords.Add(mot.GetWord());
                         return;
                     }
@@ -323,7 +326,7 @@ public class SC_PullOfWord : MonoBehaviour
     private int GetFirstMotInWheelLibre()
     {
         for (int i = 0; i < listOfCancelWheel.Length; i++)
-            if (hasWordInWheel[i])
+            if (!hasWordInWheel[i])
             {
                 hasWordInWheel[i] = true;
                 return i;
@@ -337,6 +340,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
      public void OnClickRemoveWordInWheel(TextMeshProUGUI tmp)
     {
+        Debug.Log("remove word running");
         for (int i = 0; i < listOfCancelWheel.Length; i++)
             if (listOfCancelWheel[i] == tmp)
             {
