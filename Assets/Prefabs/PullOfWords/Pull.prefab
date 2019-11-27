@@ -1767,7 +1767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -591.6, y: 327.8}
+  m_AnchoredPosition: {x: 10.799927, y: 327.8}
   m_SizeDelta: {x: 481.6001, y: 231}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511407075408149532
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3245,7 +3245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critere: {fileID: 5034044326858491985}
   perso: {fileID: 4001105017082904242}
-  whell: {fileID: 3492993355941004704}
+  wheel: {fileID: 0}
+  cancelWheel: {fileID: 0}
   myButtons: {fileID: 511407076275018789}
 --- !u!1 &511407077310873968
 GameObject:

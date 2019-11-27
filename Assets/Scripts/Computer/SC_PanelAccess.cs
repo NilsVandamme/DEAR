@@ -9,7 +9,6 @@ public class SC_PanelAccess : MonoBehaviour
     public GameObject WindowEmails;
     public SC_WindowTopBar EmailsWtb;
     public GameObject WindowTreeview;
-    public SC_WindowTopBar TreeviewWtb;
 
     public void OpenWindowInfos()
     {
@@ -56,6 +55,14 @@ public class SC_PanelAccess : MonoBehaviour
         if (WindowTreeview.activeSelf == false)
         {
             WindowTreeview.SetActive(true);
+        }
+    }
+
+    public void CloseWindowTreeView()
+    {
+        if (WindowTreeview.activeSelf == true)
+        {
+            WindowTreeview.SetActive(false);
         }
     }
 }
