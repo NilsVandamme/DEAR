@@ -74,9 +74,6 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, Input.mousePosition, cam, out newPos);
         myInputField.transform.position = new Vector3(newPos.x, myInputField.transform.position.y, newPos.z);
 
-        //Debug.Log("camera position: " + newPos);
-        //Debug.Log("inputfield position: " + myInputField.transform.position);
-
         if (linkIndex != -1)
         {
             TMP_LinkInfo linkInfo = myText.textInfo.linkInfo[linkIndex];
