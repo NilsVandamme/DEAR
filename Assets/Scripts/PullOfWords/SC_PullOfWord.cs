@@ -124,6 +124,7 @@ public class SC_PullOfWord : MonoBehaviour
         else
             Debug.LogError("Il faut le même nombre de champs lexicaux dans GM_Master que de champs lexicaux à afficher dans le Pull");
 
+        Debug.Log("choosenword lenght = " + SC_GM_Master.gm.choosenWords.Count);
         foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
@@ -312,6 +313,7 @@ public class SC_PullOfWord : MonoBehaviour
                         if (SC_GM.gm.wheelOfWords.Contains(mot.GetWord()))
                             return;
 
+                        hasWordInWheel[k] = true;
                         listOfCancelWheel[k].text = "X";
                         listOfWheel[k].text = mot.GetWord().titre;
                         SC_GM.gm.wheelOfWords.Add(mot.GetWord());
@@ -328,10 +330,7 @@ public class SC_PullOfWord : MonoBehaviour
     {
         for (int i = 0; i < listOfCancelWheel.Length; i++)
             if (!hasWordInWheel[i])
-            {
-                hasWordInWheel[i] = true;
                 return i;
-            }
 
         return -1;
     }

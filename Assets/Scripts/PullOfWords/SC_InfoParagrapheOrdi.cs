@@ -22,12 +22,8 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
                 SC_WordInPull elem = new SC_WordInPull(info.champLexical.fichierWords.name, info.champLexical.words[i], tabBool);
 
                 foreach (SC_WordInPull wordPull in SC_GM_Master.gm.choosenWords)
-                    if (wordPull.GetCL() == elem.GetCL())
-                    {
-                        SC_GM_Master.gm.choosenWords.Remove(wordPull);
-                        SC_GM_Master.gm.choosenWords.Add(elem);
+                    if (wordPull.GetWord().titre == elem.GetWord().titre)
                         return;
-                    }
 
                 SC_GM_Master.gm.choosenWords.Add(elem);
             }
