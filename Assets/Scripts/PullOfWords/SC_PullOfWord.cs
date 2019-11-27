@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -50,6 +51,7 @@ public class SC_PullOfWord : MonoBehaviour
         };
 
     // Liste des mots de la wheel
+    private bool[] hasWordInWheel;
     private TextMeshProUGUI[] listOfWheel;
     private TextMeshProUGUI[] listOfCancelWheel;
 
@@ -75,6 +77,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void InitWheel()
     {
+        hasWordInWheel = new bool[listOfCancelWheel.Length];
         listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
         listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
     }
@@ -257,7 +260,7 @@ public class SC_PullOfWord : MonoBehaviour
                     for (int k = 0; k < champsLexicauxAndWords.Length; k++)
                         for (int l = 0; l < champsLexicauxAndWords[k].Length; l++)
                         {
-                            SC_WordInPull mot = getWordInPull(k, l);
+                            SC_WordInPull mot = getWordInPull(champsLexicauxAndWords[k][l].text);
                             if (mot != null && mot.GetUsed()[i]) champsLexicauxAndWords[k][l].color = color[mot.GetWord().score[i]];
                         }
         }
@@ -266,18 +269,17 @@ public class SC_PullOfWord : MonoBehaviour
     /*
      * Trouve le mot du pull correspondant au TMP_UGUI (champsLexicauxAndWords[i][j])
      */
-    private SC_WordInPull getWordInPull(int i, int j)
+    private SC_WordInPull getWordInPull(string mot)
     {
         foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
-            if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
-            {
-                if (champsLexicauxAndWords[i][j].text == elem.GetWord().titre)
-                    return elem;
+        {
+            if (mot == elem.GetWord().titre)
+                return elem;
 
-                foreach (KeyValuePair<string, int> item in critereOfWord)
-                    if (champsLexicauxAndWords[i][j].text == elem.GetWord().critere[item.Value])
-                        return elem;
-            }
+            foreach (KeyValuePair<string, int> item in critereOfWord)
+                if (mot == elem.GetWord().critere[item.Value])
+                    return elem;
+        }
 
         return null;
 
@@ -294,20 +296,52 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
-        if (idCurrentCritere == 0 && idCurrentPerso == 0)
+        int k = GetFirstMotInWheelLibre();
+        if (k == -1)
             return;
 
         for (int i = 0; i < champsLexicauxAndWords.Length; i++)
             for (int j = 0; j < champsLexicauxAndWords[i].Length; j++)
                 if (champsLexicauxAndWords[i][j] == tmp) // cherche le TMP_UGUI sur lequel on a clicker
                 {
-                    SC_WordInPull mot = getWordInPull(i, j);
+                    SC_WordInPull mot = getWordInPull(champsLexicauxAndWords[i][j].text);
                     if (mot != null)
                     {
+                        listOfWheel[i].text = mot.GetWord().titre;
                         SC_GM.gm.wheelOfWords.Add(mot.GetWord());
                         return;
                     }
 
                 }
+    }
+
+    /*
+    * Trouve le premier mot de la wheel disponible et retoune sa position
+    */
+    private int GetFirstMotInWheelLibre()
+    {
+        for (int i = 0; i < listOfCancelWheel.Length; i++)
+            if (hasWordInWheel[i])
+            {
+                hasWordInWheel[i] = true;
+                return i;
+            }
+
+        return -1;
+    }
+
+    /*
+     * Remove le mot de la wheel
+     */
+     public void OnClickRemoveWordInWheel(TextMeshProUGUI tmp)
+    {
+        for (int i = 0; i < listOfCancelWheel.Length; i++)
+            if (listOfCancelWheel[i] == tmp)
+            {
+                hasWordInWheel[i] = false;
+                SC_GM.gm.wheelOfWords.Remove(getWordInPull(listOfWheel[i].text).GetWord());
+                listOfWheel[i].text = "";
+            }
+
     }
 }
