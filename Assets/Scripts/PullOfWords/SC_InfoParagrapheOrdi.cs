@@ -15,6 +15,7 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 
     public void OnClickButtonConfirm()
     {
+        Debug.Log("Clic");
         bool[] tabBool = new bool[SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].score.Length];
         for (int i = 0; i < info.motAccepter.Length; i++)
             if (info.motAccepter[i])
