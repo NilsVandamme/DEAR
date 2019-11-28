@@ -7,9 +7,15 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 {
     public SC_ParagrapheOrdi info;
     public TextMeshProUGUI collect;
+    public TextMeshProUGUI pull;
     public Image image;
 
     private bool validate = false;
+
+    private void Start()
+    {
+        pull.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
+    }
 
     public void OnClickParagrapheOrdi()
     {
@@ -46,7 +52,7 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
     private void Highlight ()
     {
         SC_GM.gm.numberOfCLRecover++;
-        SC_GM.gm.ratioCLRecover.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
+        pull.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
         validate = true;
         image.color = Color.gray;
 

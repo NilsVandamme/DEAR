@@ -9,7 +9,6 @@ public class SC_GM : MonoBehaviour
     [HideInInspector]
     public int numberOfCLRecover = 0;
     public int numberOfCLRecoverable;
-    public TextMeshProUGUI ratioCLRecover;
 
     // Prochaines Scenes
     [HideInInspector]
@@ -41,7 +40,6 @@ public class SC_GM : MonoBehaviour
         else if (gm != null)
             Destroy(gameObject);
 
-        ratioCLRecover.text = numberOfCLRecover.ToString() + "/" + numberOfCLRecoverable.ToString();
     }
 
    
