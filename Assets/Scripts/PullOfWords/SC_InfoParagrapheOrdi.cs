@@ -1,31 +1,65 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SC_InfoParagrapheOrdi : MonoBehaviour
 {
     public SC_ParagrapheOrdi info;
-    public TextMeshProUGUI button;
+    public TextMeshProUGUI collect;
+    public TextMeshProUGUI pull;
+    public Image image;
+
+    private bool validate = false;
+
+    private void Start()
+    {
+        pull.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
+    }
 
     public void OnClickParagrapheOrdi()
     {
-        button.text = info.champLexical.fichierWords.name;
-        button.gameObject.SetActive(true);
+        if (!validate)
+        {
+            image.gameObject.SetActive(!image.IsActive());
+            //button.text = info.champLexical.fichierWords.name;
+            collect.gameObject.SetActive(!collect.IsActive());
+
+        }
     }
 
     public void OnClickButtonConfirm()
     {
-        bool[] tabBool = new bool[SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].score.Length];
-        for (int i = 0; i < info.motAccepter.Length; i++)
-            if (info.motAccepter[i])
-            {
-                SC_WordInPull elem = new SC_WordInPull(info.champLexical.fichierWords.name, info.champLexical.words[i], tabBool);
+        if (SC_GM.gm.numberOfCLRecover < SC_GM.gm.numberOfCLRecoverable)
+        {
+            Highlight();
 
-                foreach (SC_WordInPull wordPull in SC_GM_Master.gm.choosenWords)
-                    if (wordPull.GetWord().titre == elem.GetWord().titre)
-                        return;
+            bool[] tabBool = new bool[SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].score.Length];
+            for (int i = 0; i < info.motAccepter.Length; i++)
+                if (info.motAccepter[i])
+                {
+                    SC_WordInPull elem = new SC_WordInPull(info.champLexical.fichierWords.name, info.champLexical.words[i], tabBool);
 
-                SC_GM_Master.gm.choosenWords.Add(elem);
-            }
+                    foreach (SC_WordInPull wordPull in SC_GM_Master.gm.choosenWords)
+                        if (wordPull.GetWord().titre == elem.GetWord().titre)
+                            return;
+
+                    SC_GM_Master.gm.choosenWords.Add(elem);
+                }
+        }
+    }
+
+    private void Highlight ()
+    {
+        SC_GM.gm.numberOfCLRecover++;
+        pull.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
+        validate = true;
+        image.color = Color.gray;
+
+        if (SC_GM.gm.numberOfCLRecover == SC_GM.gm.numberOfCLRecoverable)
+        {
+            UnityEvent pullComplete = new UnityEvent();
+            //pullComplete.AddListener(nomFoctionToListen);
+        }
     }
 }
