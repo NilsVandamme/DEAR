@@ -15,13 +15,14 @@ public class SC_PaperGM : MonoBehaviour
 
     // Asset des mots
     public bool paragraphsConfirmed;
-    public List<SC_PaperSnapGrid> snapPositions;
+    public SC_PaperSnapGrid[] snapPositions;
     public SC_DragDropControls[] ddcontrols;
     [HideInInspector]
     public List<SC_AutoComplete> acompletes;
 
     private void Start()
     {
+        snapPositions = FindObjectsOfType<SC_PaperSnapGrid>();
         ddcontrols = FindObjectsOfType<SC_DragDropControls>();
     }
 
@@ -54,7 +55,7 @@ public class SC_PaperGM : MonoBehaviour
 
         if (paragraphsConfirmed == false)
         {
-            for (int i = 0; i < snapPositions.Count; i++)
+            for (int i = 0; i < snapPositions.Length; i++)
                 if (snapPositions[i].currentSnappedObject != null && !acompletes.Contains(snapPositions[i].currentSnappedObject.GetComponentInChildren<SC_AutoComplete>()))
                 {
                     acompletes.Add(snapPositions[i].currentSnappedObject.GetComponentInChildren<SC_AutoComplete>());
