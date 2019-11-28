@@ -645,7 +645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
-  button: {fileID: 8544439679507924002}
+  collect: {fileID: 8544439679507924002}
+  pull: {fileID: 6343832157719882730}
   image: {fileID: 1003817562111705880}
 --- !u!1 &9094263440170871198
 GameObject:
