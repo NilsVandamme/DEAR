@@ -65,11 +65,12 @@ public class SC_PullOfWord : MonoBehaviour
     /*
      * Init les CL et les Dropdown
      */
-    private void Start()
+    public void myStart()
     {
         InitWheel();
         InitCritereAndPerso();
         InitCLAndWordInCL();
+        WriteWordAndCL();
     }
 
     /*
@@ -109,7 +110,7 @@ public class SC_PullOfWord : MonoBehaviour
     /*
      * Met a jour les zone de texte des CL et des mots inclus
      */
-    public void WriteWordAndCL()
+    private void WriteWordAndCL()
     {
         //Debug.Log("champslexicaux.lenght = " + allChampLexicaux.Length);
         hasWord = new bool[allChampLexicaux.Length][];
@@ -253,7 +254,7 @@ public class SC_PullOfWord : MonoBehaviour
         if (idCurrentPerso == 0)
             foreach (TextMeshProUGUI[] liste in champsLexicauxAndWords)
                 foreach (TextMeshProUGUI mot in liste)
-                    mot.color = Color.black;
+                    mot.color = Color.white;
 
         // Met les mots en couleurs
         else
