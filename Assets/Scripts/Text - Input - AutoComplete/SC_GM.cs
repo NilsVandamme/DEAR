@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +39,7 @@ public class SC_GM : MonoBehaviour
             gm = this;
         else if (gm != null)
             Destroy(gameObject);
+
     }
 
    
