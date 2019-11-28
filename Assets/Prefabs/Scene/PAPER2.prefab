@@ -836,6 +836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6840496846890042077}
+  - component: {fileID: 2867455821909366500}
   m_Layer: 0
   m_Name: PAPER2
   m_TagString: Untagged
@@ -864,6 +865,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2867455821909366500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6840496846890042076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c9b31273812994880aa65aa3a01ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleScore: 0
+  score: 0
+  paragraphsConfirmed: 0
+  snapPositions:
+  - {fileID: 6840496845758673209}
+  - {fileID: 6840496846317378879}
+  - {fileID: 6840496846120765254}
+  - {fileID: 6840496846560999078}
+  - {fileID: 6840496847019236444}
+  ddcontrols: []
+  acompletes: []
 --- !u!1 &6840496847019236443
 GameObject:
   m_ObjectHideFlags: 0

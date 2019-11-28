@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class SC_PullOfWord : MonoBehaviour
     // Object de la fenetre
     public GameObject critere;
     public GameObject perso;
-    public GameObject whell;
+    public GameObject wheel;
+    public GameObject cancelWheel;
     public GameObject myButtons;
 
     // Couleur des mots en fonction des points
@@ -48,6 +50,11 @@ public class SC_PullOfWord : MonoBehaviour
             {"Adjectif", 4}
         };
 
+    // Liste des mots de la wheel
+    private bool[] hasWordInWheel;
+    private TextMeshProUGUI[] listOfWheel;
+    private TextMeshProUGUI[] listOfCancelWheel;
+
 
     //##############################################################################################################################################################
     //##############################################################################################################################################################
@@ -60,8 +67,19 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void Start()
     {
+        InitWheel();
         InitCritereAndPerso();
         InitCLAndWordInCL();
+    }
+
+    /*
+     * Recupere la liste des critere et des perso. Met a jour les perso
+     */
+    private void InitWheel()
+    {
+        listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
+        listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
+        hasWordInWheel = new bool[listOfCancelWheel.Length];
     }
 
     /*
@@ -93,7 +111,9 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void WriteWordAndCL()
     {
+        //Debug.Log("champslexicaux.lenght = " + allChampLexicaux.Length);
         hasWord = new bool[allChampLexicaux.Length][];
+        //Debug.Log("sc_gm_master = " + SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length);
         if (allChampLexicaux.Length == SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length)
             for (int i = 0; i < allChampLexicaux.Length; i++)
             {
@@ -104,6 +124,7 @@ public class SC_PullOfWord : MonoBehaviour
         else
             Debug.LogError("Il faut le même nombre de champs lexicaux dans GM_Master que de champs lexicaux à afficher dans le Pull");
 
+        Debug.Log("choosenword lenght = " + SC_GM_Master.gm.choosenWords.Count);
         foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
@@ -242,7 +263,7 @@ public class SC_PullOfWord : MonoBehaviour
                     for (int k = 0; k < champsLexicauxAndWords.Length; k++)
                         for (int l = 0; l < champsLexicauxAndWords[k].Length; l++)
                         {
-                            SC_WordInPull mot = getWordInPull(k, l);
+                            SC_WordInPull mot = getWordInPull(champsLexicauxAndWords[k][l].text);
                             if (mot != null && mot.GetUsed()[i]) champsLexicauxAndWords[k][l].color = color[mot.GetWord().score[i]];
                         }
         }
@@ -251,18 +272,17 @@ public class SC_PullOfWord : MonoBehaviour
     /*
      * Trouve le mot du pull correspondant au TMP_UGUI (champsLexicauxAndWords[i][j])
      */
-    private SC_WordInPull getWordInPull(int i, int j)
+    private SC_WordInPull getWordInPull(string mot)
     {
         foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
-            if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
-            {
-                if (champsLexicauxAndWords[i][j].text == elem.GetWord().titre)
-                    return elem;
+        {
+            if (mot == elem.GetWord().titre)
+                return elem;
 
-                foreach (KeyValuePair<string, int> item in critereOfWord)
-                    if (champsLexicauxAndWords[i][j].text == elem.GetWord().critere[item.Value])
-                        return elem;
-            }
+            foreach (KeyValuePair<string, int> item in critereOfWord)
+                if (mot == elem.GetWord().critere[item.Value])
+                    return elem;
+        }
 
         return null;
 
@@ -279,20 +299,56 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
-        if (idCurrentCritere == 0 && idCurrentPerso == 0)
+        int k = GetFirstMotInWheelLibre();
+        if (k == -1)
             return;
 
         for (int i = 0; i < champsLexicauxAndWords.Length; i++)
             for (int j = 0; j < champsLexicauxAndWords[i].Length; j++)
                 if (champsLexicauxAndWords[i][j] == tmp) // cherche le TMP_UGUI sur lequel on a clicker
                 {
-                    SC_WordInPull mot = getWordInPull(i, j);
+                    SC_WordInPull mot = getWordInPull(champsLexicauxAndWords[i][j].text);
                     if (mot != null)
                     {
+                        if (SC_GM.gm.wheelOfWords.Contains(mot.GetWord()))
+                            return;
+
+                        hasWordInWheel[k] = true;
+                        listOfCancelWheel[k].text = "X";
+                        listOfWheel[k].text = mot.GetWord().titre;
                         SC_GM.gm.wheelOfWords.Add(mot.GetWord());
                         return;
                     }
 
                 }
+    }
+
+    /*
+    * Trouve le premier mot de la wheel disponible et retoune sa position
+    */
+    private int GetFirstMotInWheelLibre()
+    {
+        for (int i = 0; i < listOfCancelWheel.Length; i++)
+            if (!hasWordInWheel[i])
+                return i;
+
+        return -1;
+    }
+
+    /*
+     * Remove le mot de la wheel
+     */
+     public void OnClickRemoveWordInWheel(TextMeshProUGUI tmp)
+    {
+        Debug.Log("remove word running");
+        for (int i = 0; i < listOfCancelWheel.Length; i++)
+            if (listOfCancelWheel[i] == tmp)
+            {
+                hasWordInWheel[i] = false;
+                SC_GM.gm.wheelOfWords.Remove(getWordInPull(listOfWheel[i].text).GetWord());
+                listOfWheel[i].text = "";
+                listOfCancelWheel[i].text = "";
+            }
+
     }
 }

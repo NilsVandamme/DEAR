@@ -20,8 +20,12 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
             if (info.motAccepter[i])
             {
                 SC_WordInPull elem = new SC_WordInPull(info.champLexical.fichierWords.name, info.champLexical.words[i], tabBool);
-                if (!SC_GM_Master.gm.choosenWords.Contains(elem))
-                    SC_GM_Master.gm.choosenWords.Add(elem);
+
+                foreach (SC_WordInPull wordPull in SC_GM_Master.gm.choosenWords)
+                    if (wordPull.GetWord().titre == elem.GetWord().titre)
+                        return;
+
+                SC_GM_Master.gm.choosenWords.Add(elem);
             }
     }
 }
