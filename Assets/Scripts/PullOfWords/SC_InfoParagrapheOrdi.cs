@@ -9,6 +9,8 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
     public TextMeshProUGUI collect;
     public TextMeshProUGUI pull;
     public Image image;
+    public Animator ArboAnim;
+    
 
     private bool validate = false;
 
@@ -58,8 +60,7 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 
         if (SC_GM.gm.numberOfCLRecover == SC_GM.gm.numberOfCLRecoverable)
         {
-            UnityEvent pullComplete = new UnityEvent();
-            //pullComplete.AddListener(nomFoctionToListen);
+            ArboAnim.SetTrigger("ArboIsFull");
         }
     }
 }
