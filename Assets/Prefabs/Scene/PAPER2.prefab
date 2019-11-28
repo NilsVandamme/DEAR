@@ -816,7 +816,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2867455821909366500}
         m_MethodName: OnClickConfirmButton
         m_Mode: 1
         m_Arguments:
@@ -880,12 +880,7 @@ MonoBehaviour:
   peopleScore: 0
   score: 0
   paragraphsConfirmed: 0
-  snapPositions:
-  - {fileID: 6840496845758673209}
-  - {fileID: 6840496846317378879}
-  - {fileID: 6840496846120765254}
-  - {fileID: 6840496846560999078}
-  - {fileID: 6840496847019236444}
+  snapPositions: []
   ddcontrols: []
   acompletes: []
 --- !u!1 &6840496847019236443
@@ -1190,7 +1185,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2867455821909366500}
         m_MethodName: OnClickSubmitButton
         m_Mode: 1
         m_Arguments:
