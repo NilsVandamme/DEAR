@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class SC_LoadingScreen : MonoBehaviour
 {
     public static SC_LoadingScreen Instance; // Instance of this script
-    public string LoadedScene; // Name of the scene which will be loaded
+    private string LoadedScene; // Name of the scene which will be loaded
     private Animator anim; // Animator of the load screen
     private Image loadImage; // Image of the load screen
 
@@ -50,9 +50,10 @@ public class SC_LoadingScreen : MonoBehaviour
     */
 
     // Load the scene indicated by LoadedScene and trigger the loadscreen animation
-    public void LoadThisScene()
+    public void LoadThisScene( string sceneToLoad)
     {
         loadImage.enabled = true;
+        LoadedScene = sceneToLoad;
         anim.SetTrigger("Show");
         StartCoroutine("MinimumLoadTime");
 
