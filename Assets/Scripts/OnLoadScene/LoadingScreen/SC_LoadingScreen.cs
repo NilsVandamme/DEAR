@@ -56,7 +56,7 @@ public class SC_LoadingScreen : MonoBehaviour
         LoadedScene = sceneToLoad;
         anim.SetTrigger("Show");
         StartCoroutine("MinimumLoadTime");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
