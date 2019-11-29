@@ -54,6 +54,8 @@ public class SC_PullOfWord : MonoBehaviour
     private bool[] hasWordInWheel;
     private TextMeshProUGUI[] listOfWheel;
     private TextMeshProUGUI[] listOfCancelWheel;
+    public TextMeshProUGUI chooseXWord;
+    private int currentChoosenCritere;
 
 
     //##############################################################################################################################################################
@@ -65,7 +67,7 @@ public class SC_PullOfWord : MonoBehaviour
     /*
      * Init les CL et les Dropdown
      */
-    public void myStart()
+    public void MyStart()
     {
         InitWheel();
         InitCritereAndPerso();
@@ -81,6 +83,8 @@ public class SC_PullOfWord : MonoBehaviour
         listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
         listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
         hasWordInWheel = new bool[listOfCancelWheel.Length];
+
+        Bonus();
     }
 
     /*
@@ -112,7 +116,6 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void WriteWordAndCL()
     {
-        //Debug.Log("champslexicaux.lenght = " + allChampLexicaux.Length);
         hasWord = new bool[allChampLexicaux.Length][];
         //Debug.Log("sc_gm_master = " + SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length);
         if (allChampLexicaux.Length == SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length)
@@ -125,7 +128,6 @@ public class SC_PullOfWord : MonoBehaviour
         else
             Debug.LogError("Il faut le même nombre de champs lexicaux dans GM_Master que de champs lexicaux à afficher dans le Pull");
 
-        Debug.Log("choosenword lenght = " + SC_GM_Master.gm.choosenWords.Count);
         foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
@@ -145,6 +147,34 @@ public class SC_PullOfWord : MonoBehaviour
             }
 
         return -1;
+    }
+
+    private void Bonus(int val = 0)
+    {
+        if (SC_GM.gm.activeBonus)
+            if (SC_GM.gm.numberOfVerb != 0)
+            {
+                SC_GM.gm.numberOfVerb -= val;
+                chooseXWord.text = "Choose " + SC_GM.gm.numberOfVerb + " Verbs";
+                currentChoosenCritere = 1;
+            }
+            else if (SC_GM.gm.numberOfNoun != 0)
+            {
+                SC_GM.gm.numberOfNoun -= val;
+                chooseXWord.text = "Choose " + SC_GM.gm.numberOfNoun + " Nouns";
+                currentChoosenCritere = 2;
+            }
+            else if (SC_GM.gm.numberOfAdjectives != 0)
+            {
+                SC_GM.gm.numberOfAdjectives -= val;
+                chooseXWord.text = "Choose " + SC_GM.gm.numberOfAdjectives + " Adjectives";
+                currentChoosenCritere = 3;
+            }
+            else
+            {
+                chooseXWord.text = "Selection Finish";
+                currentChoosenCritere = 0;
+            }
     }
 
     //##############################################################################################################################################################
@@ -300,6 +330,9 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
+        if (SC_GM.gm.activeBonus && currentChoosenCritere != idCurrentCritere)
+            return;
+
         int k = GetFirstMotInWheelLibre();
         if (k == -1)
             return;
@@ -318,6 +351,9 @@ public class SC_PullOfWord : MonoBehaviour
                         listOfCancelWheel[k].text = "X";
                         listOfWheel[k].text = mot.GetWord().titre;
                         SC_GM.gm.wheelOfWords.Add(mot.GetWord());
+
+                        Bonus(1);
+
                         return;
                     }
 
