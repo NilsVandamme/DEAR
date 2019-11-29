@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -73,24 +74,10 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void MyStart()
     {
-        InitWheel();
         InitCritereAndPerso();
+        InitWheel();
         InitCLAndWordInCL();
         WriteWordAndCL();
-    }
-
-    /*
-     * Recupere la liste des critere et des perso. Met a jour les perso
-     */
-    private void InitWheel()
-    {
-        listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
-        listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
-        hasWordInWheel = new (bool, int)[listOfCancelWheel.Length];
-
-        numberOfWordPerCritere = new int[] {SC_GM.gm.numberOfWordForEachCritere.verb, SC_GM.gm.numberOfWordForEachCritere.noun, SC_GM.gm.numberOfWordForEachCritere.adjectif};
-
-        Bonus();
     }
 
     /*
@@ -104,6 +91,20 @@ public class SC_PullOfWord : MonoBehaviour
             i < SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name.Length;
             i++, j++)
             listOfPerso[j].text = SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].name[i];
+    }
+
+    /*
+     * Recupere la liste des critere et des perso. Met a jour les perso
+     */
+    private void InitWheel()
+    {
+        listOfCancelWheel = cancelWheel.GetComponentsInChildren<TextMeshProUGUI>();
+        listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
+        hasWordInWheel = new (bool, int)[listOfCancelWheel.Length];
+
+        numberOfWordPerCritere = new int[] { SC_GM.gm.numberOfWordForEachCritere.verb, SC_GM.gm.numberOfWordForEachCritere.noun, SC_GM.gm.numberOfWordForEachCritere.adjectif };
+
+        Bonus();
     }
 
     /*
@@ -163,7 +164,7 @@ public class SC_PullOfWord : MonoBehaviour
                 if (numberOfWordPerCritere[i] != 0)
                 {
                     numberOfWordPerCritere[i] -= val;
-                    chooseXWord.text = "Choose " + numberOfWordPerCritere[i] + " Verbs";
+                    chooseXWord.text = "Choose " + numberOfWordPerCritere[i] + " " + listOfCritere[i + 1].text;
                     currentChoosenCritere = valeurCritere[i];
                     if (numberOfWordPerCritere[i] != 0)
                         return;

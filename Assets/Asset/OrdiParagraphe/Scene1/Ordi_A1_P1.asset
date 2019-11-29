@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58bf807b26898294e8dc3a4f67ee89a4, type: 3}
-  m_Name: OrdiParagraphe
+  m_Name: Ordi_A1_P1
   m_EditorClassIdentifier: 
   listChampLexicaux: {fileID: 11400000, guid: 9d8752c471e94ac44a30d18b4b0e7861, type: 2}
-  champLexical: {fileID: 11400000, guid: 3c484eb6804f59a4c981648d921a1f98, type: 2}
+  champLexical: {fileID: 11400000, guid: 7e431e5cc0f09564588393b3c77efdd7, type: 2}
   nameChampLexical: 0
-  motAccepter: 0101
+  motAccepter: 0000000000
