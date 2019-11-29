@@ -5,46 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: "Assets/Scenes/Work/L_SceneJulienN\xB02.unity"
-    guid: d3dbc0b6371390a4d8d39202066775d9
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/FINAL/L_00_Menu.unity
+    guid: 2b462275d47ba714da26b05d75a105a2
   - enabled: 1
     path: Assets/Scenes/FINAL/L_A1.unity
     guid: f28590ba85c5d8142b8106a9e84fc318
-  - enabled: 1
-    path: Assets/Scenes/Game/L_Menu.unity
-    guid: f4e8e13de5e42f745ad46dd6fd6f38ba
   m_configObjects: {}
