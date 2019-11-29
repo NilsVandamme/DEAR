@@ -54,7 +54,7 @@ public class SC_PullOfWord : MonoBehaviour
     private bool[] hasWordInWheel;
     private TextMeshProUGUI[] listOfWheel;
     private TextMeshProUGUI[] listOfCancelWheel;
-    private TextMeshProUGUI chooseXWord;
+    public TextMeshProUGUI chooseXWord;
     private int currentChoosenCritere;
 
 
@@ -67,7 +67,7 @@ public class SC_PullOfWord : MonoBehaviour
     /*
      * Init les CL et les Dropdown
      */
-    public void myStart()
+    public void MyStart()
     {
         InitWheel();
         InitCritereAndPerso();
@@ -116,7 +116,6 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void WriteWordAndCL()
     {
-        //Debug.Log("champslexicaux.lenght = " + allChampLexicaux.Length);
         hasWord = new bool[allChampLexicaux.Length][];
         //Debug.Log("sc_gm_master = " + SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length);
         if (allChampLexicaux.Length == SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length)
@@ -129,7 +128,6 @@ public class SC_PullOfWord : MonoBehaviour
         else
             Debug.LogError("Il faut le même nombre de champs lexicaux dans GM_Master que de champs lexicaux à afficher dans le Pull");
 
-        Debug.Log("choosenword lenght = " + SC_GM_Master.gm.choosenWords.Count);
         foreach (SC_WordInPull elem in SC_GM_Master.gm.choosenWords)
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
