@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 96b14283d1e9b934ab912d69c6dfd69a, type: 3}
   texte:
-  - partText: _____
+  - partText: "__________\r"
   - partText: "I\u2019m pretty sure that it will enlighten or at least meliorate your
       days. It probably seems obvious but what I mean is that you have to TELL people
       around you that you need\r"
-  - partText: _____
+  - partText: __________
