@@ -37,14 +37,28 @@ public class SC_PaperGM : MonoBehaviour
                             if (elem == mot)
                                 score += word.score[peopleScore];
 
+            Debug.Log("Score = " + score);
             if (score >= SC_GM.gm.firstPivotScene)
+            {
+                Debug.Log("Loaded first scene");
                 SceneManager.LoadScene(SC_GM.gm.firstScene);
+            }
             else if (SC_GM.gm.numberOfScene == 1)
+            {
+                Debug.Log("Loaded second scene");
                 SceneManager.LoadScene(SC_GM.gm.secondScene);
+            }
+
             else if (score >= SC_GM.gm.secondPivotScene)
+            {
+                Debug.Log("Loaded second scene");
                 SceneManager.LoadScene(SC_GM.gm.secondScene);
+            }
             else
+            {
+                Debug.Log("Loaded third scene");
                 SceneManager.LoadScene(SC_GM.gm.thirdScene);
+            }
 
         }
     }

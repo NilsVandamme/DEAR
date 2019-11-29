@@ -973,6 +973,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6840496846436250584, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848177049945054853, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848177049945054853, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848177049945054853, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848177049945054853, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848177049945054853, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218d32f5c2e47a543b141ab36cfdec3c, type: 3}
 --- !u!1 &739525705
@@ -3041,5 +3071,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4350515669116233565, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 916201518416709025, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 8613847690512729037, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 564452442793346844, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 3632867497738700800, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 5939037277218953846, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 9204372559491073087, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 4754391355990681128, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 8763421249604485069, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
