@@ -10,6 +10,13 @@ public class SC_GM : MonoBehaviour
     public int numberOfCLRecover = 0;
     public int numberOfCLRecoverable;
 
+    // Choose X Word
+    public int numberOfWordInWheel;
+    public int numberOfVerb;
+    public int numberOfNoun;
+    public int numberOfAdjectives;
+    public bool activeBonus;
+
     // Prochaines Scenes
     [HideInInspector]
     public int numberOfScene;
