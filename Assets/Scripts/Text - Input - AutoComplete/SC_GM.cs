@@ -3,6 +3,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
+public struct WordForEachCritere
+{
+    public int verb;
+    public int noun;
+    public int adjectif;
+}
+
 public class SC_GM : MonoBehaviour
 {
     // Nombre de CL récupérables
@@ -12,9 +20,7 @@ public class SC_GM : MonoBehaviour
 
     // Choose X Word
     public int numberOfWordInWheel;
-    public int numberOfVerb;
-    public int numberOfNoun;
-    public int numberOfAdjectives;
+    public WordForEachCritere numberOfWordForEachCritere;
     public bool activeBonus;
 
     // Prochaines Scenes
