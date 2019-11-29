@@ -18,5 +18,5 @@ public class ScenesToLoad : MonoBehaviour
         
     }
 
-    public void LoadScene() => SC_LoadingScreen.Instance.LoadThisScene();
+    public void LoadScene() => SC_LoadingScreen.Instance.LoadThisScene("L_A1");
 }
