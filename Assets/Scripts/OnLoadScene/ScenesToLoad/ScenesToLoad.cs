@@ -18,5 +18,10 @@ public class ScenesToLoad : MonoBehaviour
         
     }
 
-    public void LoadScene() => SC_LoadingScreen.Instance.LoadThisScene("L_A1");
+    public void LoadScene()
+    {
+        SC_LoadingScreen.Instance.LoadThisScene("L_A1");
+        BossAnim.Play("PickUp");
+    }
+
 }
