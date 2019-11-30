@@ -43,11 +43,11 @@ MonoBehaviour:
     - Granny Donna
     - "Mr. S\r"
     critere:
-    - eloquent
-    - eloquent
-    - eloquent
-    - eloquence
-    - eloquent
+    - active
+    - active
+    - active
+    - active
+    - activity
   - score: 0100000002000000
     titre: Danse
     name:
@@ -63,7 +63,7 @@ MonoBehaviour:
     - 
     - 
     - 
-    - speechcraft
+    - danse
     - 
   - score: 0200000001000000
     titre: Stamina
