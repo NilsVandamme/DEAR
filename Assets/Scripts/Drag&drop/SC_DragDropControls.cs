@@ -22,19 +22,19 @@ public class SC_DragDropControls : MonoBehaviour
     //private GameObject SnapPositionObject; // Which object is it snapped to 
 
     //[Space]
-    public GameObject SnapPositionObjectOverTop;
-    public GameObject SnapPositionObjectTop; // Which object Top is it snapped to ?
-    public GameObject SnapPositionObjectDown; // Which object Down is it snapped to ?
-    public GameObject SnapPositionObjectUnderDown;
+    private GameObject SnapPositionObjectOverTop;
+    private GameObject SnapPositionObjectTop; // Which object Top is it snapped to ?
+    private GameObject SnapPositionObjectDown; // Which object Down is it snapped to ?
+    private GameObject SnapPositionObjectUnderDown;
 
     //[Space]
-    public bool overTopSnapped;
-    public bool topSnapped;
-    public bool downSnapped;
-    public bool underDownSnapped;
+    private bool overTopSnapped;
+    private bool topSnapped;
+    private bool downSnapped;
+    private bool underDownSnapped;
 
     //[Space]
-    public bool snapMovementActive; // Is the object moving to it's snap ?
+    private bool snapMovementActive; // Is the object moving to it's snap ?
 
     private Vector3 mouseOffset;
     private float mouseZCoord;
