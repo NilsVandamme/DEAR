@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 18e5a97c353fde44d8c3d603dea247a1, type: 3}
   texte:
-  - partText: "\"Well, to me you\u2019re not\",None\r"
-  - partText: "_____,Adjectif\r"
-  - partText: "\" enough. You need to get yourself together, dammit ! If they -whoever
+  - partText: '"Well'
+  - partText: '"_____"'
+  - partText: "\" enough. You need to get yourself together dammit ! If they -whoever
       they are- invited you to talk in front of people that came for that specific
-      event you\u2019re invited to, it\u2019s because they believe in you and think
-      you\u2019re important !"
-  - partText: '",None'
+      event than they must believe in you and think you\u2019re important !\""

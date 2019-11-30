@@ -99,3 +99,20 @@ MonoBehaviour:
     - being truthful
     - Truthfulness
     - thruthful
+  - score: ffffffff01000000
+    titre: Calm
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - calm down
+    - calmed down
+    - calming down
+    - Calm
+    - calm

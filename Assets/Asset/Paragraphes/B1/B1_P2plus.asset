@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: a2e53cb71e8faf143b552ff85d5c296e, type: 3}
   texte:
-  - partText: "It\u2019s pretty simple. You may think it won\u2019t help you because
-      of the current state of mind you\u2019re in but you do lack,None\r"
-  - partText: "_____,Noun\r"
-  - partText: "\". It\u2019s essential for an efficient way of thinking, especially
-      under pressure, when you can easily be fragilized by your task\u2019s weight.\r"
-  - partText: '",None'
+  - partText: "\"It\u2019s pretty simple. You may think it won\u2019t help you because
+      of the current state of mind you\u2019re in but you do lack\""
+  - partText: '"_____"'
+  - partText: "\". It\u2019s essential for an efficient way of thinking"

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: d1c9bc86672c77a4db87045d17b0e14f, type: 3}
   texte:
-  - partText: "Don\u2019t let yourself get overwhelmed by,None\r"
-  - partText: "_____,Noun\r"
-  - partText: "\"\u2018s influence. This would truely be a mistake, and would have
-      a bad influence on your speech. No joke !\",None"
+  - partText: "\"Don\u2019t let yourself get overwhelmed by your\""
+  - partText: '"_____"'
+  - partText: "\"\u2018s influence. This would truely be a mistake and would have
+      a bad influence on your speech. No joke !\""

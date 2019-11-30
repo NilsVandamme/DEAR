@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 93a7d330f6cc43f459fd2c93354f6455, type: 3}
   texte:
-  - partText: "I understand that public speaking is a difficult task for someone who
-      isn\u2019t really fond of it. And I understand that ,None\r"
-  - partText: "_____,Noun\r"
-  - partText: "might be on your mind. But you need to forget it and carry on. Don\u2019t
-      think too much about the consequences. Just go with the flow !,None"
+  - partText: "\"I understand that public speaking is a difficult task for someone
+      who isn\u2019t really fond of it. And I understand that\""
+  - partText: '"_____"'
+  - partText: "\"might be on your mind. But you need to forget it and carry on. Don\u2019t
+      think too much about the consequences. Just go with the flow !\""

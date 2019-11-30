@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 10f0d81b82721bc4d96bba818a8e9ed1, type: 3}
   texte:
-  - partText: "You could maybe try to chill down a bit. I\u2019d say that,None\r"
-  - partText: "_____,Noun\r"
+  - partText: "\"You could maybe try to chill down a bit. I\u2019d say that\""
+  - partText: '"_____"'
   - partText: "\"could really help you in that kind of situation and I hope that it
-      will help you find inspiration. That\u2019s what I would personally do."
-  - partText: '",None'
+      will help you find inspiration. That\u2019s what I would personally do.\""
