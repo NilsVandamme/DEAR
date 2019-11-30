@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e2e9302b0a7454599204ebea877d47, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  fichierWords: {fileID: 4900000, guid: d7d99cc10cfff9f4c9b697c07026884c, type: 3}
+  words:
+  - score: 0300000000000000
+    titre: Exercise
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - to exercise
+    - exercised
+    - exercising
+    - Exercise
+    - sportive
+  - score: 0400000004000000
+    titre: Activity
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - eloquent
+    - eloquent
+    - eloquent
+    - eloquence
+    - eloquent
+  - score: 0100000002000000
+    titre: Danse
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - 
+    - 
+    - 
+    - speechcraft
+    - 
+  - score: 0200000001000000
+    titre: Stamina
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - exchangeable
+    - exchangeable
+    - exchangeable
+    - exchange
+    - exchangeable
+  - score: 0300000003000000
+    titre: Age
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - aged
+    - aged
+    - aged
+    - Age
+    - aged
+  - score: 0400000003000000
+    titre: Energy
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - energetic
+    - energetic
+    - energetic
+    - energy
+    - energetic
