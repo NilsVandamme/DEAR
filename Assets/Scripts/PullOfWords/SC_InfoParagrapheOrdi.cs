@@ -20,7 +20,7 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 
     public void OnClickParagrapheOrdi()
     {
-        Debug.Log("paragraph clicked running");
+        //Debug.Log("paragraph clicked running");
         if (!validate)
         {
             image.gameObject.SetActive(!image.IsActive());
@@ -32,16 +32,18 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
 
     public void OnClickButtonConfirm()
     {
-        Debug.Log("button confirm clicked");
+        //Debug.Log("button confirm clicked");
         if (SC_GM.gm.numberOfCLRecover < SC_GM.gm.numberOfCLRecoverable)
         {
             Highlight();
 
             bool[] tabBool = new bool[SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals[0].words[0].score.Length];
             for (int i = 0; i < info.motAccepter.Length; i++)
-                if (info.motAccepter[i])
+            {
+                //Debug.Log("searching word loop running");
+                if (!info.motAccepter[i])
                 {
-                    Debug.Log("confirm add word running");
+                    //Debug.Log("confirm add word running");
                     SC_WordInPull elem = new SC_WordInPull(info.champLexical.fichierWords.name, info.champLexical.words[i], tabBool);
 
                     foreach (SC_WordInPull wordPull in SC_GM_Master.gm.choosenWords)
@@ -49,14 +51,16 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
                             return;
 
                     SC_GM_Master.gm.choosenWords.Add(elem);
-                    Debug.Log("added " + elem);
+                    //Debug.Log("added " + elem);
                 }
+            }
+
         }
     }
 
     private void Highlight ()
     {
-        Debug.Log("highlight running");
+        //Debug.Log("highlight running");
         SC_GM.gm.numberOfCLRecover++;
         pull.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
         validate = true;
