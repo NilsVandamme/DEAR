@@ -235,7 +235,7 @@ public class SC_PullOfWord : MonoBehaviour
                 pos = GetFirstMotLibre(index);
                 if (pos != -1)
                 {
-                    if (idCurrentCritere == 0) // Titre
+                    if (idCurrentCritere == 0) // Titre 
                     {
                         hasWord[index][pos] = true;
                         champsLexicauxAndWords[index][pos].text = elem.GetWord().titre;
