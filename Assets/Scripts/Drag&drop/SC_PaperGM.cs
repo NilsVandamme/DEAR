@@ -20,6 +20,8 @@ public class SC_PaperGM : MonoBehaviour
     [HideInInspector]
     public List<SC_AutoComplete> acompletes;
 
+    public bool DebugMode;
+
     private void Start()
     {
         snapPositions = FindObjectsOfType<SC_PaperSnapGrid>();
@@ -30,12 +32,15 @@ public class SC_PaperGM : MonoBehaviour
     {
         if (paragraphsConfirmed == true)
         {
-            foreach (string elem in SC_GM.gm.choosenWordInLetter)
-                foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals)
-                    foreach (Word word in listWord.words)
-                        foreach (string mot in word.critere)
-                            if (elem == mot)
-                                score += word.score[peopleScore];
+            if (!DebugMode)
+            {
+                foreach (string elem in SC_GM.gm.choosenWordInLetter)
+                    foreach (SC_ListWords listWord in SC_GM_Master.gm.listChampsLexicaux.listChampsLexicals)
+                        foreach (Word word in listWord.words)
+                            foreach (string mot in word.critere)
+                                if (elem == mot)
+                                    score += word.score[peopleScore];
+            }
 
             Debug.Log("Score = " + score);
             if (score >= SC_GM.gm.firstPivotScene)
@@ -43,13 +48,13 @@ public class SC_PaperGM : MonoBehaviour
                 Debug.Log("Loaded first scene");
                 SceneManager.LoadScene(SC_GM.gm.firstScene);
             }
-            else if (SC_GM.gm.numberOfScene == 1)
+            else if (SC_GM.gm.numberOfScene == 2)
             {
                 Debug.Log("Loaded second scene");
                 SceneManager.LoadScene(SC_GM.gm.secondScene);
             }
 
-            else if (score >= SC_GM.gm.secondPivotScene)
+            else if (score >= SC_GM.gm.secondPivotScene && SC_GM.gm.numberOfScene == 3)
             {
                 Debug.Log("Loaded second scene");
                 SceneManager.LoadScene(SC_GM.gm.secondScene);
@@ -101,5 +106,13 @@ public class SC_PaperGM : MonoBehaviour
             acompletes.Clear();
             paragraphsConfirmed = false;
         }
+    }
+
+    public void DebugSubmit(int testScore)
+    {
+        DebugMode = true;
+        paragraphsConfirmed = true;
+        score = testScore;
+        OnClickSubmitButton();
     }
 }
