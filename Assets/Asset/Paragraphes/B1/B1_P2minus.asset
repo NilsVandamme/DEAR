@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 6f857e996e6831b4d8eb66d767db3578, type: 3}
   texte:
-  - partText: "You know what\u2019s your main problem ? ,None\r"
-  - partText: "_____,Noun\r"
+  - partText: "\"You know what\u2019s your main problem ?\""
+  - partText: '"_____"'
   - partText: "\"That\u2018s the biggest inspiration inhibitor that is. Just\u2026
-      Meditate a lot and get rid of it. It\u2019ll maybe be kinda hard in the beginning,
-      but when your mind will be purified of any sorrows thanks\",None\r"
-  - partText: "_____,Noun\r"
-  - partText: "\", then you\u2019ll thank me too.\",None"
+      Meditate a lot and get rid of it. It\u2019ll maybe be kinda hard in the beginning
+      but when your mind will be purified of any sorrows thanks\""
+  - partText: '"_____"'
+  - partText: "\"then you\u2019ll thank me too.\""

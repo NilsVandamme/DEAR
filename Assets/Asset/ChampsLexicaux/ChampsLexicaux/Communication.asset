@@ -83,7 +83,7 @@ MonoBehaviour:
     - Exchange
     - exchangeable
   - score: 0300000003000000
-    titre: ' Understanding'
+    titre: Understanding
     name:
     - Titre
     - Present
@@ -99,3 +99,20 @@ MonoBehaviour:
     - 
     - ' Understanding'
     - understandable
+  - score: fefffffffeffffff
+    titre: Stress
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - stressed out
+    - stressed out
+    - stressed out
+    - Stress
+    - stressed out
