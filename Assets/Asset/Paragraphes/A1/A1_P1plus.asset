@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
+  m_Name: A1_P1plus
+  m_EditorClassIdentifier: 
+  fichierTexte: {fileID: 4900000, guid: 0b9cce14003b6654d8bbfb71611148eb, type: 3}
+  texte:
+  - partText: "\"So Donna, after carefully reading your case, I\u2019d say that you
+      seem to need\",None\r"
+  - partText: "_____,Noun\r"
+  - partText: "\"in your life. I\u2019m pretty sure that it will enlighten, or at
+      least meliorate your days. It probably seems obvious, but what I mean is that
+      you have to TELL people around you that you need\",None\r"
+  - partText: _____,Noun
