@@ -55,7 +55,7 @@ public class SC_ParagrapheEditor : Editor
         string rawContent = listOfText.fichierTexte.text;
         string[] lineList = rawContent.Split(new string[] { "\n" }, System.StringSplitOptions.None);
 
-        string[] separator = new string[] { ";" };
+        string[] separator = new string[] { "," };
         string[] cells;
 
         List<TextPart> textInfo = new List<TextPart>();
