@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58bf807b26898294e8dc3a4f67ee89a4, type: 3}
   m_Name: OrdiParagraphe
   m_EditorClassIdentifier: 
-  listChampLexicaux: {fileID: 0}
-  champLexical: {fileID: 0}
-  nameChampLexical: 0
-  motAccepter: 
+  listChampLexicaux: {fileID: 11400000, guid: 9d8752c471e94ac44a30d18b4b0e7861, type: 2}
+  champLexical: {fileID: 11400000, guid: c6de5a3094ecb794fa67e32b9567d83d, type: 2}
+  nameChampLexical: 2
+  motAccepter: 000000000000
