@@ -99,23 +99,6 @@ MonoBehaviour:
     - motivating yourself
     - Motivation
     - motivated
-  - score: 0200000002000000
-    titre: Happiness
-    name:
-    - Titre
-    - Present
-    - Passe
-    - Ing
-    - Noun
-    - Adjectif
-    - Granny Donna
-    - "Mr. S\r"
-    critere:
-    - happy
-    - enjoyed yourself
-    - getting happy
-    - Happiness
-    - happy
   - score: ffffffff01000000
     titre: Calm
     name:

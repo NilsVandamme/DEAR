@@ -10,46 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e2e9302b0a7454599204ebea877d47, type: 3}
-  m_Name: Communication
+  m_Name: Social
   m_EditorClassIdentifier: 
-  fichierWords: {fileID: 4900000, guid: 6555cc0aed390234fa83079dcb4c220e, type: 3}
+  fichierWords: {fileID: 4900000, guid: f626dbc7f4aa27640a01f8a2a954a5cd, type: 3}
   words:
-  - score: 0200000003000000
-    titre: Charisma
-    name:
-    - Titre
-    - Present
-    - Passe
-    - Ing
-    - Noun
-    - Adjectif
-    - Granny Donna
-    - "Mr. S\r"
-    critere:
-    - charismatic
-    - charismatic
-    - charismatic
-    - Charisma
-    - charismatic
-  - score: 0400000004000000
-    titre: Eloquence
-    name:
-    - Titre
-    - Present
-    - Passe
-    - Ing
-    - Noun
-    - Adjectif
-    - Granny Donna
-    - "Mr. S\r"
-    critere:
-    - eloquent
-    - eloquent
-    - eloquent
-    - Eloquence
-    - eloquent
-  - score: 0100000002000000
-    titre: Speechcraft
+  - score: 0000000000000000
+    titre: Humanity
     name:
     - Titre
     - Present
@@ -63,10 +29,61 @@ MonoBehaviour:
     - 
     - 
     - 
-    - Speechcraft
+    - Humanity
     - 
+  - score: 0000000000000000
+    titre: Empathy
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - 
+    - 
+    - 
+    - Empathy
+    - 
+  - score: 0100000000000000
+    titre: Caring
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - to care
+    - cared
+    - Caring
+    - Caring
+    - careful
+  - score: feffffff02000000
+    titre: Family
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - call your family
+    - called your family
+    - calling your family
+    - Your family
+    - family-loving
   - score: 0200000001000000
-    titre: Exchange
+    titre: Friendship
     name:
     - Titre
     - Present
@@ -77,25 +94,8 @@ MonoBehaviour:
     - Granny Donna
     - "Mr. S\r"
     critere:
-    - exchangeable
-    - exchangeable
-    - exchangeable
-    - Exchange
-    - exchangeable
-  - score: 0300000003000000
-    titre: ' Understanding'
-    name:
-    - Titre
-    - Present
-    - Passe
-    - Ing
-    - Noun
-    - Adjectif
-    - Granny Donna
-    - "Mr. S\r"
-    critere:
-    - 
-    - 
-    - 
-    - ' Understanding'
-    - understandable
+    - make friends
+    - made friends
+    - making friends
+    - Friendship
+    - friendly

@@ -19,13 +19,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 171c13b1ebcc1da46a7a01e73f48c3dd, type: 2}
   - {fileID: 11400000, guid: 7134cd03f8834e943bd319ce9af684f9, type: 2}
   - {fileID: 11400000, guid: 7335644ffd4c48740b7a8e8d5ff08e4b, type: 2}
+  - {fileID: 11400000, guid: 6da2fae2c76ad7f4482742d728b136dc, type: 2}
   nameChampsLexicals:
   - Communication
-  - Test2
-  - Test
-  - Test
-  - Test
-  - Test
-  - Test
-  - Test
-  - Test
+  - Fears
+  - Feelings
+  - Health
+  - Knowledge
+  - Rationality
+  - Social
