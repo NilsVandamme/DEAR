@@ -11,10 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FINAL/L_A1.unity
     guid: f28590ba85c5d8142b8106a9e84fc318
-  - enabled: 1
-    path: Assets/Scenes/FINAL/L_B1.unity
-    guid: a33b5dba53026df4289b31b7c3085a9b
-  - enabled: 1
-    path: Assets/Scenes/FINAL/L_B2.unity
-    guid: 681d595d995a72f49917e06af79950e2
   m_configObjects: {}
