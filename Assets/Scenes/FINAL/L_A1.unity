@@ -2890,6 +2890,11 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 660180569}
+    - target: {fileID: 16779531650734744, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1001846892670900804, guid: 84e5422f523dbd74982bd1ec97190c33,
         type: 3}
       propertyPath: m_IsActive
