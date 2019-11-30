@@ -41,7 +41,7 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
             for (int i = 0; i < info.motAccepter.Length; i++)
             {
                 //Debug.Log("searching word loop running");
-                if (!info.motAccepter[i])
+                if (info.motAccepter[i])
                 {
                     //Debug.Log("confirm add word running");
                     SC_WordInPull elem = new SC_WordInPull(info.champLexical.fichierWords.name, info.champLexical.words[i], tabBool);
