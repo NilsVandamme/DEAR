@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
-  m_Name: A1_P3minus
+  m_Name: B1_P4plus
   m_EditorClassIdentifier: 
-  fichierTexte: {fileID: 4900000, guid: 4145949fa918a65409c3e728259cfd2c, type: 3}
+  fichierTexte: {fileID: 4900000, guid: 9af12df4b1b2bc1488e65c0cfcd66e13, type: 3}
   texte:
-  - partText: "Donna! Get your stuff together. You know what? Screw,None\r"
+  - partText: "\"You\u2019re your own victim, you know that ? Close your eyes. Take
+      a deep breath.\r"
+  - partText: "Focus on\",None\r"
   - partText: "_____,Noun\r"
-  - partText: "\"That ain't gonna help you in your current life, nor your dream. The
-      biggest part of the work has to be done on a day-to-day basis. Fight boredom
-      with consistency!\r"
-  - partText: "\r"
+  - partText: "\". This is very important. It\u2019s truely the only thing to think
+      about in that kind of moment, with your kind of profile. Believe me !"
   - partText: '",None'
