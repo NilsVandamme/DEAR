@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.972549, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0451297be4a7bc4ab83fc0fe3528d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
+  SelectedColor: {r: 0.9716981, g: 0.38959593, b: 0.38959593, a: 1}
   mailTextsListParent: {fileID: 3863771882833749881}
   mailButtonsListParent: {fileID: 7366822076357110451}
   mailTextsList: []
