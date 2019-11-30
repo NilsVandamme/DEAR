@@ -46,9 +46,9 @@ public class SC_PullOfWord : MonoBehaviour
     private Dictionary<string, int> critereOfWord = 
         new Dictionary<string, int>()
         {
-            {"Verb", 0},
-            {"Noun", 3},
-            {"Adjectif", 4}
+            {"Verbs", 0},
+            {"Nouns", 3},
+            {"Adjectives", 4}
         };
 
     // Liste des mots de la wheel
@@ -235,14 +235,14 @@ public class SC_PullOfWord : MonoBehaviour
                 pos = GetFirstMotLibre(index);
                 if (pos != -1)
                 {
-                    if (idCurrentCritere == 0 && elem.GetWord().titre != "none") // Titre
+                    if (idCurrentCritere == 0) // Titre 
                     {
                         hasWord[index][pos] = true;
                         champsLexicauxAndWords[index][pos].text = elem.GetWord().titre;
                     }
 
                     foreach (KeyValuePair<string, int> item in critereOfWord)
-                        if (listOfCritere[idCurrentCritere].text == item.Key && elem.GetWord().critere[item.Value] != "none") // Critere
+                        if (listOfCritere[idCurrentCritere].text == item.Key) // Critere
                         {
                             hasWord[index][pos] = true;
                             champsLexicauxAndWords[index][pos].text = elem.GetWord().critere[item.Value];
