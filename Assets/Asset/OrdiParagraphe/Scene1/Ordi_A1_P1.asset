@@ -15,4 +15,4 @@ MonoBehaviour:
   listChampLexicaux: {fileID: 11400000, guid: 9d8752c471e94ac44a30d18b4b0e7861, type: 2}
   champLexical: {fileID: 11400000, guid: 7e431e5cc0f09564588393b3c77efdd7, type: 2}
   nameChampLexical: 0
-  motAccepter: 0101010101
+  motAccepter: 0100000001

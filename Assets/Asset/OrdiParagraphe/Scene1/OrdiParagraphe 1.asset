@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: OrdiParagraphe 1
   m_EditorClassIdentifier: 
   listChampLexicaux: {fileID: 11400000, guid: 9d8752c471e94ac44a30d18b4b0e7861, type: 2}
-  champLexical: {fileID: 11400000, guid: 9f5d2fa15ad1d8d4d8902bf0be2487ad, type: 2}
+  champLexical: {fileID: 11400000, guid: ef9ecb1afae240c4e83e55f0949e1c81, type: 2}
   nameChampLexical: 1
-  motAccepter: 0100
+  motAccepter: 0000000000
