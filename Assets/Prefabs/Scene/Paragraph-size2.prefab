@@ -248,10 +248,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f75fed2e653d6418d653800654f5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoveringHeight: -5.25
-  SpeedDivider: 2.5
+  HoveringHeight: 1
+  SpeedDivider: 1.2
   SnapSpeed: 5
   ParagraphSize: 2
+  SnapPositionObjectOverTop: {fileID: 0}
+  SnapPositionObjectTop: {fileID: 0}
+  SnapPositionObjectDown: {fileID: 0}
+  SnapPositionObjectUnderDown: {fileID: 0}
+  overTopSnapped: 0
+  topSnapped: 0
+  downSnapped: 0
+  underDownSnapped: 0
+  snapMovementActive: 0
 --- !u!114 &8748866908836355309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3667830684787226248}
     m_Modifications:
+    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
+        type: 3}
+      propertyPath: m_Name
+      value: TextAutoComplete
+      objectReference: {fileID: 0}
     - target: {fileID: 1104232924593432691, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -376,11 +390,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_Name
-      value: TextAutoComplete
       objectReference: {fileID: 0}
     - target: {fileID: 8869976904462432070, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
