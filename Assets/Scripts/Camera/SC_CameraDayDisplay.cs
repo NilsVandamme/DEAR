@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,19 +19,20 @@ public class SC_CameraDayDisplay : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if(scene.name == "Scene_Intro_Prez1 ")
+        if(scene.name == "L_A1")
         {
             DayText.text = "Day 1\nFirst day at work";
 
         }
 
-        if (scene.name == "Scene_Bad_Prez" || scene.name == "Scene_Good_Prez")
+        if (scene.name == "L_B1")
         {
             DayText.text = "Day 2\nThe Speech";
         }
-        else
+
+        if (scene.name == "L_B2")
         {
-            DayText.text = "Day 1\nFirst day at work";
+            DayText.text = "Day 2\nThe Speech";
         }
     }
   
