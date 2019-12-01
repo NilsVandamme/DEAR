@@ -187,6 +187,10 @@ public class SC_PullOfWord : MonoBehaviour
                         return;
                 }
 
+            // Ouvre le tuto
+            SC_BossHelp.instance.CloseBossHelp(3);
+            SC_BossHelp.instance.OpenBossBubble(3);
+
             chooseXWord.text = "Selection Finish";
             currentChoosenCritere = 0;
         }

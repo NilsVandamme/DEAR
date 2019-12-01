@@ -73,6 +73,8 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
         if (SC_GM.gm.numberOfCLRecover == SC_GM.gm.numberOfCLRecoverable)
         {
             ArboAnim.SetTrigger("ArboIsFull");
+            SC_BossHelp.instance.CloseBossHelp(2);
+            SC_BossHelp.instance.OpenBossBubble(2);
         }
     }
 }
