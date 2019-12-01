@@ -43,7 +43,7 @@ public class SC_PaperGM : MonoBehaviour
             }
 
             Debug.Log("Score = " + score);
-            if (score >= SC_GM.gm.firstPivotScene)
+            if (score > SC_GM.gm.firstPivotScene)
             {
                 Debug.Log("Loaded first scene");
                 SceneManager.LoadScene(SC_GM.gm.firstScene);
@@ -54,7 +54,7 @@ public class SC_PaperGM : MonoBehaviour
                 SceneManager.LoadScene(SC_GM.gm.secondScene);
             }
 
-            else if (score >= SC_GM.gm.secondPivotScene && SC_GM.gm.numberOfScene == 3)
+            else if (score > SC_GM.gm.secondPivotScene && SC_GM.gm.numberOfScene == 3)
             {
                 Debug.Log("Loaded second scene");
                 SceneManager.LoadScene(SC_GM.gm.secondScene);
