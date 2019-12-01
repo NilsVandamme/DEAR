@@ -66,6 +66,8 @@ public class SC_PullOfWord : MonoBehaviour
     // Paragraphe d'autoComplete
     private SC_AutoComplete[] autoComplete;
 
+    public Button startWrittingButton;
+
 
     //##############################################################################################################################################################
     //##############################################################################################################################################################
@@ -146,13 +148,6 @@ public class SC_PullOfWord : MonoBehaviour
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
                     champsLexicauxAndWords[i][GetFirstMotLibre(i)].text = elem.GetWord().titre;
 
-        // Active le bouton startwritting
-        if (SC_GM.gm.wheelOfWords.Count > 0)
-        {
-            Debug.Log("enable writting button");
-            startWrittingButton.interactable = true;
-        }
-
     }
 
     /*
@@ -192,7 +187,6 @@ public class SC_PullOfWord : MonoBehaviour
                         return;
                 }
 
-            startWrittingButton.enabled = true;
             chooseXWord.text = "Selection Finish";
             currentChoosenCritere = 0;
         }
@@ -420,11 +414,17 @@ public class SC_PullOfWord : MonoBehaviour
                 listOfCancelWheel[i].text = "";
             }
 
-        Debug.Log("disable test " + (SC_GM.gm.wheelOfWords.Count == 0));
+        Debug.Log("disable test " + (SC_GM.gm.wheelOfWords.Count < 1));
         // Désactive le bouton startwritting
-        if (SC_GM.gm.wheelOfWords.Count == 0)
+        if (SC_GM.gm.wheelOfWords.Count < 1)
+        {
             Debug.Log("disable writting button");
             startWrittingButton.interactable = false;
+        }
+        else
+        {
+            startWrittingButton.interactable = true;
+        }
     }
 
     //##############################################################################################################################################################
