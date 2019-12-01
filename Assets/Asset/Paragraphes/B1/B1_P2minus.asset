@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
   m_Name: B1_P2minus
   m_EditorClassIdentifier: 
-  fichierTexte: {fileID: 4900000, guid: 6f857e996e6831b4d8eb66d767db3578, type: 3}
+  fichierTexte: {fileID: 4900000, guid: c421ff03fa2dfa441a33b59c225edc1f, type: 3}
   texte:
-  - partText: "\"You know what\u2019s your main problem ?\""
-  - partText: '"_____"'
-  - partText: "\"That\u2018s the biggest inspiration inhibitor that is. Just\u2026
-      Meditate a lot and get rid of it. It\u2019ll maybe be kinda hard in the beginning
-      but when your mind will be purified of any sorrows thanks\""
-  - partText: '"_____"'
-  - partText: "\"then you\u2019ll thank me too.\""
+  - partText: "You know what\u2019s your main problem ? "
+  - partText: <link="Noun">_____</link>
+  - partText: "That\u2018s the biggest inspiration inhibitor that is. Just\u2026 Meditate
+      a lot and get rid of it. It\u2019ll maybe be kinda hard in the beginning, but
+      when your mind will be purified of any sorrows thanks"
+  - partText: <link="Noun">_____</link>
+  - partText: ", then you\u2019ll thank me too."

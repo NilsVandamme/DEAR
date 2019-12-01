@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
   m_Name: B1_P3plus
   m_EditorClassIdentifier: 
-  fichierTexte: {fileID: 4900000, guid: 18e5a97c353fde44d8c3d603dea247a1, type: 3}
+  fichierTexte: {fileID: 4900000, guid: 275ae875787d48148bc617ced9a23f99, type: 3}
   texte:
-  - partText: '"Well'
-  - partText: '"_____"'
-  - partText: "\" enough. You need to get yourself together dammit ! If they -whoever
+  - partText: "Well, to me you\u2019re not"
+  - partText: <link="Adjectif">_____</link>
+  - partText: " enough. You need to get yourself together, dammit ! If they -whoever
       they are- invited you to talk in front of people that came for that specific
-      event than they must believe in you and think you\u2019re important !\""
+      event you\u2019re invited to, it\u2019s because they believe in you and think
+      you\u2019re important !"

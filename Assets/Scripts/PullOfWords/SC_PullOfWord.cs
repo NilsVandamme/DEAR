@@ -14,6 +14,7 @@ public class SC_PullOfWord : MonoBehaviour
     public GameObject wheel;
     public GameObject cancelWheel;
     public GameObject myButtons;
+    public GameObject listParagrapheLettres;
 
     // Couleur des mots en fonction des points
     private Dictionary<int, Color> color = 
@@ -62,7 +63,8 @@ public class SC_PullOfWord : MonoBehaviour
 
     public TextMeshProUGUI chooseXWord;
 
-    public Button startWrittingButton;
+    // Paragraphe d'autoComplete
+    private SC_AutoComplete[] autoComplete;
 
 
     //##############################################################################################################################################################
@@ -80,6 +82,7 @@ public class SC_PullOfWord : MonoBehaviour
         InitWheel();
         InitCLAndWordInCL();
         WriteWordAndCL();
+        InitParagrapheLettre();
     }
 
     /*
@@ -150,6 +153,14 @@ public class SC_PullOfWord : MonoBehaviour
             startWrittingButton.interactable = true;
         }
 
+    }
+
+    /*
+     * Récupère l'ensemble des paragraphes disponibles pour écrire la lettre.
+     */
+     private void InitParagrapheLettre()
+    {
+        autoComplete = listParagrapheLettres.GetComponentsInChildren<SC_AutoComplete>(true);
     }
 
     /*
@@ -424,6 +435,7 @@ public class SC_PullOfWord : MonoBehaviour
 
     public void StartWritting()
     {
-        // TO-DO
+        foreach (SC_AutoComplete elem in autoComplete)
+            elem.Init();
     }
 }

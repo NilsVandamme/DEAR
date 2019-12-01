@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
   m_Name: B1_P1minus
   m_EditorClassIdentifier: 
-  fichierTexte: {fileID: 4900000, guid: d1c9bc86672c77a4db87045d17b0e14f, type: 3}
+  fichierTexte: {fileID: 4900000, guid: 8f24fda7e5e240e4bbd2dd4ad6834608, type: 3}
   texte:
-  - partText: "\"Don\u2019t let yourself get overwhelmed by your\""
-  - partText: '"_____"'
-  - partText: "\"\u2018s influence. This would truely be a mistake and would have
-      a bad influence on your speech. No joke !\""
+  - partText: "Don\u2019t let yourself get overwhelmed by"
+  - partText: <link="Noun">_____</link>
+  - partText: "\u2018s influence. This would truely be a mistake, and would have a
+      bad influence on your speech. No joke !"

@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 4145949fa918a65409c3e728259cfd2c, type: 3}
   texte:
-  - partText: "Donna! Get your stuff together. You know what? Screw,None\r"
-  - partText: "_____,Noun\r"
-  - partText: "\"That ain't gonna help you in your current life, nor your dream. The
+  - partText: Donna! Get your stuff together. You know what? Screw
+  - partText: <link="Noun">_____</link>
+  - partText: That ain't gonna help you in your current life, nor your dream. The
       biggest part of the work has to be done on a day-to-day basis. Fight boredom
-      with consistency!\r"
-  - partText: "\r"
-  - partText: '",None'
+      with consistency!
