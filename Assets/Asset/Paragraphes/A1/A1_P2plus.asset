@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 9cc3486db4be3344689be51ff4e3e1fd, type: 3}
   texte:
-  - partText: "\"It\u2019s clear that the retirement home isn\u2019t the funniest
-      place to stay at, but if you tell the people who care about you your need to
-      get more\",None\r"
-  - partText: "_____,Noun\r"
-  - partText: '"in your life. It will get better for sure. Trust me.",None'
+  - partText: "It\u2019s clear that the retirement home isn\u2019t the funniest place
+      to stay at, but if you tell the people who care about you your need to get more"
+  - partText: <link="Noun">_____</link>
+  - partText: in your life. It will get better for sure. Trust me.

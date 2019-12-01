@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: b63e0960a41d89c4592bd3d21d2bd65d, type: 3}
   texte:
-  - partText: "\"From what I\u2019ve seen, you do have a problem with\",None\r"
-  - partText: "_____,Noun\r"
-  - partText: "\"It's pretty much linked to your current state of boredom and, let's
+  - partText: "From what I\u2019ve seen, you do have a problem with"
+  - partText: <link="Noun">_____</link>
+  - partText: "It's pretty much linked to your current state of boredom and, let's
       say it, loneliness. Ring your family to tell them about it. They\u2019re the
-      people you should be telling how you feel.\r"
-  - partText: '",None'
+      people you should be telling how you feel."

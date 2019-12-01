@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 0b9cce14003b6654d8bbfb71611148eb, type: 3}
   texte:
-  - partText: "\"So Donna, after carefully reading your case, I\u2019d say that you
-      seem to need\",None\r"
-  - partText: "\"_____\",Noun\r"
-  - partText: "\"in your life. I\u2019m pretty sure that it will enlighten, or at
-      least meliorate your days. It probably seems obvious, but what I mean is that
-      you have to TELL people around you that you need\",None\r"
-  - partText: '"_____",Noun'
+  - partText: "So Donna, after carefully reading your case, I\u2019d say that you
+      seem to need"
+  - partText: <link="Noun">_____</link>
+  - partText: "in your life. I\u2019m pretty sure that it will enlighten, or at least
+      meliorate your days. It probably seems obvious, but what I mean is that you
+      have to TELL people around you that you need"
+  - partText: <link="Noun">_____</link>

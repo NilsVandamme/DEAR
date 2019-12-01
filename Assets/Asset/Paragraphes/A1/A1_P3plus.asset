@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichierTexte: {fileID: 4900000, guid: 7385cc30b5f16dc428bd89b13997a412, type: 3}
   texte:
-  - partText: "\"You know what? You are clearly full of life and energy, positive
-      energy I mean. It seems like it\u2019s currently going to waste. Yes, you cannot
-      dance right now but how about\",None\r"
-  - partText: "_____,Noun\r"
-  - partText: "\"? That\u2019s important, too! I\u2019m sure that you can find a way
-      to get entertained!\",None"
+  - partText: "You know what? You are clearly full of life and energy, positive energy
+      I mean. It seems like it\u2019s currently going to waste. Yes, you cannot dance
+      right now but how about"
+  - partText: <link="Noun">_____</link>
+  - partText: "? That\u2019s important, too! I\u2019m sure that you can find a way
+      to get entertained!"

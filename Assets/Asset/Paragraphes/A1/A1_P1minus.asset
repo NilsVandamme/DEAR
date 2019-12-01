@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
   m_Name: A1_P1minus
   m_EditorClassIdentifier: 
-  fichierTexte: {fileID: 4900000, guid: b46b2b1b3e3ba604386b62ae093f34e6, type: 3}
+  fichierTexte: {fileID: 4900000, guid: 51941bd5691394d4e984929fa6e31d15, type: 3}
   texte:
-  - partText: "\"A lack of\",None\r"
-  - partText: "_____,Noun\r"
-  - partText: '"That''s what''s wrong in your life right now. Just think about it'
-  - partText: "_____,Noun\r"
-  - partText: '"Though it''s probably not the only one...",None'
+  - partText: 'A lack of '
+  - partText: <link="Noun">_____</link>
+  - partText: 'That''s what''s wrong in your life right now. Just think about it;
+      Where do most of your problems come from? What has pushed your children to send
+      you where you are? The answer''s obvious:'
+  - partText: <link="Noun">_____</link>
+  - partText: ' Though it''s probably not the only one...'
