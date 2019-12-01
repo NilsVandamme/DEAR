@@ -126,6 +126,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 441537616}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &53295042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1114481652400096715, guid: 84e5422f523dbd74982bd1ec97190c33,
+    type: 3}
+  m_PrefabInstance: {fileID: 5027511407946955177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536c657be041a034d8b795246a8b7e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &102913071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1865,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6840496846169252734, guid: 218d32f5c2e47a543b141ab36cfdec3c,
+        type: 3}
+      propertyPath: m_Text
+      value: END OF DEMO, WON'T WORK
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218d32f5c2e47a543b141ab36cfdec3c, type: 3}
 --- !u!4 &689659634 stripped
@@ -3557,12 +3574,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCLRecover: 0
-  numberOfCLRecoverable: 3
+  numberOfCLRecoverable: 6
   numberOfWordInWheel: 6
   numberOfWordForEachCritere:
     verb: 0
-    noun: 6
-    adjectif: 0
+    noun: 4
+    adjectif: 2
   activeBonus: 1
   numberOfScene: 2
   firstPivotScene: 0
@@ -6067,6 +6084,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
         type: 2}
+    - target: {fileID: 1141421538314770518, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 53295042}
+    - target: {fileID: 1141421538314770518, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickParagrapheOrdi
+      objectReference: {fileID: 0}
     - target: {fileID: 1231265504312318055, guid: 84e5422f523dbd74982bd1ec97190c33,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -6096,6 +6123,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.materialCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044002834939642739, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4318985677922019831, guid: 84e5422f523dbd74982bd1ec97190c33,
         type: 3}
@@ -6192,6 +6224,11 @@ PrefabInstance:
       propertyPath: m_textInfo.materialCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5454135880363144973, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6542111281365053762, guid: 84e5422f523dbd74982bd1ec97190c33,
         type: 3}
       propertyPath: m_textInfo.materialCount
@@ -6250,6 +6287,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697620458904919615, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 53295042}
+    - target: {fileID: 7697620458904919615, guid: 84e5422f523dbd74982bd1ec97190c33,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButtonConfirm
       objectReference: {fileID: 0}
     - target: {fileID: 2059657599, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
       propertyPath: m_Enabled
@@ -6424,7 +6471,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -375
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5273843246516138917, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+    - {fileID: 5454135880363144973, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
 --- !u!1 &5027511407946955178 stripped
 GameObject:
