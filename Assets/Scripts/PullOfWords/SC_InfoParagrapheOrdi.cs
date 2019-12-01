@@ -10,6 +10,8 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
     public TextMeshProUGUI pull;
     public Image image;
     public Animator ArboAnim;
+    public Color HighlightColor;
+    public Color TakenColor;
 
     private bool validate = false;
 
@@ -24,6 +26,7 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
         if (!validate)
         {
             image.gameObject.SetActive(!image.IsActive());
+            image.color = HighlightColor;
             //button.text = info.champLexical.fichierWords.name;
             collect.gameObject.SetActive(!collect.IsActive());
 
@@ -64,11 +67,14 @@ public class SC_InfoParagrapheOrdi : MonoBehaviour
         SC_GM.gm.numberOfCLRecover++;
         pull.text = SC_GM.gm.numberOfCLRecover.ToString() + "/" + SC_GM.gm.numberOfCLRecoverable.ToString();
         validate = true;
-        image.color = Color.gray;
+        collect.gameObject.SetActive(!collect.IsActive());
+        image.color = TakenColor;
 
         if (SC_GM.gm.numberOfCLRecover == SC_GM.gm.numberOfCLRecoverable)
         {
             ArboAnim.SetTrigger("ArboIsFull");
+            SC_BossHelp.instance.CloseBossHelp(2);
+            SC_BossHelp.instance.OpenBossBubble(2);
         }
     }
 }
