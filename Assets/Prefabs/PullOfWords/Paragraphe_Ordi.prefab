@@ -420,6 +420,8 @@ MonoBehaviour:
   pull: {fileID: 0}
   image: {fileID: 1003817562111705880}
   ArboAnim: {fileID: 0}
+  HighlightColor: {r: 0.5424528, g: 1, b: 0.5424528, a: 0.4}
+  TakenColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
 --- !u!1 &9094263440170871198
 GameObject:
   m_ObjectHideFlags: 0
