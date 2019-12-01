@@ -17,7 +17,7 @@ public class SC_PaperGM : MonoBehaviour
     public bool paragraphsConfirmed;
     public SC_PaperSnapGrid[] snapPositions;
     public SC_DragDropControls[] ddcontrols;
-    [HideInInspector]
+    //[HideInInspector]
     public List<SC_AutoComplete> acompletes;
 
     public bool DebugMode;
