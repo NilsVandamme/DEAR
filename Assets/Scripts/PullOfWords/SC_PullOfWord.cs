@@ -62,6 +62,8 @@ public class SC_PullOfWord : MonoBehaviour
 
     public TextMeshProUGUI chooseXWord;
 
+    public Button startWrittingButton;
+
 
     //##############################################################################################################################################################
     //##############################################################################################################################################################
@@ -123,6 +125,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void WriteWordAndCL()
     {
+        Debug.Log("WriteWordAndCL running");
         hasWord = new bool[allChampLexicaux.Length][];
         //Debug.Log("sc_gm_master = " + SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length);
         if (allChampLexicaux.Length == SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length)
@@ -139,6 +142,14 @@ public class SC_PullOfWord : MonoBehaviour
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
                     champsLexicauxAndWords[i][GetFirstMotLibre(i)].text = elem.GetWord().titre;
+
+        // Active le bouton startwritting
+        if (SC_GM.gm.wheelOfWords.Count > 0)
+        {
+            Debug.Log("enable writting button");
+            startWrittingButton.interactable = true;
+        }
+
     }
 
     /*
@@ -170,6 +181,7 @@ public class SC_PullOfWord : MonoBehaviour
                         return;
                 }
 
+            startWrittingButton.enabled = true;
             chooseXWord.text = "Selection Finish";
             currentChoosenCritere = 0;
         }
@@ -328,6 +340,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
+        Debug.Log("AddWordInWheel running - " + SC_GM.gm.wheelOfWords.Count);
         if (SC_GM.gm.activeBonus && currentChoosenCritere != idCurrentCritere)
             return;
 
@@ -352,10 +365,18 @@ public class SC_PullOfWord : MonoBehaviour
 
                         Bonus(1);
 
+                        Debug.Log("enable test " + (SC_GM.gm.wheelOfWords.Count > 0));
+                        // Active le bouton startwritting
+                        if (SC_GM.gm.wheelOfWords.Count > 0)
+                            Debug.Log("enable writting button");
+                        startWrittingButton.interactable = true;
+
                         return;
                     }
 
                 }
+
+        
     }
 
     /*
@@ -375,7 +396,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
      public void OnClickRemoveWordInWheel(TextMeshProUGUI tmp)
     {
-        Debug.Log("remove word running");
+        Debug.Log("remove word running - " + SC_GM.gm.wheelOfWords.Count);
         for (int i = 0; i < listOfCancelWheel.Length; i++)
             if (listOfCancelWheel[i] == tmp)
             {
@@ -388,6 +409,11 @@ public class SC_PullOfWord : MonoBehaviour
                 listOfCancelWheel[i].text = "";
             }
 
+        Debug.Log("disable test " + (SC_GM.gm.wheelOfWords.Count == 0));
+        // Désactive le bouton startwritting
+        if (SC_GM.gm.wheelOfWords.Count == 0)
+            Debug.Log("disable writting button");
+            startWrittingButton.interactable = false;
     }
 
     //##############################################################################################################################################################
