@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SC_PaperGM : MonoBehaviour
 {
+    // Score personne courante
+    [HideInInspector]
+    public int peopleScore = 0;
+
     [HideInInspector]
     // Score de la scene
     public int score = 0;
@@ -35,7 +39,7 @@ public class SC_PaperGM : MonoBehaviour
                         foreach (Word word in listWord.words)
                             foreach (string mot in word.critere)
                                 if (elem == mot)
-                                    score += word.score[SC_GM.gm.peopleScore];
+                                    score += word.score[peopleScore];
             }
 
             Debug.Log("Score = " + score);

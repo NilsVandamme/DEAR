@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e2e9302b0a7454599204ebea877d47, type: 3}
+  m_Name: ChampLexical 1
+  m_EditorClassIdentifier: 
+  fichierWords: {fileID: 4900000, guid: 11bebb6e6ab1e0f4787b6dc83821977b, type: 3}
+  words:
+  - score: 0100000003000000
+    titre: Visit&
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - visit&
+    - visited&
+    - visiting&
+    - visit&
+    - none
+  - score: 02000000fdffffff
+    titre: Anxiety&
+    name:
+    - Titre
+    - Present
+    - Passe
+    - Ing
+    - Noun
+    - Adjectif
+    - Granny Donna
+    - "Mr. S\r"
+    critere:
+    - anxious&
+    - anxious&
+    - anxious&
+    - anxiety&
+    - anxious&

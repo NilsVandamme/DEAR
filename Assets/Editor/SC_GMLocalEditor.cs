@@ -19,13 +19,6 @@ public class SC_GMLocalEditor : Editor
     {
         EditorGUILayout.BeginHorizontal();
 
-        EditorGUILayout.LabelField("Perso de la scene");
-        gmLocal.peopleScore = EditorGUILayout.Popup(gmLocal.peopleScore, gmLocal.persoCourant);
-
-        EditorGUILayout.EndHorizontal();
-
-        EditorGUILayout.BeginHorizontal();
-
         EditorGUILayout.LabelField("Number of Scene");
         gmLocal.numberOfScene = EditorGUILayout.IntSlider(gmLocal.numberOfScene, 2, 3);
 
@@ -72,8 +65,7 @@ public class SC_GMLocalEditor : Editor
 
         EditorGUILayout.Space();
 
-        EditorUtility.SetDirty(gmLocal);
-
         base.OnInspectorGUI();
+
     }
 }
