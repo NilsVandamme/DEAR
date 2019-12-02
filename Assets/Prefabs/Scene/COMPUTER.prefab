@@ -4638,11 +4638,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5027511409708767500}
     m_Modifications:
-    - target: {fileID: 6987084096938364171, guid: d838d7e00092b974db7a9c108dd3d3d4,
-        type: 3}
-      propertyPath: m_Name
-      value: TreeviewOverlay
-      objectReference: {fileID: 0}
     - target: {fileID: 5611993271772008762, guid: d838d7e00092b974db7a9c108dd3d3d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4706,7 +4701,7 @@ PrefabInstance:
     - target: {fileID: 5611993271772008762, guid: d838d7e00092b974db7a9c108dd3d3d4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.22
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5611993271772008762, guid: d838d7e00092b974db7a9c108dd3d3d4,
         type: 3}
@@ -4747,6 +4742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987084096938364171, guid: d838d7e00092b974db7a9c108dd3d3d4,
+        type: 3}
+      propertyPath: m_Name
+      value: TreeviewOverlay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d838d7e00092b974db7a9c108dd3d3d4, type: 3}

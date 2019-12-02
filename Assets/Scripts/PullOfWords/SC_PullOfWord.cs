@@ -185,6 +185,8 @@ public class SC_PullOfWord : MonoBehaviour
                     currentChoosenCritere = valeurCritere[i];
                     if (numberOfWordPerCritere[i] != 0)
                         return;
+                    else
+                        break;
                 }
 
             // Ouvre le tuto

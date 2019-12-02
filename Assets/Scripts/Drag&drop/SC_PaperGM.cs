@@ -81,6 +81,7 @@ public class SC_PaperGM : MonoBehaviour
 
                     for (int m = 0; m < acompletes.Count; m++)
                     {
+                        SC_ConfirmParagraphHighlight.instance.ChangeColor(true);
                         acompletes[m].enabled = true;
                     }
 
@@ -105,6 +106,7 @@ public class SC_PaperGM : MonoBehaviour
 
             acompletes.Clear();
             paragraphsConfirmed = false;
+            SC_ConfirmParagraphHighlight.instance.ChangeColor(false);
         }
     }
 
