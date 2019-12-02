@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SC_PullOfWord : MonoBehaviour
 {
@@ -186,14 +187,19 @@ public class SC_PullOfWord : MonoBehaviour
                     if (numberOfWordPerCritere[i] != 0)
                         return;
                     else
-                        break;
+                        val = 0;
                 }
 
             // Ouvre le tuto
-            SC_BossHelp.instance.CloseBossHelp(3);
-            SC_BossHelp.instance.OpenBossBubble(3);
+            if(SceneManager.GetActiveScene().name == "L_A1")
+            {
+                SC_BossHelp.instance.CloseBossHelp(3);
+                SC_BossHelp.instance.OpenBossBubble(3);
+            }
+
 
             chooseXWord.text = "Selection Finish";
+            startWrittingButton.GetComponent<TMP_Text>().color = Color.green;
             currentChoosenCritere = 0;
         }
     }
@@ -443,5 +449,6 @@ public class SC_PullOfWord : MonoBehaviour
     {
         foreach (SC_AutoComplete elem in autoComplete)
             elem.Init();
+       
     }
 }

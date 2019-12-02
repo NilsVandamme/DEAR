@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCLRecover: 0
-  numberOfCLRecoverable: 3
+  numberOfCLRecoverable: 6
   numberOfWordInWheel: 6
   numberOfWordForEachCritere:
     verb: 0

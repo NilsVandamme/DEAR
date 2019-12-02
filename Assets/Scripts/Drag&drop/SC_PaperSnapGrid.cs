@@ -13,8 +13,11 @@ public class SC_PaperSnapGrid : MonoBehaviour
         if (other.tag == "Paragraph")
         {
             //Debug.Log(other.name + " has snapped on " + gameObject.name);
+
             currentSnappedObject = other.gameObject;
             hasSnappedObject = true;
+            SC_ConfirmParagraphHighlight.instance.HighlightColor();
+
         }
     }
 
@@ -25,8 +28,10 @@ public class SC_PaperSnapGrid : MonoBehaviour
         if (other.tag == "Paragraph" && other.gameObject == currentSnappedObject)
         {
             //Debug.Log(other.name + " has unsnapped on " + gameObject.name);
+            
             currentSnappedObject = null;
             hasSnappedObject = false;
+            SC_ConfirmParagraphHighlight.instance.HighlightColor();
         }
     }
 }
