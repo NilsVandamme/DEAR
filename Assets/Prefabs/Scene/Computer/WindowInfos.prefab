@@ -4665,7 +4665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 589b521f01c4a9747971fa94fcd88e02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73e29df2cf45c46458d794f013c470db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7747,6 +7747,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9121226948211006726, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
+        type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9094263440170871196, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
         type: 3}
       propertyPath: m_text
@@ -7778,11 +7783,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121226948211006726, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
-        type: 3}
-      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1986454965637585775, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
         type: 3}
@@ -7940,6 +7940,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0005777
       objectReference: {fileID: 0}
+    - target: {fileID: 9121226948211006726, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
+        type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9094263440170871196, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
         type: 3}
       propertyPath: m_text
@@ -7976,11 +7981,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121226948211006726, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
-        type: 3}
-      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1986454965637585775, guid: 9e4c9dabbb9f66542a8f5916ad70837d,
         type: 3}

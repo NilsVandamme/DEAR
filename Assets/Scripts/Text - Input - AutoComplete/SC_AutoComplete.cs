@@ -46,11 +46,6 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
         toDisplay = new List<(string, string)>();
         toStore = new List<(string, string)>();
 
-        foreach (Word elem in SC_GM.gm.wheelOfWords)
-            for (int i = 0; i < elem.critere.Length; i++)
-                if (elem.critere[i] != "none")
-                    toStore.Add((elem.critere[i], elem.name[i + 1]));
-
         // Init des élements du canvas
         listButtons = myButtons.GetComponentsInChildren<Button>(true);
         rect = this.GetComponent<RectTransform>();
@@ -62,6 +57,14 @@ public class SC_AutoComplete : MonoBehaviour, IPointerClickHandler
 
         // Init le tab des inputs sauvegardées
         SC_GM.gm.choosenWordInLetter = new List<string>();
+    }
+
+    public void Init()
+    {
+        foreach (Word elem in SC_GM.gm.wheelOfWords)
+            for (int i = 0; i < elem.critere.Length; i++)
+                if (elem.critere[i] != "none")
+                    toStore.Add((elem.critere[i], elem.name[i + 1]));
     }
 
     /*

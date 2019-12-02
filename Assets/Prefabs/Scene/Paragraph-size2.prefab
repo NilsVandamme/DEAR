@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 3667830684787226358}
   - component: {fileID: 3667830684787226357}
   - component: {fileID: 3667830684787226249}
+  - component: {fileID: 1262395233662144385}
+  - component: {fileID: 8748866908836355309}
   m_Layer: 0
   m_Name: Paragraph-size2
   m_TagString: Paragraph
@@ -234,6 +236,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1262395233662144385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667830684787226251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f75fed2e653d6418d653800654f5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoveringHeight: 1
+  SpeedDivider: 1.2
+  SnapSpeed: 5
+  ParagraphSize: 2
+  SnapPositionObjectOverTop: {fileID: 0}
+  SnapPositionObjectTop: {fileID: 0}
+  SnapPositionObjectDown: {fileID: 0}
+  SnapPositionObjectUnderDown: {fileID: 0}
+  overTopSnapped: 0
+  topSnapped: 0
+  downSnapped: 0
+  underDownSnapped: 0
+  snapMovementActive: 0
+--- !u!114 &8748866908836355309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667830684787226251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502b39ea80adf8049ac11055800fc09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textParagraphe: {fileID: 0}
 --- !u!1001 &2157216834898057506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,6 +281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3667830684787226248}
     m_Modifications:
+    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
+        type: 3}
+      propertyPath: m_Name
+      value: TextAutoComplete
+      objectReference: {fileID: 0}
     - target: {fileID: 1104232924593432691, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,11 +390,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104232924593432695, guid: 563652843ee2da24a9ca92c3e59e582e,
-        type: 3}
-      propertyPath: m_Name
-      value: TextAutoComplete
       objectReference: {fileID: 0}
     - target: {fileID: 8869976904462432070, guid: 563652843ee2da24a9ca92c3e59e582e,
         type: 3}

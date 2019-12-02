@@ -14,6 +14,7 @@ public class SC_PullOfWord : MonoBehaviour
     public GameObject wheel;
     public GameObject cancelWheel;
     public GameObject myButtons;
+    public GameObject listParagrapheLettres;
 
     // Couleur des mots en fonction des points
     private Dictionary<int, Color> color = 
@@ -46,9 +47,9 @@ public class SC_PullOfWord : MonoBehaviour
     private Dictionary<string, int> critereOfWord = 
         new Dictionary<string, int>()
         {
-            {"Verb", 0},
-            {"Noun", 3},
-            {"Adjectif", 4}
+            {"Verbs", 0},
+            {"Nouns", 3},
+            {"Adjectives", 4}
         };
 
     // Liste des mots de la wheel
@@ -61,6 +62,11 @@ public class SC_PullOfWord : MonoBehaviour
     private int[] numberOfWordPerCritere;
 
     public TextMeshProUGUI chooseXWord;
+
+    // Paragraphe d'autoComplete
+    private SC_AutoComplete[] autoComplete;
+
+    public Button startWrittingButton;
 
 
     //##############################################################################################################################################################
@@ -78,6 +84,7 @@ public class SC_PullOfWord : MonoBehaviour
         InitWheel();
         InitCLAndWordInCL();
         WriteWordAndCL();
+        InitParagrapheLettre();
     }
 
     /*
@@ -123,6 +130,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
     private void WriteWordAndCL()
     {
+        Debug.Log("WriteWordAndCL running");
         hasWord = new bool[allChampLexicaux.Length][];
         //Debug.Log("sc_gm_master = " + SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length);
         if (allChampLexicaux.Length == SC_GM_Master.gm.listChampsLexicaux.nameChampsLexicals.Length)
@@ -139,6 +147,15 @@ public class SC_PullOfWord : MonoBehaviour
             for (int i = 0; i < champsLexicauxAndWords.Length; i++)
                 if (elem.GetCL() == champsLexicauxAndWords[i][posElemCl].text)
                     champsLexicauxAndWords[i][GetFirstMotLibre(i)].text = elem.GetWord().titre;
+
+    }
+
+    /*
+     * Récupère l'ensemble des paragraphes disponibles pour écrire la lettre.
+     */
+     private void InitParagrapheLettre()
+    {
+        autoComplete = listParagrapheLettres.GetComponentsInChildren<SC_AutoComplete>(true);
     }
 
     /*
@@ -169,6 +186,10 @@ public class SC_PullOfWord : MonoBehaviour
                     if (numberOfWordPerCritere[i] != 0)
                         return;
                 }
+
+            // Ouvre le tuto
+            SC_BossHelp.instance.CloseBossHelp(3);
+            SC_BossHelp.instance.OpenBossBubble(3);
 
             chooseXWord.text = "Selection Finish";
             currentChoosenCritere = 0;
@@ -235,14 +256,14 @@ public class SC_PullOfWord : MonoBehaviour
                 pos = GetFirstMotLibre(index);
                 if (pos != -1)
                 {
-                    if (idCurrentCritere == 0 && elem.GetWord().titre != "none") // Titre
+                    if (idCurrentCritere == 0) // Titre 
                     {
                         hasWord[index][pos] = true;
                         champsLexicauxAndWords[index][pos].text = elem.GetWord().titre;
                     }
 
                     foreach (KeyValuePair<string, int> item in critereOfWord)
-                        if (listOfCritere[idCurrentCritere].text == item.Key && elem.GetWord().critere[item.Value] != "none") // Critere
+                        if (listOfCritere[idCurrentCritere].text == item.Key) // Critere
                         {
                             hasWord[index][pos] = true;
                             champsLexicauxAndWords[index][pos].text = elem.GetWord().critere[item.Value];
@@ -328,6 +349,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
+        Debug.Log("AddWordInWheel running - " + SC_GM.gm.wheelOfWords.Count);
         if (SC_GM.gm.activeBonus && currentChoosenCritere != idCurrentCritere)
             return;
 
@@ -352,10 +374,18 @@ public class SC_PullOfWord : MonoBehaviour
 
                         Bonus(1);
 
+                        Debug.Log("enable test " + (SC_GM.gm.wheelOfWords.Count > 0));
+                        // Active le bouton startwritting
+                        if (SC_GM.gm.wheelOfWords.Count > 0)
+                            Debug.Log("enable writting button");
+                        startWrittingButton.interactable = true;
+
                         return;
                     }
 
                 }
+
+        
     }
 
     /*
@@ -375,7 +405,7 @@ public class SC_PullOfWord : MonoBehaviour
      */
      public void OnClickRemoveWordInWheel(TextMeshProUGUI tmp)
     {
-        Debug.Log("remove word running");
+        Debug.Log("remove word running - " + SC_GM.gm.wheelOfWords.Count);
         for (int i = 0; i < listOfCancelWheel.Length; i++)
             if (listOfCancelWheel[i] == tmp)
             {
@@ -388,6 +418,17 @@ public class SC_PullOfWord : MonoBehaviour
                 listOfCancelWheel[i].text = "";
             }
 
+        Debug.Log("disable test " + (SC_GM.gm.wheelOfWords.Count < 1));
+        // Désactive le bouton startwritting
+        if (SC_GM.gm.wheelOfWords.Count < 1)
+        {
+            Debug.Log("disable writting button");
+            startWrittingButton.interactable = false;
+        }
+        else
+        {
+            startWrittingButton.interactable = true;
+        }
     }
 
     //##############################################################################################################################################################
@@ -398,6 +439,7 @@ public class SC_PullOfWord : MonoBehaviour
 
     public void StartWritting()
     {
-        // TO-DO
+        foreach (SC_AutoComplete elem in autoComplete)
+            elem.Init();
     }
 }

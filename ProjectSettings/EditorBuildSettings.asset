@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FINAL/L_A1.unity
     guid: f28590ba85c5d8142b8106a9e84fc318
+  - enabled: 1
+    path: Assets/Scenes/FINAL/L_B1.unity
+    guid: 80c4a69f9e1a9324dafdefde043dc031
+  - enabled: 1
+    path: Assets/Scenes/FINAL/L_B2.unity
+    guid: a9df45bf5f9d7b94cb4d3d5356fd7332
+  - enabled: 1
+    path: Assets/Scenes/FINAL/L_ENDDEMO.unity
+    guid: bf3432275a7f2477b9e05bb4c1e9abd5
   m_configObjects: {}

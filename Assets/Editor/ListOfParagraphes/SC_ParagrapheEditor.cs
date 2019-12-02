@@ -55,7 +55,7 @@ public class SC_ParagrapheEditor : Editor
         string rawContent = listOfText.fichierTexte.text;
         string[] lineList = rawContent.Split(new string[] { "\n" }, System.StringSplitOptions.None);
 
-        string[] separator = new string[] { ";" };
+        string[] separator = new string[] { "§" };
         string[] cells;
 
         List<TextPart> textInfo = new List<TextPart>();
@@ -63,6 +63,10 @@ public class SC_ParagrapheEditor : Editor
 
         for (int i = 1; i < lineList.Length; i++)
         {
+            int sep = lineList[i].LastIndexOf(",");
+            lineList[i] = lineList[i].Substring(0, sep) + "§" + lineList[i].Substring(sep + 1, lineList[i].Length - (sep + 1));
+            lineList[i] = lineList[i].Replace("\"", "");
+
             cells = lineList[i].Split(separator, System.StringSplitOptions.None);
             
 

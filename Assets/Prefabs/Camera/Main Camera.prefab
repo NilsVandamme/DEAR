@@ -136,7 +136,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 44
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -195,7 +195,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553468919167876980}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c4e60e39621a85142939539ce90067a6, type: 2}
   m_CullingMode: 0
