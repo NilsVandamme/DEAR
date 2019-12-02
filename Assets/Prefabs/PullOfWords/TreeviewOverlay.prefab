@@ -3881,7 +3881,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6714192311751264735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &131785473613772959
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,7 +4267,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1485459778502427328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &353949788570495824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,7 +4579,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5079194695652989637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &516093277986818219
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,7 +4818,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1459811441442072124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &525553630541687798
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,7 +5432,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2964412654764358700}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &653757855527060768
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5819,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 704661336900362713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &809301539900560343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,7 +6058,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8298641340008538898}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &917513546162342078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6220,7 +6297,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9213598736032962119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &962690357819000366
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,7 +6655,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2742121649716425077}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1362124415354111417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,7 +6894,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5193050997366384499}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1431240200963229699
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,7 +7361,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4481607807581237523}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1509761812064372481
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,7 +7600,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2364747870191242692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1511114528557528957
 GameObject:
   m_ObjectHideFlags: 0
@@ -7906,7 +8038,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4278706604428359422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1557834667990509526
 GameObject:
   m_ObjectHideFlags: 0
@@ -8134,7 +8277,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 846530926519010458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1570537150937643290
 GameObject:
   m_ObjectHideFlags: 0
@@ -8546,7 +8700,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6395179580876206926}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1708715701766739986
 GameObject:
   m_ObjectHideFlags: 0
@@ -9377,7 +9542,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1040781837585467364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1868583680094348567
 GameObject:
   m_ObjectHideFlags: 0
@@ -10019,7 +10195,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6252238659246682550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2188562970699764787
 GameObject:
   m_ObjectHideFlags: 0
@@ -10247,7 +10434,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523653333150465807}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2213725660646650230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10814,7 +11012,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 61378370306785850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2623978435327441417
 GameObject:
   m_ObjectHideFlags: 0
@@ -11115,7 +11324,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 483708839247744772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2758831719316273566
 GameObject:
   m_ObjectHideFlags: 0
@@ -11770,7 +11990,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7181920380036199483}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3019656913685479754
 GameObject:
   m_ObjectHideFlags: 0
@@ -12478,7 +12709,6 @@ GameObject:
   - component: {fileID: 7099077604249387117}
   - component: {fileID: 1400353176525662453}
   - component: {fileID: 3120096360543602231}
-  - component: {fileID: 601950523433844337}
   - component: {fileID: 2043305236835023755}
   m_Layer: 5
   m_Name: Mot3
@@ -12624,34 +12854,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &601950523433844337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3200293562561205056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: AddWordInWheel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3120096360543602231}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &2043305236835023755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12694,7 +12896,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3120096360543602231}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3120096360543602231}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3260831123190820006
 GameObject:
   m_ObjectHideFlags: 0
@@ -12995,7 +13208,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4922008340914400182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3320614007764590444
 GameObject:
   m_ObjectHideFlags: 0
@@ -13264,7 +13488,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3981688401705298165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3788061949009960283
 GameObject:
   m_ObjectHideFlags: 0
@@ -13276,7 +13511,6 @@ GameObject:
   - component: {fileID: 5848031221734998597}
   - component: {fileID: 5580207413404282531}
   - component: {fileID: 6541405881996670538}
-  - component: {fileID: 2503414396940966755}
   - component: {fileID: 4074822129498366430}
   m_Layer: 5
   m_Name: Mot1
@@ -13422,34 +13656,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2503414396940966755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3788061949009960283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: AddWordInWheel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6541405881996670538}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &4074822129498366430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13492,7 +13698,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6541405881996670538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6541405881996670538}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3833860513056615831
 GameObject:
   m_ObjectHideFlags: 0
@@ -14014,7 +14231,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2294785404259430313}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3917881870236705208
 GameObject:
   m_ObjectHideFlags: 0
@@ -14242,7 +14470,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7743162204009047414}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3962300046894426276
 GameObject:
   m_ObjectHideFlags: 0
@@ -14654,7 +14893,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1436164571076192536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4065646658646477262
 GameObject:
   m_ObjectHideFlags: 0
@@ -14882,7 +15132,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4217496794732076331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4093599355276324081
 GameObject:
   m_ObjectHideFlags: 0
@@ -15110,7 +15371,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3505013110608021384}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4118268576295313693
 GameObject:
   m_ObjectHideFlags: 0
@@ -15794,7 +16066,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5849449713889090886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4444781063026142918
 GameObject:
   m_ObjectHideFlags: 0
@@ -16821,7 +17104,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5583696634717972511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5125607445963200649
 GameObject:
   m_ObjectHideFlags: 0
@@ -17350,7 +17644,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6748126250592172549}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5236535021610844848
 GameObject:
   m_ObjectHideFlags: 0
@@ -17924,7 +18229,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8064302555247074610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5519343859246110040
 GameObject:
   m_ObjectHideFlags: 0
@@ -18152,7 +18468,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3061766705077996526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5532420438362361908
 GameObject:
   m_ObjectHideFlags: 0
@@ -18380,7 +18707,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 395064492802645690}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5540808882180409793
 GameObject:
   m_ObjectHideFlags: 0
@@ -19358,7 +19696,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 510721498299079872}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6293623146777980087
 GameObject:
   m_ObjectHideFlags: 0
@@ -19586,7 +19935,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8791030486414849380}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6302194009202019142
 GameObject:
   m_ObjectHideFlags: 0
@@ -19814,7 +20174,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5317731077761603752}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6347298081696834939
 GameObject:
   m_ObjectHideFlags: 0
@@ -20792,7 +21163,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5386100876550800463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6659779537355828036
 GameObject:
   m_ObjectHideFlags: 0
@@ -21020,7 +21402,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8975881534626876809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6680457090700355510
 GameObject:
   m_ObjectHideFlags: 0
@@ -21777,7 +22170,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7037997605138630260}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6866524266378025416
 GameObject:
   m_ObjectHideFlags: 0
@@ -22398,7 +22802,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 467543703302591669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7009328519047597171
 GameObject:
   m_ObjectHideFlags: 0
@@ -22695,7 +23110,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4640764642638358856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7099831258017885465
 GameObject:
   m_ObjectHideFlags: 0
@@ -22707,7 +23133,6 @@ GameObject:
   - component: {fileID: 9108154094812684199}
   - component: {fileID: 4313147956715414897}
   - component: {fileID: 2655954910741562032}
-  - component: {fileID: 181987939749786333}
   - component: {fileID: 6653622531350676040}
   m_Layer: 5
   m_Name: Mot2
@@ -22853,34 +23278,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &181987939749786333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099831258017885465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: AddWordInWheel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2655954910741562032}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &6653622531350676040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22923,7 +23320,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2655954910741562032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2655954910741562032}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7120444266695898908
 GameObject:
   m_ObjectHideFlags: 0
@@ -23151,7 +23559,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8753027191540061272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7145827739003203755
 GameObject:
   m_ObjectHideFlags: 0
@@ -24165,7 +24584,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6465206692635085130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7621257740549851141
 GameObject:
   m_ObjectHideFlags: 0
@@ -24393,7 +24823,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4379442779436516363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7623942812837886555
 GameObject:
   m_ObjectHideFlags: 0
@@ -24659,7 +25100,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7788986693164585893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7661458411789027705
 GameObject:
   m_ObjectHideFlags: 0
@@ -25103,7 +25555,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3751043609131298924}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7831844951270669541
 GameObject:
   m_ObjectHideFlags: 0
@@ -25561,7 +26024,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2146179338452448217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8056326287165134812
 GameObject:
   m_ObjectHideFlags: 0
@@ -26318,7 +26792,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4595175249169216195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8343986215544010332
 GameObject:
   m_ObjectHideFlags: 0
@@ -26883,7 +27368,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8620463381970467488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8637368975492297952
 GameObject:
   m_ObjectHideFlags: 0
@@ -27111,7 +27607,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2900369014825762323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8822064368618283976
 GameObject:
   m_ObjectHideFlags: 0
@@ -27339,7 +27846,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 224743378359721737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9032738977230746611
 GameObject:
   m_ObjectHideFlags: 0
@@ -27864,7 +28382,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1212795099349842691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5632954227385449819}
+        m_MethodName: AddWordInWheel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9193411100116566912
 GameObject:
   m_ObjectHideFlags: 0

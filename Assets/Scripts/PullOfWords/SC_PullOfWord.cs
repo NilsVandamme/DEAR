@@ -109,7 +109,7 @@ public class SC_PullOfWord : MonoBehaviour
         listOfWheel = wheel.GetComponentsInChildren<TextMeshProUGUI>();
         hasWordInWheel = new (bool, int)[listOfCancelWheel.Length];
 
-        numberOfWordPerCritere = new int[] { SC_GM.gm.numberOfWordForEachCritere.verb, SC_GM.gm.numberOfWordForEachCritere.noun, SC_GM.gm.numberOfWordForEachCritere.adjectif };
+        numberOfWordPerCritere = new int[] { SC_GM.gm.numberOfWordForEachCritere.noun, SC_GM.gm.numberOfWordForEachCritere.adjectif, SC_GM.gm.numberOfWordForEachCritere.verb };
 
         Bonus();
     }
@@ -345,7 +345,7 @@ public class SC_PullOfWord : MonoBehaviour
     //##############################################################################################################################################################
 
     /*
-     * Ajoute le mot clicker dans la wheel si l'on est sur 'Général' et 'Titre'
+     * Ajoute le mot clicker dans la wheel
      */
     public void AddWordInWheel(TextMeshProUGUI tmp)
     {
