@@ -13,6 +13,12 @@ public struct WordForEachCritere
 
 public class SC_GM : MonoBehaviour
 {
+    // Score personne courante
+    [HideInInspector]
+    public string[] peopleCourant = new string[] {"Donna", "Mr.S"};
+    [HideInInspector]
+    public int peopleScore = 0;
+
     // Nombre de CL récupérables
     [HideInInspector]
     public int numberOfCLRecover = 0;

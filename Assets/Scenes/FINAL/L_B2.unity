@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3270,6 +3270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d0af4307d691f4988a0f557d7d62f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peopleCourant:
+  - Donna
+  - Mr.S
+  peopleScore: 1
   numberOfCLRecover: 0
   numberOfCLRecoverable: 6
   numberOfWordInWheel: 6
@@ -11571,6 +11575,14 @@ PrefabInstance:
     - target: {fileID: 1331033675, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105324986, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 354453573, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7945488595379301518, guid: 84e5422f523dbd74982bd1ec97190c33, type: 3}
