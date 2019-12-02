@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 91bd896ef784f084ea94b9d5781792f6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sanchez
+  fontNames:
+  - Sanchez
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 289d317c2063b824fbaa01e99e5a1f3c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

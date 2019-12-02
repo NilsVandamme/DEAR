@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159c894eddbf0fb48ab1bd9e37d1743e, type: 3}
+  m_Name: A1_P3minus
+  m_EditorClassIdentifier: 
+  fichierTexte: {fileID: 4900000, guid: 4145949fa918a65409c3e728259cfd2c, type: 3}
+  texte:
+  - partText: Donna! Get your stuff together. You know what? Screw
+  - partText: <link="Noun">_____</link>
+  - partText: That ain't gonna help you in your current life, nor your dream. The
+      biggest part of the work has to be done on a day-to-day basis. Fight boredom
+      with consistency!
